@@ -1,0 +1,147 @@
+CREATE TABLE <nombre_tabla>
+(
+<nombre_campo> <tipo_datos(tamaño)>
+[null | not null] [default <valor_por_defecto>]
+{,<nombre_campo> <tipo_datos(tamaño)>
+[null | not null] [default <valor_por_defecto>]}
+[, constraint <nombre> primary key (<nombre_campo>[ ,...n ])]
+[, constraint <nombre> foreign key (<nombre_campo>[ ,...n ])
+references <tabla_referenciada> ( <nombre_campo> [ ,...n ] ) ]
+) ;
+
+ALTER TABLE <nombre_tabla>
+ADD <nombre_campo> <tipo_datos(tamaño)>
+[null |not null] [default <valor_por_defecto>]
+{, <nombre_campo> <tipo_datos(tamaño)>
+[null |not null] [default <valor_por_defecto>]} ; 
+
+ALTER TABLE <nombre_tabla> ADD 
+CONSTRAINT <nombre_pk> primary key (<nombre_campo>)
+[,CONSTRAINT <nombre_fk> foreign key (<nombre_campo>)
+    references <nombre_tabla> (<nombre_campo>)];
+
+ALTER TABLE <nombre_tabla>
+alter column <nombre_campo> <tipo_datos(tamaño)>
+[null | not null] [default <valor_por_defecto>];
+
+DROP TABLE <nombre_tabla>;
+
+TRUNCATE TABLE <nombre_tabla>;
+
+CREATE [UNIQUE] INDEX <nombre_indice>
+ON <nombre_tabla>(
+<nombre_campo> [ASC | DESC]
+{,<nombre_campo> [ASC | DESC]})
+);
+
+DROP INDEX <nombre_tabla>.<nombre_indice>;
+
+CREATE VIEW <nombre_vista>
+AS
+(<sentencia_select>);
+
+ALTER VIEW <nombre_vista>
+AS
+(<sentencia_select>);
+
+DROP VIEW vAlquileres;
+
+CREATE SYNONYM <nombre_sinonimo>
+FOR <nombre_tabla>;
+
+DROP SYNONYM <nombre_sinonimo>;
+
+SELECT [ALL | DISTINCT ]
+    <nombre_campo> [{,<nombre_campo>}]
+FROM <nombre_tabla>|<nombre_vista> 
+    [{,<nombre_tabla>|<nombre_vista>}]
+[WHERE <condicion> [{ AND|OR <condicion>}]]
+[GROUP BY <nombre_campo> [{,<nombre_campo >}]]
+[HAVING <condicion>[{ AND|OR <condicion>}]]
+[ORDER BY <nombre_campo>|<indice_campo> [ASC | DESC]
+	[{,<nombre_campo>|<indice_campo> [ASC | DESC ]}]]
+
+INSERT INTO <nombre_tabla> 
+[(<campo1>[,<campo2>,...])]
+values 
+(<valor1>,<valor2>,...);
+
+INSERT INTO <nombre_tabla> 
+[(<campo1>[,<campo2>,...])]
+SELECT 
+[(<campo1>[,<campo2>,...])]
+FROM
+<nombre_tabla_origen>;
+
+DELETE FROM <nombre_tabla>
+[ WHERE <condicion>];
+
+UPDATE <nombre_tabla> 
+SET  <campo1> = <valor1>
+    {[,<campo2> = <valor2>,...,<campoN> = <valorN>]}
+[ WHERE <condicion>];
+
+UPDATE <nombre_tabla> 
+SET  <campo1> = <valor1> | <subconsulta1> 
+    {[,<campo2> = <valor2> | <subconsulta2>
+    ,...
+    , <campoN> = <valorN> | <subconsultaN>]}
+[ WHERE <condicion>]; 
+
+SELECT [ALL | DISTINCT ]
+    <nombre_campo> [{,<nombre_campo>}]
+FROM <nombre_tabla> 
+[{INNER JOIN  <nombre_tabla> ON <condicion_combinacion>}]
+[WHERE <condicion> [{ AND|OR <condicion>}]]
+[GROUP BY <nombre_campo> [{,<nombre_campo >}]]
+[HAVING <condicion>[{ AND|OR <condicion>}]]
+[ORDER BY <nombre_campo>|<indice_campo> [ASC | DESC]
+    [{,<nombre_campo>|<indice_campo> [ASC | DESC ]}]]
+
+SELECT [ALL | DISTINCT ]
+    <nombre_campo> [{,<nombre_campo>}]
+FROM <nombre_tabla> 
+[{LEFT|RIGHT OUTER JOIN  <nombre_tabla> ON <condicion_combinacion>}]
+[WHERE <condicion> [{ AND|OR <condicion>}]]
+[GROUP BY <nombre_campo> [{,<nombre_campo >}]]
+[HAVING <condicion>[{ AND|OR <condicion>}]]
+[ORDER BY <nombre_campo>|<indice_campo> [ASC | DESC]
+    [{,<nombre_campo>|<indice_campo> [ASC | DESC ]}]]
+
+SELECT [ALL | DISTINCT ]
+    <nombre_campo> [{,<nombre_campo>}]
+FROM <nombre_tabla> 
+[{LEFT|RIGHT OUTER JOIN  <nombre_tabla> ON <condicion_combinacion>}]
+[WHERE <condicion> [{ AND|OR <condicion>}]]
+[GROUP BY <nombre_campo> [{,<nombre_campo >}]]
+[HAVING <condicion>[{ AND|OR <condicion>}]]
+{
+UNION [ALL | DISTINCT ]
+SELECT [ALL | DISTINCT ]
+    <nombre_campo> [{,<nombre_campo>}]
+FROM <nombre_tabla> 
+[{LEFT|RIGHT OUTER JOIN  <nombre_tabla> ON <condicion_combinacion>}]
+[WHERE <condicion> [{ AND|OR <condicion>}]]
+[GROUP BY <nombre_campo> [{,<nombre_campo >}]]
+[HAVING <condicion>[{ AND|OR <condicion>}]]
+}
+[ORDER BY <nombre_campo>|<indice_campo> [ASC | DESC]
+    [{,<nombre_campo>|<indice_campo> [ASC | DESC ]}]]
+
+SELECT [ALL | DISTINCT ]
+    <nombre_campo> [{,<nombre_campo>}]
+    [{,<funcion_agregado>}]
+FROM <nombre_tabla>|<nombre_vista> 
+    [{,<nombre_tabla>|<nombre_vista>}]
+[WHERE <condicion> [{ AND|OR <condicion>}]]
+[GROUP BY <nombre_campo> [{,<nombre_campo >}]]
+[HAVING <condicion>[{ AND|OR <condicion>}]]
+[ORDER BY <nombre_campo>|<indice_campo> [ASC | DESC]
+    [{,<nombre_campo>|<indice_campo> [ASC | DESC ]}]]
+
+AVG(<expr>)
+COUNT(<expr>)
+MIN(<expr>)
+MAX(<expr>)
+
+http://www.devjoker.com/gru/Tutorial-SQL-/CSQL/Tutorial-SQL-.aspx

@@ -1,0 +1,38 @@
+1.a)
+
+Apunte Arboles.
+
+Entre las muchas aplicaciones de los  árboles binarios podemos nombrar los 
+árboles de expresión, que son la estructura fundamental en el diseño de compiladores, 
+las árboles de codificación de Huffman, que es un algoritmo eficiente para la 
+compresión de datos, y el uso como soporte para los árboles binarios de búsqueda. 
+
+Habría que ver si los árboles binarios tienen sí o sí cada nodo dos hijos (en ese caso es verdadero) o es MAXIMO dos hijos y pueden haber nodos que tengan uno solo (en ese caso sería falso).
+
+1.b) VERDADERO.
+
+Obviamente asumiendo que el código de creación de la tabla esté dentro de una transacción, si se rollbackea debería borrarse la tabla, ya que debe quedar todo EXACTAMENTE como antes de iniciar la transacción.
+
+---
+
+2.a) Poner una restricción a un campo de una tabla. Un ejemplo de Check podría ser importe > 10, si quiero registrar las ventas mayores a 10 pesos nada más.
+
+2.b) Regalado, hablar de backup.
+
+---
+
+3.a)
+
+Para mí es correcta, el chiste es saber si la función to_number rompe (me parece cualquiera que evalúen el conocimiento de una función, en mi curso nunca la usamos). La busqué y es de Oracle, le pasás un string y te devulve el número. El tema es saber qué pasa cuando recibe un int, probé y no pasa nada, te devuelve el mismo número.
+
+3.b)
+
+T-SQL
+
+SELECT DISTINCT c.num_cliente, c.direccion, c.mail...etc
+FROM Clientes c, Facturas f
+WHERE c.num_cliente = f.num_cliente
+AND YEAR(fecha_alta) >= 2005
+AND mail IS NOT NULL
+GROUP BY c.num_cliente, c.direccion, c.mail...etc
+HAVING SUM(CASE WHEN anio = 2010 THEN importe ELSE 0 END) > SUM(CASE WHEN anio = 2009 THEN importe ELSE 0 END)

@@ -1,0 +1,22 @@
+--1a) F
+--1b) V
+
+/*2a)
+	En las VISTAS, la seguridad radica en utilizarlas, para no dejar accesar a usuario/s en particular, 
+	a una o varias tablas de una BD. Ya sea mostrándole tablas en las que tiene permisos para operar
+	Los TRIGGERS, se utiliza para asegurar la integridad de datos o limitar accesos, mediante el evento
+	disparador de una tabla en particular, por medio de sentencias dentro del mismo.
+*/
+/*2b)
+	El HASHING, utiliza un función para aplicar a una clave en forma dinámica, y acceder directamente a un registro.
+	El ARBOL B, es una estructura estática, que está asociado a un registro mediante un puntero en sus hojas.
+	La ventaja del hashing es que tiene acceso directo al registro, pero la desventaja es que tiene un 
+	costo en complejidad computacional.
+	La ventaja del árbol b es que posee una menor complejidad computacional pero como desventaja que pierde
+	eficiencia cuando el tamaño de la estructura crece.
+*/
+--3a) opción a
+
+--3b) opción c
+
+http://www.utnianos.com.ar/foro/tema-pedido-final-gestion-de-datos-06-08-2013

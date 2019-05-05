@@ -1,0 +1,56 @@
+import CondicionesGlobales.*
+import Artefactos.*
+import Hechizos.*
+import Personajes.*
+
+class Comerciante{
+		const itemsALaVenta = []
+		var property tipo
+		
+		method itemEstaDisponible(item){
+				if(not itemsALaVenta.contains(item)){
+					throw new UserException("El item no esta disponible.")
+				}
+		}
+		method precioConRecargo(item) =
+				item.precio() + tipo.impuestoAdicional(item)
+		method recategorizar(){
+				tipo.recategorizar(self)
+		}
+}
+
+
+//Tipos de Comerciantes
+
+
+class Independiente{
+		var property comision
+		
+		method duplicarComision(){
+			comision = comision * 2
+		}
+		method excedioComision() = comision > condicionesGlobales.impuestoAlValorAgregado()
+		method impuestoAdicional(item) = item.precio() * comision / 100
+		method recategorizar(comerciante){
+				self.duplicarComision()
+				if(self.excedioComision()){
+					comerciante.tipo(registrado)
+				}
+		}
+}
+
+object registrado{
+		method impuestoAdicional(item) =
+				item.precio() * condicionesGlobales.impuestoAlValorAgregado() / 100
+		method recategorizar(comerciante){
+				comerciante.tipo(conImpuestoPorGanancias)
+		}
+}
+
+object conImpuestoPorGanancias{
+		method excedenteSobreMinimoNoImponible(item) = 
+				item.precio() - condicionesGlobales.minimoNoImponible()
+		method impuestoAdicional(item) = 
+				(self.excedenteSobreMinimoNoImponible(item) * 35 / 100).max(0)
+		method recategorizar(_){}
+}

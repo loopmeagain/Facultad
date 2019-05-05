@@ -1,0 +1,105 @@
+Algoritmos de clasificacion
+(ordenamiento, tecnicamente son lo mismo, pero clasificarlos implica ordenar un conjunto de valores en un momento determinado, y el ordenamiento se asocia a armar una estructura que los mantenga ordenados)
+
+hay dos tipos de algoritmos
+
+	-internos: algoritmos que son solo aplicables en memoria principal 
+	-externos: algoritmos que son aplicables a los que pueden estar tanto en memoria principal como en disco
+
+va muy de la mano con el volumen de los valores
+otra cosa muy diferente es que en la realidad estos algoritmos tienen que ser aquellos que se ejecutan in situ
+
+teoria de la complejidad 
+mide justamente la complejidad en la evaluacion de un algoritmo, que tanto va a tardar en funcion de cuanto va a tardar en ejecutar el algoritmo, se utiliza para determinar si el algoritmo va a ser aplicable o no (viabilidad); para que algo sea aplicable el orden de complejidad tiene que tener un comportatommiento lineal, como se evalua este teorema? se hace un analisis de todo lo que tarda en ejecutar el algoritmo y lo que mas tarda en ejecutar un algoritmo es en comparar; en promedio una comparacion es 100 veces mas lenta que otra operacion.
+lo que se evalua es cuantas comparaciones hace y eso es lo que nos va a dar el orden de complejidad
+
+dentro de los metodos entre los algoritmos de clasificacion
+
+burbuja(metodo dicotomico)
+dado un conjunto de elementos, compara el 1,2 2,3 3,4, si el de la izq es mayor se swapea y el mayor se dice que va burbujeando hasta el final, termina cuando pasa por toda la estructura y no intercambio ningun elemento, cuantas veces lo va a hacer? primero n veces, despues n-1, despues n-2 etc, esto es basicamente como subir n veces, la cota maxima tiede a ser n^2, nunca va  a ser esta pero no va  a ser mas grande. la complejidad entonces es parabolica, para pequeños conjuntos de valores entonces, es similar a la complejidad lineal, por lo que es tolerable
+
+metodo del minimo (directo)
+
+compara el primer elemento con los n-1 restantes, cuando es mayor los cambia, basicamente hace las mismas comparaciones que la burbuja, por lo tanto tienen el mismo orden de complejidad, sin embargo la burbuja tiene un metodo de corte anticipado, cosa que este no tiene.
+
+Quicksort
+lo que va a hacer es tomar un archivo, tomar un pivot, y compara todos los elementos con el pivote, al comienzo tomara el primero y compara a ese pivote contra los n-1 elementos restantes, y a partir de ahi en lugar de mover el pivote como el metodo de la burbuja, divide al conjunto en dos subconjuntos, los menores al pivote y los mayores al pivote, y pone al pivot en el medio, de esta forma esta seguro que el pivot esta bien, luego agarra el subconjunto de los menores agarra el primero lo usa de pivot 2 y asi sigue...
+
+al dividir el conjunto en conjuntos mas pequeños, reduce ampliamente el nivel de comparaciones que se deben hacer, y siempre es menor que mantenerlos juntos
+
+8 19 14 41 22 60 99 3
+
+toma el 8, compara 8 con 19, 8 con 14, 8 con 41.....
+
+3, como hay un solo elemento este sub conjunto ya esta ordenando (los menores)	
+99 60 22 41 14 19 
+toma el 99 como pivote
+
+60 22 41 14 19
+
+22 41 14 19
+14 19		22		41
+			14 19 toma el 14 como pivot, el 19 es mayor, esta ordenado
+			41 esta ordenado
+
+quicksort aplica un concepto de subdivision pero de una forma especifica, una estructura de datos particular, yo tengo un universo, lo parto al medio, y asi lo parto en dos, de forma tal que se llega a la menor cantidad posible a para determinar que esta ordenado, lo que busca con esto es potenciar las comparaciones de un arbol, las cuales no son lineales, sino que son logaritmicas, esto hace que el orden de complejidad de este algoritmo tienda a ser n log n
+
+para que un arbol tenga un comportamiento logaritmico, tiene que ser un arbol completamente balanceado,  en el caso anterior vemos que tiene todo de un lado el arbol, no esta balanceado ni en pedo, por esto es que cuando esta ordenado en algun sentido el arbol queda todo de un lado, y es el peor de los casos porque tiene que recorrer nveces n elementos (cuando tiene todos subconjuntos de uno)
+
+en funcion de este metodo surgen dos similares
+	-Binary-sort
+		toma como pivote el elemento central, asumiendo que el del medio es el medio (ordinalmente), osea asume que tiene que estar ordenados
+	-Min-sort
+		- toma como pivote el numero mas cercano a la media
+como elegir el mas aplicable ante informacion que no se sabe como esta distribuido, lo que se hace es pasar por ej el metodo de la burbuja y en funcion de la cantidad de iteraciones, se puede saber masomenos que tan ordenado esta, pero no sobre toda la info, sino sobre una muestra, esto depende de la forma de distribucion y la densidad. si tiro la burbuja y cambia 3 de mil significa que esta bastante ordenado, entonces que siga haciendo la burbuja puede ser una de las mejores decisiones. 
+La idea de esto es que independientemente de como esten distribuidos, tarden el mismo valor para la misma cantidad de elementos
+
+Heap sort
+un heap es un arbol, para que el arbol no se caiga, tiene que ser perfectamente completamente balanceado y binario y el padre siempre debe ser mayor a los hijos.
+Este metodo va a crear un heap, con el conjunto de datos que le venga y lo va a desarmar, y cuando lo desarme le van a quedar los datos ordenados, cuando metes uno a lo sumo comparas cantidad de niveles veces
+
+
+8 19 14 41 22 60 99 3
+
+primer elemento que entra es el 8
+
+					8
+entra el 19
+					19
+				8
+entra el 14
+					14
+				8		19
+entra el 41 		41
+				14
+			8		19	
+entra el 22				
+					41
+				22
+			14
+		8		19	
+y asi...
+					
+remake segun video, primero se inserta
+  				8
+  		19				14
+  	41		22		60		99
+  3
+
+
+hago un max heap
+				3
+  		41				14
+  	8		22		60		99
+ 19			
+remove primer heap
+				41
+  		22				14
+  	8		3		60		99
+ 
+ uff hay que trackear tambien como se va a modificando el array es re paja			
+
+para leerlo en orden saca la raiz, y lo reemplaza el ultimo elemento (inicialmente el 3) y lo trata de poner en la raiz, entonces que hace lo reemplaza por el mayor de los hijos(chequear esto en algun video), la comparacion siempre es por niveles
+
+la complejidad es log de n porque el arbol va creciendo cuando se lo va cargando y decreciendo cuando se lo lee
+ESTE es el metodo que se usa cunado no se sabe que otro metodo aplicar

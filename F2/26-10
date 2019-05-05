@@ -1,0 +1,216 @@
+Termodinamica
+primer principio
+
+relacion energia interna calor y trabajo
+
+si el entorno hace trabajo sobre el sistema, hayt una compresion, por tanto el volumen disminuye, por eso consideramos el trabajo negativo
+
+W= integral<v1,v2>(P dv)
+[P]= Kpa
+V=dm3
+P=F/S => [P]= [N/m^2]=Pa (pascal)
+1 atm=~ 101,3 Kpa=~ 1013 hPa
+1atm= 760 mmhg
+[W]= Kpa dm3 = 1000 N/m^2 1Exp-3 m^3 = [J]= [Nm]
+
+el primer principio relaciona las tres magnitudes
+
+delta U<ab> = Qab - Wa->b
+deltaUab = Ub- Ua
+ hay que entender que tanto q como w  NO son variables de estado, pero Q-W eso SI es una funcion de estado.
+
+la diferencia no depende del camino
+
+si bien el trabajo y el calor absobido por el sistema dependen del proceso realizado, para pasar de un estado a a otro b, la diferencia entre calor absorbido y trabajo realizado resulta independiente de la transformacion realizada para pasar de un estado a otro b y depende solamente de los estados inicial y final.
+
+esta diferencia es por lo tanto una variable de estado y se la denomina variacion de la energia interna del sistema
+
+entonces ahora vamos a analizar las distintas evoluciones que podemos tener, vamos a empezar suponiendo que a nuestro cilindro se lo mantiene a presion constante, voy a empezar a calentar este gas pero voy a poner un manometro que mida la presion para asegurarme que este constante. cuasiestaticamente (muy despacito se realiza la evolucion para poder ir midiendo)
+
+A presion constante esta evolucion se llama ISOBARICA, va a haber un cambio de volumen EL AREA BAJO LA CURVA ES EL TRABAJO W, para este caso el area del rectangulo W= P integral<v1,v2> dv= P(V2-V1)
+SI HAY UNA COMPRESION DE GAS PERO A PRESION CONSTANTE  el sistema ejerce trabajo sobre el entorno aumenta el volumen 
+
+delta Uab=  mc delta Tab- P deltaVab
+
+´dado que puede variar el calor especifico dependiendo de la presion y el volumen
+
+m cp deltaT => [cp]= J /mol k
+
+deltaUab= m cp deltaTab- P deltaVab
+
+
+P V =nrt
+Evolucion ISOCORICA
+Volumen CTE
+
+el volumen esta constante y el gas esta ahi y repente quiero que aumente la presion, que tengo que hacer? calentarlo
+Si se ve el area sobre la curva  es nulo, W=0
+dado que la deltaU esta enfuncion de la temperatura, la variacion de delta Uab= Qab porque el trabajo vale 0
+deltaUab= m Cv deltaTab
+
+
+Evolucion ISOTERMICA
+ T= cte
+ deltaT=0
+ P=f(V)
+ P= nrt/ V
+
+ si la U depende absolutamente de la T al no haber delta T no va ahaber variacion de la energia interna, todo el calor que se le entrega al sistema en este caso va directo al trabajo, 
+
+ Wab= integral<a,b>(nrtdv /v)
+ Wab= nr t ln(vb/va)
+ ACA SI ME PIDEN EL CALOR LO CALCULO POR EL TRABAJO
+ porque si DELTA Uab= 0 => 0 = qab-Wab => qab=Wab
+
+ evolucion ciclica
+ (esquema combinado)
+ si salis de un punto y volves al mismo punto La variacion de energia interna es 0
+ DeltaU ciclo=0
+ Qciclo=Wciclo
+ si el ciclo gira hacia la derecha, va a absobrber calor
+ si el ciclo gira hacia la izquierda, va a perder calor
+ calor y trabajo no es algo que se tiene es algo en transito
+ ciclo abcda
+ a b es cero
+ de b a c es positivo
+ de c a d es positivo
+ de d a a es negativo
+ 
+ Ejercicio 23
+
+
+ es un ciclo cerrado abc
+ el trabajo de este ciclo  es el area debajo de la curva entre la curva y el ciclo
+ como es un ciclo DeltaU=0
+ entonces Qciclo=Wciclo
+ Wciclo= Wab + wbv+ wca
+ v1=15 l
+ p1= 101kpa
+ pb=2pa
+ pb= 202kpa
+ no tengo n ni R pero tengo valores de p y v
+ wbc= pb * Va ln(vc/va) (en esta parte es volumen cte entonces vb=va)
+  pb va = pa vc
+  vc= pb va/pa
+  vc= 2 va
+
+  wbc= 2pa va ln(2)
+  wbc= 2100J
+
+  wca= es el area bajo la curva ac
+  es una compresion asi que el trabajo va a ser negativo en esta parte
+  wca= pa(va-vc)= 101kpa (-va)= -1515J
+
+ Wciclo= 0(transformacion isocorica) + 2100J -1515J= 585J
+
+
+ 19)
+ Q que absorbe es 80J en el ciclo acb
+ Wacb= 30J
+
+ si Wadb=10J
+ Qadb= ?
+
+ deltaUab= Qacb - wacb= 80-30= 50J
+
+ deltaUab= 50 independientemente del camino
+ 50= Qadb- 10J= Qadb=60J
+
+ b) 
+ Wba= -20J
+ el sistema absobe o entrega calor?
+ deltaUba= -50(es negativo porque es de b->a)= Qba- wba
+ 			Qba= -70J
+ 			es negativo entonces el sistema cede calor hacia el entorno
+ c)
+
+ ua=0
+ uD= 40J
+ qad?
+ qdb?
+ deltaUad= 40J
+ el trabajo de db = 0  osea que el Wadb es solamente el trabajo de ad entonces Wad= wadb =10J
+
+ Qad= 40J + Wad= 50J
+
+ Qdb?
+
+ delta Uciclo =0
+ delta U ad +delta Udb+ delta U ab=0
+  40J + deltaUdb= 50J
+  deltaUdb= 10J
+
+si la evolucion es de una isoterma a otra
+  deduccion de isotermas
+  R=cp-cv
+  R=0,082 atml/kmol
+  R= 8,3145[j/k mol]
+
+  DeltaU= n cv deltaT 
+
+  Evolucion Adiabatica
+
+  Q=0
+
+  deltaUab= -Wab
+  al ser un sistema cerrado por ser adiavatico todo el trabajo se convierte en energia interna
+
+  W= integral<i.f> (p dv)
+
+  delta U = -W
+  m cv dT= nrt dv/v
+  cv dt/t= -R dv/v
+  Tf Vf^(gama-1)=Ti Vi ^(gama-1)
+  gama=Cp/CV razon de colores especificos molares
+
+  Tf= Pf Vf/m r  		Ti=Pi Vi/mr
+
+  Pf Vf^gama= Pi Vi^gama
+
+  W= 1/gama-1 		* [Pf Vf-Pi Vi]
+
+  ej 25
+
+  gas 				CV 			CP 		gama
+
+  monoatomico		3R/2		5R/2 	5/3
+  diatomico			5R/2		7R/2   	7/5
+
+
+
+  AB es isotermica
+  m=1 mol
+  de a  a b es isotermica DeltaU=0
+  Wbc=0 (cede calor)
+  Pa= 4atm
+  Pb=2atm
+  Va= 10 l
+  Cp=5R/2
+  Wab= Qab=? 	Wab= paVa ln(vb/Va)= pa va ln(pa va/pb)      
+  				wab= 4atm 10l ln(2)= 27,62atm l  -> tengo que pasarlo a J
+  				8,3145 j/kmol= 0,082 atml/kmol => 1 atm l = 8,3145J/0,082= 101,39 J
+  				Wab= 101,39J * 27,62 J= 2819J =wab=Qab
+  Qbc=? Wbc=0
+  deltaUbc=Qbc
+  Qbc= m cv deltaT
+  Qbc= (cp-R) deltaT
+  Qbc= (cp-r) (Tb-Ta)			donde Tb =TA  aestar altura en el isocorico
+  										Ta= pa va/mr
+  TC VC^(gama-1)= Ta VA^(gama-1)
+  Tc= Ta (Va /vc)^gama-1
+  Tc= Ta (1/2)^(2/3)
+  Qbc= 1 3R/2 	(tc-Ta)
+  Qbc= -2242 J
+  Wca= - deltaVca
+  Wca=- m cv(ta-tc)
+  Wca= 1 mol 3R/2 Ta 0,37
+  Wca= -2242J
+
+otra forma mas facil! y rapido
+Si la deltaUciclo=0 => deltaUBC + DeltaUCA=0
+					   deltaUbc= -deltaUca
+					   -2242J = -(-Wca)
+					   -2242J=Wca
+					   
+  
+  wca=?

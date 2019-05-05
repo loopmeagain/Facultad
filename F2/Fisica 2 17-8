@@ -1,0 +1,189 @@
+nos faltaba ver termometro de gas ideal
+
+como se calcula la escala para poder calibrar hay que buscar 2 piuntos el del congelamiento del agua y el de ebullicion  por ejemplo en grados c si fuese el termometro de mercurio el eje y es longitud  en mm l0 es la de congelamiento l100 la de ebullicion, cualquier temp intermedia  lt calculamos la pendiente  
+
+(l_100-l_0)/(T_100-T_0) = lt-l0/t-t0 => T[c]= (lt-l0/l100-l0)*100 ºc
+
+es valido para cxualquiier variable termometrica
+
+hay un termometro que es el termometro de gas ideal (@ Volumen=cte) #termometro a gas cte
+mide la la variacion de la presion a traves de un manometro
+
+si metemos distintos tipos de gases, se observa queno se puede llegar a temperaturas tan bajas como el 0 absoluto de manera sencilla.
+ dada curvas de gases  de como varia la presion en f de la temperatura, lo interesante  de esto es que no importa el tipo de gas, mientras cumpla con las condiciones de gas ideal (las moleculas del gas no interaccionan entre si), este termmetro tiene la propiedad de que extrapolando las curvas se puede ubicar el 0 absoluto en -273,15 ºc
+ la importancia de este termometro es que no necesito dos puntos porque ya se donde esta el 0 absoluto para cualquier gas, se usa el punto triple del agua que esta a T3= 0,01ºc, el cual se sabe su presion P3=4,58mmhg	hacemos la cuenta
+ 
+ p3-po	(p0 es 0 aunque no se puede llegar)=	px-p0
+ -----											------ =>
+ t3-t0											tx-t0
+
+=> tx=px*t3
+   	  -----
+       p3
+
+    ºc	|	ºf
+    0	|	32
+		|	
+		|	
+		|	
+		|	
+		|	
+	100	|	212
+		|	
+
+delta de 32 a 212 = 180
+delta de 0 100=100
+
+T[F]= 32ºF+ T[c] 180F/100C
+T[C]= (T[F]-32F)*100C/180F
+
+hay una temperatura a la que se igualan
+10/18*(t-32)=32+t 18/10
+5/9 t- 32*5/9= 32 +9/5 t 
+(25t-81t)/45=32+32*5/9
+-56t/45=288+160/9
+t=-45*448/56*9=-40
+
+los elementos las moleculas cuando mayor atraccion reciben, aumenta su energia termica, empieza a haber vibracion, entonces al umentar la temperatura se empieza a aumentar la distancia entre las moleculas
+ 
+ Dilatacion lineal
+
+ -------------------------				a una temperatura t0
+ |			l0 			 |
+
+ ---------------------------------		a una temperatura t1>t0
+ 						 | deltaL |	
+ se comprueba que la variacion de la longitud es proporcional a la variacion de temperatura
+ alfa= coeficiente de dilatacion lineal [1/ºC]
+ deltaL=L0 * alfa * deltaT
+ L-L0=L0* alfa * deltaT
+ L=L0(1+alfa*deltaT)
+
+ dilatacion superficial:
+ 	---------------------------------
+ 	|	-------------------------	|
+ 	|	|						|   |
+ 	|	|						|   |
+ 	|	|						|   |
+ 	|	|						|   |
+ 	|	|						|   |
+ 	|	|						|   |
+ 	|	|						|   |
+ 	|	|						|   |
+ 	|	-------------------------	|
+ 	---------------------------------
+ 		
+ 		deltaT=Tf-T0
+ 		deltaS=s-s0
+ 		S=s0(1+alfa*deltat)
+
+
+  dilatacion volumetrica
+  v=v0(1+beta*deltaT) dilata en los tres ejes
+ 
+  relacion entre alfa y beta
+  delta y=dy/dx   deltax
+  dV=~deltaV
+
+  deltaV=d/dL (L0^3) deltaL
+  deltav= 3L0^2 *deltaL
+  		=3L0^2* L0 *alfa * deltaT		
+  		= L0^3 *3alfa*deltat
+  		=> beta=~3alfa
+
+
+ ejercicio nro 3(guia vieja)
+ volumen inicial del vidrio 50 cm^3
+ deltaT =tf-t0
+ 		=40ºc-12ºc
+ 		=22ºc
+ alfavidrio= 9*10^-6 *1/ºc
+ betahg= 18*10^-5	1/ºc
+
+ un frasco de vidrio a tope, cuando se expande y se derrama es porque el mercurio cuando se dilata va a generar mas volumen que el vidrio
+ calculo el deltav del mercurio y el delta v del vidrio entonces la diferencia seria lo que se derrama
+
+deltaVhg - deltaVVidrio= cantidad de V hg derramado
+mercurio derramado	=	50cm3* betahg * deltat- 50cm3 3*alfavidrio*deltaT
+					=	50 cm3 * 22ºc* [18*10^-5*1/ºc-3*9*10^-6*1/ºc]
+					= 	0.1683 cm3
+
+capacidad calorifica
+
+se verifica que si se quiere saber cual es la variacion de temperatura puedo hacerlo a traves de la variacion de masa
+si quiero elevar la temperatura de un cuerpo a 3 grados no voy a gastar la misma energia que elevar una masa mas grande 3 grados
+
+Q1 experimenta un deltaT1	q2 un delta t2.... y asi
+la razon es la misma
+
+C'=Q1/deltaT1=Q2=deltaT2=Q3/deltaT3
+C':capacidad calorifica del cuerpo de masa m
+tengo 2kg de agua que esta a 0 grados y lo quiero llevar a 5 grados, no voy a gastar la misma cantidad de energia si la masa es las grandee
+si M>m Q'i>qi
+c=C'/m= Q/deltaT*m------> Q=m*c*deltaT
+c: capacidad calorifica especifica(calor especifico)
+[C']=cal/ºc
+[c]=cal/gºc
+el calor especifico de una sustancia se puede definir como la cantidad de calorias que requiere para aumentar en un grado un gramo de esa sustancia
+
+Q=integral entre t2 y t1 de mcdT
+Q= m* integral<t1,t2>(cdT) (c puede ser en funcion de la temperatura)
+
+calorimetro de las mezclas #calorimetro ideal
+un calorimetro ideal es  adiavatico cosa de que no haya intercambio de calor con el entorno
+es importante delimitar bien cual es la frontera
+------------------------------------------------------------------------------------
+el calor que el sistema reciba se toma como positivo								|
+el calor que el sistema ceda a su entorno es negativo								|
+																					|	
+el trabajo que un entorno realiza sobre un sistema se va a considerar negativo		|
+y si el sistema realizara trabajo sobre el entorno se va a considerar positivo		|
+------------------------------------------------------------------------------------|
+
+W= integral(F*dl)
+si el gas se expande va a empujar el piston hacia arriba
+el trabajo se va a poder explicar de distintas formas, la presion que el gas expresa sobre esta forma va a ser igual a la Fuerza sobre el area, y el desplazamiento(del piston) esta en el mismo sentido que la fuerza que el gas hace, osea que el angulo entre la f y dl es 0 => si P=F/A =>F=P*A=> W=integral<a,b>(P*A)*dy=> Como dV=A*dy=>W=integral<v1,v2>(P*dV)
+
+cuando es adiavatico la sumatoria de los Qi tiene que ser igual a 0  porque no hay intercambio con el entorno. 
+
+ej8) 
+PI=20g
+mh20=100g @20ºc
+mx=50g @90ºc
+Teq=24ºc
+Qh2o+Qx+Qpi=0
+0	=	mh2o*ch2o(24ºc-20ºc)+ PI* Ch2o*(24ºc-20ºc)+mx*cx*(24ºc-90ºc)
+0	=	400cal+80cal-3300g*ºc*cx
+cx 	=  -480cal/3300gºc
+cx 	=	0.145cal/gºc
+
+
+una masa de agua a temperatura m y otra masa M a otra temperatura
+lo que vamos a hacer es poner primero la M y despues la m dentro del recipiente, se tapa el calorimetro y se espera a que alcance el equlibrio termico; QM+Qm=0 el tema que la M que ya estaba en el calorimetro va a intercambiar calor con el calorimetro  antes de que se ingrese la segunda m
+Qm(calor cedido)+q(M+calorimetro)=0
+					calor absorbido
+demostracion PI calorimetro
+0	=	m ch2o(Teq-t2)+	M ch2o(Teq-T1)+magregada cagregada (teq-t1)+mtermometro c termometro (teq-t1) + mcal c cal (teq-t1)
+0	=	m ch2o(Teq-t2)+ M * ch20(Teq-t1)[...] (Teq-T1)
+[...] -> es reemplazado por una masa generica que es equivalente a PI * ch20
+
+PI	=	m ch2o(t2-teq)+Mch2o(t1-teq)/(ch2o(Teq-T1))
+PI 	=	m (Teq-t2)/(Teq-t1)-M(Teq-T1)/(Teq-T1)
+PI 	= 	m (Teq-t2)/(Teq-t1)- M
+
+ejerc(icio 9 
+mh20=40g @22ºc 	Mh20)=*/(80*0.22+117.75)=4173/2071,520g @50ºc	Teq=35ºc		
+
+0 	=	mh2o ch2o(Teq-22ºc)+ PI ch2o (Teq-22ºc)+50g Ch2o(Teq-50ºc)
+--- el profe jugando a ser mago matematico---
+PI 	=	-40*1*13+750/1*13
+PI 	= 	17.7g
+
+b)
+mh2o= 100g @22ºc
+mal=80g @90ºc
+Cal=0,22 cal/gºc
+
+Qh2o +QPI+Qal=0
+(mh2o+PI) ch2o *(tEq-22ºc)+80g*0.22(Teq-90ºc)=0
+Teq= (117,7*22*1+90*80*0.22)/ (80*0.22+117.7)=4173/2071,52

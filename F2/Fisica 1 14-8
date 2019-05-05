@@ -1,0 +1,119 @@
+Matias proietti	
+mproietti@frba.utn.edu.ar
+
+bibliografia : 
+				<sears-zemansky(<title>Fisica universitaria<title>)
+				<tipler (editorial reverte, cubo levitando <title>fisica **<title>, editado Mosca)
+				<resnick(editorial cecsa, <title>Fisica</title>)	
+guias de ejericicios: 	vieja guia
+							-electrostatica, magnetismo y circuitos BF1cp10
+								> circuitos corriente continua
+								>capacitores y dielectricos
+							-calor, termodinamica y corriente alterna bf1cp11
+								> calorimetria, 
+								> 1er y segundo principio
+								> transimicion de calor
+								disclaimer: optica y entropia no se dan en finales
+						
+						nueva guia
+							pagina de la materia fisica 2
+
+Metodologias de evaluacion:
+		hay complemento y se aplican las reglas normales de promocion
+		2do parcial ultimo dia de clases
+		diciembre primeras 2 instancias de recuperacion de cada parcial y se falla en la recuperacion del primer parcial si es mas bajo que
+		el parcial (para escalar la nota para promocion)
+		2dos rec en febrero
+Laboratorio:
+	4 labos 2tps por labo
+	alejandro y nose? ayudantes de labo
+	1-> 4 de septiembre	(venir leido calorimetria para el parcialito)
+	 
+	entramos y a la izquierda 
+	guia de tp de fisica 2
+	ir con grupos armados de 4 o 5 personas
+clases de consulta: miercoles(valea) jueves(proietti) 18 a 21 30
+
+Temas:
+calor-temperatura-dilataciom-termomentro 
+calorimetria
+transimicion del calor  <conduccion	
+						<conexion
+						<radiacion
+
+electroestatica 		<carga electrica
+						<campo electrico
+						<energia potencial electroestatica
+						<potencial
+						<trabajo
+
+circuitos de CC 		<ley de ohm 
+						<ley de kirchoff
+capacitores y dielectricos
+1 er y  2da ley de termodinamica
+-------------------------------------------------<1er parcial>-------------------------------------------------
+fuerza magnetica
+fuentes de campo magnetico
+ley de induccion de faraday-lenz
+autoinduccion e induccionmutua
+corriente alterna
+circuito LRC serie
+ecuaciones de maxwell
+-------------------------------------------------<2do parcial>-------------------------------------------------
+
+calor y temperatura
+
+que es el calor ?
+del cuerpo con mayor a temperatura fluye al cuerpo con menor temperatura; calor es -ENERGIA EN TRANSITO-
+
+que es la temperatura?
+medida cuantitativa del estado  de frialdad o calidez de los cuerpos (a nivel macroscopico)
+
+la madera y el metal estan a la misma temperatura pero se sienten distintos por que? 
+porque la velocidad de transmision del calor que fluye de nuestro cuerpo que esta a mayor temperatura que el resto, se conduce mejor o peor de acuerdo el material que toque 
+
+equilibrio termico cuando no hay gradientes de temperatura(variaciones) entre los elementos que coexisten en un lugar
+
+el calor no se tiene, un cuerpo esta a una temperatura, a mayor o menor. lo que si tienen los cuerpos es energia interna
+energia interna
+deltaV: variacion de energia interna esta asociado proporcinalmente con la variacion de la temperatura deltaT
+Q:calor
+w:trabajo
+
+Materiales buenos conductores de calor(conductores termicos)
+		<metales
+		<
+Malos conductores de calor(aislantes termicos o adiavaticos)	
+		<madera
+		<amianto
+		<telgopor
+
+el principio cero fue posterior al primero
+principio es algo que se acepta sin demostracion matematica
+si hay dos elementos que estan a la misma temperatura (A B), y estan en contacto con un tercer cuerpo(C) pero no entre si, el espacio en el medio es un tabique no conductor del calor (en rojo paredes conductoras de calor, en celeste tabique no conductor del calor)
+
+-si a intercambia calor con c y b intercambia calor con c pero a no intercambia calor con b, entonces a intercambia calor con b-
+
+#imagen de principio 0
+
+
+regimen transitorio es el tiempo que transcurre entre que se produce una variacion a la entrada del sistema hasta que este sistema se estabiliza
+
+temperatura de infinito se refiere a las temperaturas que no estan en la vecindad de los intercambios de energia. Cuando hay una conveccion, esta se lleva por un cambio de densidades en el fluido(el aire), al tocar la ventana, que es la vecindad, hay un flujo de calor entre el interior del aula y el patio.
+
+termometros
+
+Sustancia termometrica	|	X:variable termometrica	|	Escala    
+------------------------|---------------------------|--------------
+Semiconductor			|	resistencia electrica 	|	#escala de T en funcion de X celsius (se tiene en cuenta la t de fusion de ebull)
+Mercurio				|	Volumen					|
+#Tira bimetal			|	Longitud				|
+Termocupla				|							|
+
+en la tira bimetal uno se dilata mas que el otro y al estar espiralado, se ve en forma clara la variacion de movimiento, en una escala apropiada, puede indicar la temperatura 
+
+termocupla: en los extremos hay conductores electricos aislados del resto de la termocupla, cada extremo tiene dos metales 	que al calentarse generan una diferencia de potencial
+el cilindro externo esta conectado a masa, el centro es el que va a estar aislado y va conectado a lo que mide el piloto.
+si hay llama aparece la dif de potencial (esta prendida la estufa), al final viene un dispositivo (bobina) que sirve de electroiman con un nucleo de ferrite que atrae a otra pieza (inserte descripcion de rele/contactor) [...]	#como funciona una termocupla
+
+

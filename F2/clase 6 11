@@ -1,0 +1,166 @@
+ejericio 140)
+
+B= 0,5 wb/m^2
+I = 0,1A
+alfa= 30º
+a=5cm
+b=10cm
+N=20
+
+la idea es poder ver el momento que se genera sobre la espira
+
+el momento se define como M=vectorRXvectorFmg 	 donde R es la distancia de donde se aplica la fuerza hasta el lugar donde pivotea
+recordando que la fuerza magnetica  en un conductor se define como Fmg= I vectordl x B
+Fmg= q v vector X B
+en las partes horizontales de la  espira van orientados paralelo al ejez para arriba y para abajo; sobre  las partes de la espira que estan  vertical es la unica que va a producir una fuerza magnetica paralela al  plano xy  y va a hacerla rotar en un sentido
+
+dfmg= I vect del x vectB
+Fmg= q vect v x vect B
+
+vect Fmg= I vect b x vect B
+
+cada espira va a contribuir al momento, hay que recordar que habia 20
+M= N vector a X I vectorb x vectorB
+M= N I (aXb) X vectB									donde axb lo llamamos vectorArea
+-M= N I vectArea X vectB
+M= N vectorm x vectorB  								donde el vector m es el momento magnetico de la espira= I vector Area
+
+M= 20 |m| x |B| sen |m|^|B|  			donde en este caso el angulo entre m y B es el complemento de 30º (Alfa), osea 60 º
+M= 20 0.1A  5Exp-2 m 10 Ext-2 m 1 0.5T sen60º   el 1 es el seno entre a y b
+
+
+
+Fmg= q vect v X vectB
+q v b= m a
+
+recordando 
+
+R= mv/qB
+
+146)
+
+|v0| = 10^7 m/s
+me= 9,11 exp-31 Kg
+e= -1,6 Exp-19 C
+R = 10cm
+se deduce del dibujito que como es un electron tiene que ser si o si entrante el vector B
+B= mv/R Q = 9.11Exp-31 Kg 10^7 m/s/ (5Exp-2m  |-1,6 Exp-19 C|)
+B= 1,138 exp-3 T
+
+t= T/2
+
+w= 2 pi/T = v/R
+T= 2pi/ (v/R)
+t= 5 exp-2 m pi / 10^7 m/s
+t=1,57 exp-8 s
+
+hacer de tarea el 142
+
+
+
+CICLOTRON
+es un dispositivo que sirve para acelerar particulas, y lograr tener particulas con alta energia
+esta al vacio embebido en un campo magnetico, el cual es uniforme que traspasa al dispositivo de abajo hacia arriba, conectado a una fuente alterna, la carga tiene que ser positiva si b va an este sentido
+como v aumenta en relacion a r la w se mantiene constante
+
+140)
+F= W/2pi
+
+De= 1m  "Radio del ciclotron"
+|B|=0.65T
+qproton= 1,6 Exp-19
+mp= 1,67 Exp-27 kg
+T= 2pi/W= 2pi/ v/r    	donde r= mv/qB
+T= 2pi m/ q v =
+f=v/R2pi
+
+v= B qR/m
+f= BQ/m 2pi = 0,65 T 1.6EXP -19 C / 1,66Exp-27 Kg 2 pi= 10 Mhz
+Ek= 1/2 m V^2
+Ek=  1/2 1,67 exp-27 kg  (B q/m)^2
+Ek=
+
+FUENTES DE CAMPO MAGNETICO
+
+Las fuentes de campo magnetico son cargas en movimiento
+las lineas de campo magnetico son cerradas 
+
+
+Ley de Biot-Savart
+
+supongamos que tenemos una carga de q= 4,5 nc  a una velocidad V=3,6 exp 7 versor i m/s la carga se encuentra en (-4,3)
+me piden calcular el campo magnetico en el origen
+que es lo que se comprueba?  el campo magnetico debido a la carga Q va a ser proporcional a la carga, proporcional al |v| va a ser proporcional a la permeabilidad magnetica (mu0) e inversamente proporcional al cuadrado de la distancia entre la arga y la posicion donde quiero conocer el campo
+
+B= (mu0/ 4pi) *  q vect v X versor Rp /|Rp|^2
+mu0= 4pi exp-7 [T m^2/C m/s]  = [T m/A]
+B= 4pi exp -7 T m/A /4pi 	* 	4,5Exp-9C * 3,6Exp7 1 sen(v^r)/5m^2 =
+
+la ley de biot savart nos dice que
+dB= mu0/4pi   Idl x Rp/ |Rp|^2
+
+si tuvieramos un cable y quisieramos saber el campo en algun punto, tomamos un Idl 
+y tiramos un vector rp hacia el punto
+
+vamos con casos tipicos
+
+1) 	un tramo de conductor que lleva corriente i
+	queremos saber el campo magnetico a una distancia  R desde el conductor
+	entonces, dibujamos un eje de coordenadas sobre el cable haciendolo coincidir con el eje x
+	tenemos dos angulos, tita a la izquierda y tita derecha formando un triangulo entre el comienzo, el final del conductor y el punto p a la distancia R
+
+db=mu0/4pi	Idx .1 sen alfa/ |Rp|^2 			aca Rp va a depender de x
+
+propone que en lugar de usar seno de alfa usar otra cosa para no complejizar la integral
+usa el alterno interno donde sen alfa = cos b
+db=mu0/4pi	Idx .1 cos beta/ |Rp|^2
+cosbeta= R/|rp|
+tgbeta= x/R = x =R tgbeta
+si yo diferencio es mas feliz que usando alfa
+dx/db= R sex^2(beta)
+dx= R sec^2(b) dbeta
+dB= mu0/4pi 	I R sec^2(beta) dbeta cos(beta)/|rp|^2
+
+dB= mu0 /4pi 	I R sec^2 (beta) cos(beta) dbeta/ R^2/cos^2(beta)
+dBDerecha= mu0 / 4pi  I/R 	 cos(beta) dbeta
+Bd= integral<0, betaD>( mu0/4pi 	I/R 	cosbeta dbeta)
+
+sen beta= xd/root(xd^2+R^2) => betaD= arcsen (Xd/root(Xd^2+r^2))
+Bd= mu0 I/4piR 	sen(beta) |<0,Bd>
+BD= mu0 I/4piR sen Bd o bien en funcion de los valores del ejercicio Bd= muo I /4piR 	 Xd/root(xd^2+R^2)
+Bp= Bd + BI
+Bp= mu0 I/4piR  [sen(bI)+ sen(bd)] versor B
+
+ej 169
+
+es una espira cuadrada de longitud de lado l px en el centro
+
+aca el beta va a ir valores de 0 a 45 º tanto derecha como izquierda por cada tramo de la espira
+beta=45º
+ basandonos en la formula deducida,
+
+ Bp= 4 Bl   es cuatro veces la de un tramo, donde R = l/2
+ Bl= mu0 I/4piR  	(sen 45 + sen 45)
+ Bl= mu0 I /4pi l/2 		root(2)
+ Bl= mu0 I root(2)/2 pi l
+ Bp= 4  mu0 I root(2)/2 pi l =  2 mu0 I root(2)/l 	versor B
+
+si estuviera aplicado a una semicircunferencia #final/parcial
+
+las componentes en el sector 1 y 3 dan 0 porque el seno da 0 MORALEJA SI ESTAN EN LA MISMA LINEA el punto no contribuye al campo magnetico
+
+
+--------		x 		-----------
+
+
+el campo Bp va a estar solamente dado por el sector 2
+Bp= B2
+
+el r versor siempre esta a 90º
+B2= pi0 I/4pi   	I R dtita (esto es dl) *1 *1 / R^2 				uno de los unos es el modulo de un versor, y el otro es el del angulo 																		entre los vectores que siempre es 90 que el seno siempre da 1
+B2= mu0 I /4R   versor -k
+
+B2= integral<0,pi> (mu0 I/4pi R)
+
+Bp si el cable es infinito => elos angulos bi y bd tieden a 90 º  => BalambreInfinito= mu0 I/4pi R   	*  2
+BalambreInfinito= mu0 I /2piR 

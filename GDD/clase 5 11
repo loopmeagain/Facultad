@@ -1,0 +1,36 @@
+la capa interna del motor divide la informacion usando paginacion
+
+las paginas tienen id renglones y footer offset
+
+los footers offset son entradas que son accesos directos a cada renglon, osea son el indice de cada pagina
+clustering es aquello que decide donde en la memoria se va a guardar, que puede tener alguna logica o no, pero en el clustering se decide eso
+
+tipo de clustering 
+->intra file -> tiene mas relacion con el contenido que guarda la memoria, es la nocion de pertenencia
+->inter file -> prioriza la relacion por sobre la pertenencia, si tengo una materia quiero toda la gente que curso esta materia, todas las notas que se sacaron en esta materia, proque casi siempre voy a pedir la informacion asi
+
+la logica por defecto es intra file de la mayoria de los motores
+lo que por defecto graba de forma inter file son los indices, cuando le pidas a la db una relacion a partir de un indice, no va a la pagina donde estan los datos, va a la pagina donde esta el indice, y con la foreign key trae las filas que necesita sin tener que hacer un full scan
+
+ejemplo, somos clientes, entramos a distitna hora todos, no nos sentamos en orden, implico que la posicion fisica que ocupamos no tenga que ver con el valor logico. a partir de ahi cada uno que va aentrando lo voy asignando en una pagina, entonces en el footer porque tiene que ser generico lo unico que puedo poner son posiciones relativas, cuando el indice me da una psoicion no me da la posicion en una pagina me da la posicion relativa, cuando accedo a la posicion relativa ahi ya accedo a la informacion de forma directa.
+
+clientes
+7
+3
+2
+1
+14
+(orden de entrada)
+
+footers: 
+0 1 2 3 4
+
+che select * from clientes = 14
+
+el indice te dice que el 14 esta en la fila 4 y ahi va a lafila 4 y trae el cliente 14
+
+el motor de db esta constituido similarmente a un so
+tiene un IPL (initial program loader), UM (user managment), FM (file manager), Dm(data managment).
+el unico que tiene posiciones absolutas es el disk manager
+en un mainframe el motor si toca el disco directamente porque tiene una particion dedicada
+

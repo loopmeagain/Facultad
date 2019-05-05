@@ -1,0 +1,66 @@
+	adr clase 3
+
+Objetivo: Implementar y desarrollar una app mobile que permita ubicar a las personas con necesidades basicas insatisfechas y conectarlos con personas que pueden y quieren ayudarlas 
+
+requerimientos
+- usuarios registrados
+- definicion de politicas de usuarios
+- que no se pueda monetizar el uso de la aplicacion
+- ubicar los puntos de necesidad en un mapa
+- login x redes sociales y propio
+- la aplicacion va  a ser mobile
+- web institucional
+- idioma español
+- que mapa vamos a usar? googlemaps
+- publicar la app en los stores (especificando cuales)
+- lista de funcionalidades
+- se puede utilizar sobre android e ios especificando las versiones minimas
+
+restricciones
+ 
+- alcance geografico es sobre caba y pcia de bsas
+- para usar la aplicacion debera tener acceso a internet el usuario
+	
+- duracion 1 año
+- no traza rutas
+ .No alcanzados:
+  	-trazar rutas
+  	- back office
+  	- pagar hosting
+  	- adm servers
+  	- back up
+  	- capacitacion de usuarios
+  hitos
+- aprobacion de requerimientos
+- aprobacion del presupuesto 
+- aprobacion del cronograma
+- definicion de equipos de trabajo
+- versionalidacion de prototipo
+- finalizacion de soft
+- finalizacion de pruebas
+- entrega del producto
+- publicacion de app
+- aprobacion de version beta
+- cierre del proyecto
+supuesto
+- se espera como maximo una cantidad  usuarios registrados 100k
+- se espera hasta 500 usuarios concurrentes
+el usuario debe tener celular
+que para el registro no se van ausar datos sensibles
+
+
+entregables
+- doc alcance firmado
+-prototipos de pantalla
+-app mobile publicada
+-casos de prueba realizados 
+-base de datos mobile
+-sitio web publicado
+- manual de deploy
+-documento de base de datos
+- Informe de Qa (es la validacion de los casos de prueba)
+ restriccion es una cuestion explicita que esta bien definida
+ el limite lo encuentro yo mediante elr relevamiento y la definicion de los requerimientos
+ diferencia entre hito y entregable, el entregable es algo  tangible, el hito puede ser la salida de una ley, una comunicacion,
+
+ los supuestos pueden ser  requerimientos que los stakeholders no pueden darme garantias de los limites o suposiciones del cliente que salen sobre la marcha y que no es algo que sea restrictivo de forma explicita

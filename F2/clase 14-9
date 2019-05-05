@@ -1,0 +1,102 @@
+ley de gauss
+
+Flujo= integralC(E ds)= qrectangular/epsilon0
+
+
+calculo de E a una distancia X de un plano conductor
+si bien es finito hay miles de millones de atomos en su "espesor",cuando lo cargo con carga q en el medio, en los extremos voy a tener q/2
+E=sigma/2 epsilon0
+condiciones	
+	 E= constante en toda la superficie gaussiana ( la superficie que me interesa calcular)
+	 a priori tendria que ver como es el campo electrico y que superficie me conviene
+	 esta figura se puede pensarlo como la superposicion de dos campos no conductores, solapo los efectos sumo vectorialmente y ya esta (esa es una forma)
+	 el campo de la izquierda esta de un lado y otro y el de la derecha tambien
+ superponiendo los efectos de dos planos infinitos no conductores se puede hallar la expresion del campo E  auna distancia X del plano conductor, lo que se haria es meter unaca cajita de gauss dentro del conductor
+ el campo dentro de un conductor es siempre 0 independientemente de su forma
+
+ E= Ei+Ed
+ E= sigma/2epsilon0 + sigma/2epsilon0
+ E= sigma/epsilon0
+
+ ej 34
+
+
+ <----- +	----><-----	+------>
+ 		+				+
+ 		+				+
+ I		+		II		+	III
+ 		+				+
+ 		+				+
+ 		+				+
+ 		+				+
+ 		+				+
+
+ fijense que no depende de la distancia es algo muy importante
+ EII=0 por ED+EI=0 (EI y ED tienen direcciones opuestas y mismo modulo)
+ EI =sigma/epsilon 0 (-iversor)
+ EIII= sigma/2epsilon0(iversor)
+por que el campo en el conductor es 0, si yo lo cargo con carga la carga siempre se va a la superficie aunque el conductor sea macizo porque la cargapuede fluir libremente entonces tiende a alejarse, hasta apoyarse en la superficie, las lineas de campo electrico son siempre perpendiculares a la superficie, de otra forma si tuviera una ligera inclinacion de mas y no fueran normales habria un componente tangencial que moveria las cargas, cosa que no pasa en la realidad entonces se infiere que al no haber movimiento de cargas, entonces todas las lineas son normales
+
+ejercicio 40
+
+I	-	---<-<----  +			
+	-		II		+	III		
+	-				+			
+	-				+			
+	-				+			
+	-				+			
+	-				+			
+	-				+			
+	-				+			
+
+	 las cargas se atraen y dirigen hacia la parte negativa(porque tienen la misma densidad de carga) ya que, las lineas de campo  son entrantes hacia la carga negativa
+EI= EIII=0
+EII=  EI + ED
+EII= sigmaI (-i)/2epsilon0 +sigmaD (i)/2epsilon0
+EII= |sigma|(i)/epsilon0 
+
+ej 38
+
+si yo de alguna manera cargo el cascaron esferico (macizo conductor) a donde va a ir a parar la carga? a  la superficie (duh), las lineas de campo son salientes de la carga positiva del medio, entonces en la superficie va a haber un Q- porque estas mismas lineas son entrantes 
+desde su perspectiva 
+
+E si r<a (en la esfera de vacio)
+integralC(E ds)= q/epsilon0
+E integralCSG1(ds)= q/epsilon0 => E1=Q r0/4pir^2 epsilon0
+E2: si a<=r<=b (en el conductor)
+integralCSg(Eds)= +q-q/epsilon0	=	0
+recordar que el E dentro de un conductor =0
+
+E3 b<=r:
+integralCsg3(E3 ds)= +q-q+Qinducida+q(centro)/epsilon0
+E3= q+Q r0/ 4pir^2 epsilon0
+
+ej 44
+rA=0.1m
+rB=0.3m
+EA=2000N/c (hacia afuera)
+EB= 1000 N/c hacia adentro
+observar que las lineas de campo son paralelos al diferencial de superficie
+
+IntegralC(Ea ds1)=qinterior/epsilon0
+(solo flujo radial)
+EA 2pi r h cos(0º)=  qinterior /epsilon0
+qinterior/h= |EA| 2pi r epsilon0 	donde qinterior/h = lambdai
+lambdai= 1,11 x10^-8 c/m= 11,1 nc/m
+
+encierro con una nueva superficie gausiana mas grande que el cilindo, que encierra todas las cargas
+
+
+integralC(EB ds2)= qinterna(positiva) + qexterna(suponiendo neutra al comienzo)/ epsilon0
+cos(Eb prodEscalar ds2), el vector eb y ds2 estan en misma direccion (son paralelas superpuestas) pero en sentido contrario(180º)
+cos(180)EB integral(|ds2|)
+-1000 n/c 2pi rB. h= qi+qext/epsilon0
+
+-2000 n/c pi 0.3 8.85 10^-12 f/m= qinterna/h 	+ 	qext/h
+
+lambdaext= qext/h => lambdaext= -2,77 10^-8 c/m
+
+sea una placa conductora cuadrada de 4 m de lado, la cual se encuentra dentro de un E uniforme cuya intensidad es 450 KN/m
+a) indicar la densidad superficial de carga en ambos lados de la placa
+b) se deposita una carga Q= 5uc en la placa, hallar la sigma izquierda y sigma derecha EI y Ed TAREA
+

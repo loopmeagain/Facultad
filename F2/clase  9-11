@@ -1,0 +1,176 @@
+clase  9-11
+
+Ley de Biot savart
+ej 166)
+espira en plano xz
+
+dl=r dtita
+
+dBnormal= db sen alfa 			sen alfa =R /root(R^2+b^2)   donda root(R^2^+b^2)= |Rp|
+dbnormal=mu0/4pi 	* IRdtita 1 sen90 /(R^2+b^2 )  	* 	R/root(R^2+b^2)
+dbnormal= mu0/4pi 	IR^2/(r^2+b^2)^3/2 	 	*dtita
+Bnormal= mu0 I R^2/4pi (r^2+b^2)^3/2 	integral<0,2pi>(dtita)
+
+Bnormal= mu0 IR^2  2pi 	/ 4pi(R^2+b^2)^3/2
+
+Bnormal= mu0 I R^2/ 2(R^2+b^2)^3/2 	versor j
+
+si p(0,0,0) :> b=0 => Bn(p)= mu0 I R^2 versorj / 2R^3   => Bn(p)= mu0 I /2R
+
+
+
+en una semi circunferencia 
+
+db= mu0 I dl x (r-r')/ 4pi |r-r'|^2 |r-r'| 			donde (r-r')/|r-r' | =  Rp
+db= mu0 I  dl x (r-r')/ 4pi |r-r'|^3   formula general
+
+r= (0,0,z)
+r'=(x',y',0)
+r-r'= (-x',-y'.z)
+|r-r'|=root(x'^2+y'^2+z^2)
+aca conviene pasar a polares
+
+{x'=r con tita'
+{y'=r sen tita'
+dl= dx i + dy j + dz k
+dx'= -r sen tita' dtita'
+dy'= r cos tita' dtita'
+dz'= no hay variacion en z = 0
+r-r'=(-rcos(tita'). -rsentita',z)
+
+dlx (r-r')=		| i 	 				j  					k		|
+				| -rsentita' dtita' 	rcostita'dtita'		0		|
+				|-rcostita' 			-rsentita'			z		|
+
+dlx r-r' = versori zrcostita' dtita + versorj Rz sentita' dtita' + versor k  [R^2 sen^2(tita') dtita'+R^2 cos^2tita' dtita']
+dl x r-r'= versori z R cos(tita') dtita' + versoj z Rsentita' dtita' + versor k  R^2 dtita'
+r-r'= (-r cos tita', -rsentita', z)
+
+dB(p)= mu0 I (zR cos tita' dtita', zR sentita' dtita', R^2 dtita')/4pi (R^2+z^2)^3/2
+B(p)=mu0 I/ 4pi (r^2+z^2)^3/2 	   * (0;zRintegral<0,pi/2>(sentita' dtita'), r^2 integral<0,pi/2>(dtita'))
+B(p)= mu0 I /4pi (r^2+z^2)^3/2     *  (0,zR (-cos tita')|<0,pi/2>, R^2pi)
+B(p)= mu0 I /4pi (r^2+z^2)^3/2     * (0,2zR,R^2pi)
+
+
+Ley de Ampere (es la analoga a la ley de gauss)
+dado dos cables uno C1 y C2 que circula una corriente I1 e I2 respectivamente, que pasa cuando dos conductores paralelo a una distancia R, ambos de longitud infinita
+
+para saber el campo se usa la ecuacion del campo sobre cables infinitos
+si las corrientes van en un mismo sentido se puede concluir que  las fuerzas se atraen
+si las corrientes son en sentidos contrarios las fuerzas entre los conductores van a ser de repulsion
+
+F1= I l1 X B21
+B21= mu0 I_2 /2piR  b_21 versor
+
+F1= I_1 l_1  uo I_2/2piR
+F_1/l_1= I_1 I_2 mu0/ 2piR
+[F/l]=N/m
+F2/l2= I1 I2 mu0/2piR
+
+si por dos conductores  PARALELOS aislados a 1 metro de distancia circulan corrientes iguales se define a la corriente en cada uno de ellos igual a 1 A, la fuerza por unidad de longitud es de 2 exp-7 N/m
+
+agarro cualquiera de las dos
+2exp-7 N/m= I^2 4pi mu0/1exp-7 n/A^2 2pi 1m
+I^2= A^2
+I= 1A
+
+ley de ampere:0
+0
+s0ea una curva que encierra a n  conductores
+
+integralC(Bdl)=mu0 Ic   siendo IC la corriente concatenada por la curva c
+
+IC= I1 -I2 -I3  (dependen del sentido de la corriente tomando que con la mano derecha si la corriente hace que gire en sentido antihorario es positivo y horairo negativo)
+
+limitaciones: las corrientes tienen que ser continuas y circular sobre cables de forma infinita
+solo lo puedo usar en casos geometricos particulares, para calcular el vector campo magnetico
+
+por ejemplo en un cable filiforme recto  donde circula una corriente uniforme
+
+
+calculo segun la ley de ampere sobre un cable infinito 
+
+la idea es tomar una curva facil de integrar
+por ejemplo una circunferencia de radio R
+Idl X r me da el sentido de B (me paro en el mpunto uso la mano derecha y la puedo ubicar siguiendo el sentido de la corriente con los dedos)
+
+integralC(B dl)= mu0 I => integralC ( B dl cos 0)= mu0 I => B integralC(dl)= mu0 I => B R integralC<0,2pi>(dtita)=muoI
+
+B= mu0 I versorb /2pi R
+
+ej 156)
+I1=4A
+I2= 1A
+l=2m
+tengo que buscar donde el campo da 0
+
+encierro con una curva a c1, puedo saber b1, y si rodeo a c2 con otra curva podria saber b2
+en algun punto intermedio se tienen que anular, habria que ver si hay mas de uno
+
+calculo la ley de ampere en 1 y la ley de ampere en 2
+B1= mu0 I1/2pi x =
+B2= mu0 I2 / 2pi (l-x)= 
+
+se plantea que en el punto p Bp=0 siendo Bp= B1+B2 => |B1|= |B2|
+mu0 I1/2pix= mu0 I2/ 2pi(l-x)
+I1(l-x)= I2 x
+I1L - I1x= I2x
+(I1+I2) x= I1L => I1 l/ I1+I2=x  => x= 4A 2m/5A =  1,6m
+
+4 dic primer parcial, 
+
+
+Campo magnetico dentro de un conductor
+
+
+como tomo la corriente concatenada, utilizando la densidad de corriente,todo lo que sale a una seccion tiene que pasar por la otra seccion, entonces si una seccion es mas grande que la otra entonces las densidades van a ser distintas
+Jvector= vector densidad de corriente
+J[A/m^2]
+i=d1/dl
+
+J1= i1/s1
+J2= i2/s2
+i1 e i2 son la misma porque es son secciones transversales, como si fuera un circuito en serie, por ambas fluyen la misma cantidad de carga, la diferencia es que en una va a estar mas concentrada, y en otra mas holgada
+
+S1<S2 => J1> J2
+I= integralS(J ds)
+
+no siempre es necesario hacer la integral puede salir a ojo
+
+se traca una curva rodeando  la seccion de material
+si R> a=> B(r)= mu0 i/2piR
+si 0<r<a 
+como j es constante => J= i / pi a^2
+Ic= integral(i/pi a^2  	* 	ds)   	el vector j esta alineado con la corriente, el ds tambien esta alineado, estan a 0 º, entonces cos0 =1
+el ds es un cachito de  superficie del cable como si fuera un anillo plano que estirado es un rectangulo de 2pir' dr'
+Ic= integral<0,a>(i/pia^2 2pi r' dr')
+Ic=2i/a^2 integral<0,r> (r'dr')
+Ic= 2i r'^2/a^2 2
+Ic= i r^2/a^2
+
+
+
+integralC(B dl) = mu0 i r^2/a^2
+B 2pi r = mu0 i r^2/a^2
+b(r)= mu0 i r/ 2pi a^2
+dentro queda de la forma de una constante por una lineal,  y a los extremos cae de forma hiperbolica
+
+ejercicio 159)
+J=3/2 i0 r/pia^3
+
+se grafica el conductor con un eje en el centro del conductor y el otro normal,  el del centro es B(r), el normal r
+
+a medida que r es mas grande j aumenta, casi nada fluye por el centro, cuanto mayor sea el radio  mas va a fluir
+si 0<r<a
+integral (B dl) = mu0....
+Ic= integral 3/2 i0 r'/pi a^3  * 2pir' dr'
+Ic= 3 i0/a^3  integral<0,r>(r'^2 dr')
+IC= i0/a^3   r'^3/3 |<0,r'>
+Ic= i0 r^3 / a^3
+
+B 2pir= mu0 i0 r^3/a^3
+B(r)= mu0 i0 r^2/2pi a^3
+
+esto queda de la forma cte x^2 , una parabola, osea que va a crecer en forma parabolica y va a caer en forma hiperbolica a los costados
+
+el solenoide es simplemente un dispositivo que esta barnizado

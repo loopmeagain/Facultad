@@ -1,0 +1,125 @@
+flujo calorifico es el calor que atraviesa una determinada superficie en cuanto tiempo
+
+
+Resistencia termica
+
+se define a la resistencia termica (tita o rth) como una propiedad de resistirse a ese intercambio de energia
+hay menos resistencia cuanto mayor area, por lo que 
+rth~1/A 
+rth~~ deltaX 
+cuando mas grande es mas conductivo por tanto
+rth~~1/k
+
+=> rth= deltax/kA 
+
+es la resistencia que representa un material de area A de un espesor delta X con un coef de conductividad k
+
+tambien se observa que hay una relacion entre la rth y la H
+
+Rth=deltax/kA = deltaT/H
+[rth]=[ºc/w]
+
+
+#materiales dispuestos en serie
+
+H1=H2=H => dado que no entra ni sale flujo
+
+-k1 A (tL-Tunion)/deltaX1= -k2 A (tu-Th/deltaX2)=H
+
+rtheq(de todo el bloque)= deltaT/H => H= deltaT/rtheq = -(TL-TH)/RthEq
+
+1)	tl-tu = H deltax1/ -k1A
+2) 	Tu-th= H deltax2/-k2 A
+
+(tl-tu)+ (tu-th)= tl-th
+-H deltax1/k1 A - h deltaX2/k2A	=	-H rth se canselan todas las h
+deltax1/k1A		+	deltax2/k2A= rth  => la resistencia termica en los materiales en serie es la suma de sus resistencias termicas
+
+rthEQ= rth1 + rth2 ---> resistencia termica en serie
+
+
+
+si yo quisisera despejar la temperatura para cualquier x (la temperatura de la feta que pudiera percibir en un x del bloque) con respecto al comienzo del material (x-0) y 2) analizo usando la union y th
+para 1) h= -kA(tx.th/x-0)
+
+1)	Hx/k2A	+Th = T(x)
+para 2) 
+h=-k1A(tu-tx)/(x-x2)
+-h(x-x2)/k1A + tu = tx
+
+2)-hx/k1A  +  hx2/k1a +tu =tu(x)
+la pendiente mas pronunciada la que va desde la union al final del bloque
+cuanto menos pronunciada es la pendiente mejor es la capacidad de conduccion, porque el material no imprime una resistencia por cada capa		
+PEDIR GRAFICO A URI (pendiente roja y azul)
+
+
+ejercicio 15  #ej16
+A=0,5cm2
+Tu=60ºc
+Kcu=0,92 cal/s cm ºc
+Kac= 0,12 cal/s cm ºc
+
+a)
+del cobre tengo todo 
+Hcu= hac=h
+
+hCu=-kcuA(tu-th)/100cm
+hcu= 0.92 cal/s cm ºc  * 0,5 cm^"/100cm	*	(60ºc-100ºc)= 0,184 cal/s
+
+b) 	deltaxac= -kac A (ti-tu)/H
+	deltaxac= -0.12 cal/scmºc *0.5cm^2  -60ºc/(0.184cal/s)
+
+	Lac= 19.56 cm
+#Pedir el grafico de pendientes a uri de este ejercicio
+
+
+Materiales dispuestos en paralelo
+a pesar de ser un cilindro el flujo calorifico no se distribuye de forma radial porque cada feta esta a la misma temperatura, solamente tengo diferencia de temperatura en el sentido de x, parte del flujo calorifico se va a  ir por el corazon de acero y y otra parte por el cobre 
+
+
+Heq=  hcu+hac
+deltaT/rtheq= kcu Acu deltat/deltaX 	+ kac Aac deltat/deltaX
+RthEq 		=  1/(1/(deltax/kcu acu)	+	1/(deltax/kac Aac))
+rtheq 		= 1/ ((1/rthcu)	+ (1/rthac))
+
+rtheq = 1/SUM(1/Rth i)
+
+ejercicio 16) 
+rth cu= 20/0.92(pi*1cm2-pi 0,5^2 cm2)		=9,22ºc/w
+rth ac= 20/0.12*pi*0.5^2cm2=242.2 ºc/w
+
+rth eq= 9.22*212.2/(9.22+212.2)= 8,84ºc/w
+
+htot=100ºc/8.84ºc/w= 11,3w
+
+hac/heq *100 = Hac %
+
+hcu%= (htot-hac)%
+
+hac/htot= 9.22/242.2+9.22=4.16 => 4,16% esto es lo que conduce el acero
+100- 4,16%=95,84%	=> conduce el cobre
+
+ej 13 de la guia nueva #ej13(n)
+
+deltaxpared=15cm	deltaxpuerta=7cm	deltaxventana=5mm 	deltaXreboque=3cm
+Apared=26m2			Apuerta=1,6m2 		Aventana=2,4m2 		
+kpared=0,81 W/m K 	kpuerta=0.17 W/mK 	kventana=0,9 W/mK 	kreboque=1,5 W/mK
+
+
+RthEq= Rthpared + Rthreboque
+
+RthTOTAL= 1/ (1/RthEq 	+1/rthventana+ 1/rthpuerta)
+ 
+Conveccion del calor
+
+la estufa tiene que estar a una cierta altura porque calienta el aire, por diferencia de densidad se genera un movimiento (ciclo convectivo)
+el flujo calorifico por conveccion
+H~~deltaT
+H~~A
+H~~h (coef de convecccion)
+
+los flujos convectivos son complicados, que tienen que ver con dinamica de fluidos
+la temperatura de infinito es una temperatura que existe en el ambiente hasta un punto distante de la frontera
+
+Hcv=-hAdeltaT --> formula del flujo convectivo
+

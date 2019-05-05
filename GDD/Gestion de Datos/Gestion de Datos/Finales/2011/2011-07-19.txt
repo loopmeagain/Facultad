@@ -1,0 +1,43 @@
+Mi resolución (me saqué 8):
+
+1.a) FALSO.
+
+1.b) VERDADERO.
+
+---
+
+2.a)
+
+- Una tabla en la que se hagan muchos insert, update, delete y pocos select.
+- Si el índice está en una columna de la tabla que nunca se usa en WHERE, ORDER BY, etc.
+
+2.b)
+
+Conjunto de sentencias que se ejecutan atómicamente. BEGIN TRANSACTION, COMMIT TRANSACTION, ROLLBACK TRANSACTION (expliqué cada uno). Puse un ejemplo con dos INSERT dentro de una transacción.
+
+---
+
+3)
+
+SELECT p1.nombre, IFNULL(p2.nombre, 'Sin Hermanos')
+FROM persona p1
+LEFT OUTER JOIN persona p2 ON (p1.padre = p2.padre OR p1.madre = p2.madre)
+WHERE p1.id != p2.id --para q no joinee consigo mismo
+
+Acá el tema es que no tuve en cuenta lo de sacar los repetidos, una solución podría ser agregar en el WHERE p1.id > p2.id como dice Matías.
+
+4) PL-SQL para usar el FOR EACH ROW y no tener que usar cursores.
+
+CREATE TRIGGER trg_sexo
+ON persona
+AFTER INSERT OR UPDATE
+FOR EACH ROW
+
+BEGIN
+  IF(:new.sexo = 'F' AND EXISTS(SELECT * FROM persona WHERE padre = :new.id)
+    RAISE ERROR
+  ELSIF(:new.sexo = 'M' AND EXISTS(SELECT * FROM persona WHERE madre = :new.id)
+    RAISE ERROR
+END;
+
+El tema acá es que busco los hijos del que se agrega, cuando en realidad quizás habría que buscar los padres, no sé si está del todo bien.

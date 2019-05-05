@@ -1,0 +1,72 @@
+mperezgdd@gmail.com	
+sqlserver
+google groups => consulta tps
+google site => material de trabajo para el parcial
+donny no: no hacer nada de transact en la parte de sql, ni nada de sql en la parte de transact
+
+en el der las entidades representan abstracciones que me interesan modelar en el sistema.
+la primary key puede estar compuesta por uno o mas datos
+tabla=Entidad
+
+string -> fijo=char(N) dinamico=varchar(n)
+boolean-> bit (pero usamos int)
+date -> smalldatetime/datetime/timestamp
+float-> decimal(n,m) / numeric(n,m) where n-> cantidad de digitos del numero entero y m-> cantidad de digitos del numero decimal
+select ->trae, from->de donde
+
+select apellido,nombre
+
+	from alumno
+	where edad > 25
+	order by apellido Desc/Asc
+
+	apellido	|	nombre
+
+	--------	|	-------
+	--------	|	-------
+	--------	|	-------
+
+insertar imagenes de los tipos de join
+
+	empl_codigo	 |	empl_nombre	|	empl_apellido
+		001		 |	andres		|	gomez				 
+		002		 |	laura		|	gutierrez			 
+		003		 |	maria		|	sanchez			 
+	----------------------------------------------
+
+	fact_tipo 	|	fact_sucursal	| 	fact_numero	|	fact_fecha	|	fact_importe	|	fact_vendedor	|
+	A			|	001				|	0001		|	10/10/16	|	2000			|	001				|
+	A			|	001				|	0002		|	12/10/16	|	4000			|	002				|
+	A			|	001				|	0003		|	13/10/16	|	1000			|	001				|
+
+
+select fact_tipo,fact_sucursal, fact_numero
+
+	from facturas
+	where fact_vendedor=´001´
+	output:
+			fact_tipo 	|	fact_sucursal	| 	fact_numero	|	fact_fecha	|	fact_importe	|	fact_vendedor	|
+			A			|	001				|	0001		|	10/10/16	|	2000			|	001				|
+
+funciones de grupo (sum, count, var, avg)
+
+cuando dice para todo x es que me traiga todos lo tenga o no
+para todos los empleados cuanto vendieron, me interesan solamente los que hayan vendido mas de 3500
+la tabla que manda es en la que tienen que estar si o si todos los registros(como dice todos los empleados, es from empleados)
+primero resuelve despues agrupa 
+
+select empl_apellido, empl_nombre, Sum(isnull(fact_importe,0))
+	from empleado left join factura on (empl_codigo=fact_vendedor)
+	group by empl_apellido, empl_nombre 					<-- va a agrupar la tabla con empl_nombre y empl_apellido, hay que usar todos  															<--	 los que se usan en el select sino al group by le hace ruido		
+	having sum(isnull(fact_importe,0))>3500
+															<--  en sql server el orderby te deja usar indices por columna, pero el having <--  no,tampoco con alias
+
+hay dos tipos de tablas las tablas transaccionales y las tablas maestras(son las que tienen abm)
+
+tip: identificar primero las tablas maestras  y a partir de ahi armamos relacionalmente el modelo, creando las tablas transaccionales que necesitemos para que el modelo sea fiel
+
+relaciones identificiativas y no identificativas
+indentificativa es cuando la foreign key esta en la primary
+no identificativa cuando esta en los atributos
+
+

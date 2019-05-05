@@ -1,0 +1,35 @@
+import CondicionesGlobales.*
+
+// Clases de Hechizos
+class Hechizo{
+	method esPoderoso() = self.poder() > condicionesGlobales.poderHechizoPoderoso()
+	method precio() = self.poder()
+}
+
+class HechizoDeLogos inherits Hechizo{
+	var nombre
+	var multiplicador = 1
+	
+	method poder() = nombre.size() * multiplicador
+	method cambiarNombre(palabra){
+			nombre = palabra
+	}
+}
+
+class LibroDeHechizos inherits Hechizo{
+	const hechizos = #{}
+	
+	method poder() =
+			hechizos.filter({hechizo => hechizo.esPoderoso()}).sum({hechizo => hechizo.poder()})
+	override method precio() = hechizos.sum({hechizo => hechizo.poder()}) + 10 * hechizos.size()
+}
+/* Es necesario que haya varios Libros de Hechizos, ya que no todos los libros contendran los
+ * mismos hechizos. Así podran haber distintas combinaciones de hechizos en distintos libros, 
+ * con poder y precio independientes del resto.
+ */
+ 
+//Hechizos conocidos
+
+object hechizoBasico inherits Hechizo{	
+		method poder() = 10
+}

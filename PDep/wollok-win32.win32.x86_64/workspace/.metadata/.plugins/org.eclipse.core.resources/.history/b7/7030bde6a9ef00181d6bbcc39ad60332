@@ -1,0 +1,75 @@
+import Personajes.*
+import Hechizos.*
+import Artefactos.*
+import Refuerzos.*
+import CondicionesGlobales.*
+import Comerciantes.*
+
+describe "Tests Punto 3"{
+		
+		var ursula = new PlayerCharacter()
+		const mascaraOscura = new MascaraOscura ()
+		const mascaraSemiOscura = new MascaraOscura (indiceDeOscuridad = 0.5)
+		var pastoriza = new Comerciante(tipo = new Independiente(comision = 10),
+										itemsALaVenta = [mascaraSemiOscura])
+		var prieto = new Comerciante(tipo = registrado,
+									itemsALaVenta = [mascaraSemiOscura])
+		var fermepin = new Comerciante(tipo = conImpuestoPorGanancias,
+										itemsALaVenta = [mascaraSemiOscura, mascaraOscura])
+	
+	test "la mascara obscura es null" { assert.equals(mascaraSemiOscura,null)}
+	test "Ursula le compra la máscara semioscura a Pastoriza."{
+		ursula.comprarArtefactoA(mascaraSemiOscura, pastoriza)
+		assert.equals(94.5, ursula.monedasDeOro())
+	}
+	
+	test "Ursula le compra la máscara semioscura a Prieto."{
+		ursula.comprarArtefactoA(mascaraSemiOscura, prieto)
+		assert.equals(93.95, ursula.monedasDeOro())
+	}
+	
+	test "Ursula le compra la máscara semioscura a Fermepin."{
+		ursula.comprarArtefactoA(mascaraSemiOscura, fermepin)
+		assert.equals(95, ursula.monedasDeOro())
+	}
+	
+	test "Ursula le compra una máscara oscura (con índice de oscuridad 1) a Fermepin."{
+		ursula.comprarArtefactoA(mascaraOscura, fermepin)
+		assert.equals(88.95, ursula.monedasDeOro())
+	}
+	
+	test "Recategorizar a Pastoriza. Hacer que Ursula le compre la máscara semioscura a Pastoriza."{
+		pastoriza.recategorizar()
+		ursula.comprarArtefactoA(mascaraSemiOscura, pastoriza)
+		assert.equals(94, ursula.monedasDeOro())
+	}
+	
+	test "Recategorizar dos veces a Pastoriza. Hacer que Ursula le compre la máscara semioscura a Pastoriza."{
+		pastoriza.recategorizar()
+		pastoriza.recategorizar()
+		ursula.comprarArtefactoA(mascaraSemiOscura, pastoriza)
+		assert.equals(93.95, ursula.monedasDeOro())
+	}
+	
+	test "Recategorizar a Prieto. Hacer que Ursula le compre la máscara semioscura a Prieto."{
+		prieto.recategorizar()
+		ursula.comprarArtefactoA(mascaraSemiOscura, prieto)
+		assert.equals(95, ursula.monedasDeOro())
+	}
+	
+	test "Recategorizar a Fermepin. Hacer que Ursula le compre la máscara semioscura a Fermepin."{
+		fermepin.recategorizar()
+		ursula.comprarArtefactoA(mascaraSemiOscura, fermepin)
+		assert.equals(95, ursula.monedasDeOro())
+	}
+	
+	//Tests Extra sobre Disponibilidad de Items
+	
+	test "Hacer que Ursula le compre la máscara oscura a Pastoriza."{	
+		assert.throwsExceptionWithMessage("El item no esta disponible.", {ursula.comprarArtefactoA(mascaraOscura, pastoriza)})
+	}
+	
+	test "Hacer que Ursula le compre la máscara oscura a Prieto."{	
+		assert.throwsExceptionWithMessage("El item no esta disponible.", {ursula.comprarArtefactoA(mascaraOscura, prieto)})
+	}
+}

@@ -1,0 +1,49 @@
+ejercicio 184)
+ al comienzo no lo traspasan las lineas de campo, cuando la figura bva a entrando las lineas lo traspasan generando una diferencia de flujo magnetico
+ como a mide 4 de 0 a 4 en x el flujo va a ser creciente a medida que la espira va entrando, como graficamos esto? esto va a depnder como orientemos la superficie, si tomamos como diferencial de superficie orientado vertical con el vector hacia nosotros, el coseno entre ds y b es de 180 °
+
+cuando la espira ya esta sumergida en el campo, al moverse la espira en las dos secciones verticales sucede lo mismo, aparecen las mismas fem con las mismas orientaciones, entonces no hay fem inducida, por lo que hasta que no salga ninguna parte del campo, y este todo sumergido no va a haber variacion de flujo, como de= 5 desde que entra hasta que  pasa los 5 cm el flujo se va a mantener constante
+
+cuando empieza a salir la fem en la varilla que esta adentro, tiene mas potencial que la que esta afuera.
+
+Inserte dibuoj de espira entre dos polos aqui
+
+e(t)= bs sen(wt) w
+phi(t)= bs cos (wt)
+
+
+Autoinduccion  -  induccion mutua
+el c1 produce su propio campo, y el c2 produce otro campo tambien pero por  el campo b1 que es concatenado por el circuito 2
+
+osea c1 se puede autoinducir concatenado con sigo mismo generando una fem, y o inducir una fem en el circuito2
+
+el coeficiente de autoinduccion L  y el fenomeno de induccion mutua M 
+
+L: coeficiente de autoinduccion, relaciona la corriente que circula por un circuito con el campo magnetico  el cual genera un flujo , que se calcula a traves de una superficie, esta superficie es el circuito.
+L= phi/I : FLUJO TOTAL teniendo en cuenta todas las espiras
+ generalmente el flujo depende de la corriente, por lo que l va a depender generalmente de las cuestiones geometricas del circuito
+
+E= -dphi/dt 
+donde phi(t)= L i(t)
+e= -L di(t)/dt
+
+e1= e11 + e12 		 e11 es la propia =>  -d phi11(t)/dt 	 phi11 es el propio, es el que la corriente 1 produce en el circuito 1
+e2= e21 + e22
+phi11= L1 I1(t)
+phi22= L2 I2(t)
+phi12=  integralS1 (B2 ds1) es el que aparece en el circuito uno debido al circuito 2
+phi21= integralS2(B1ds2)
+
+M12= phi12(t)total/I2 
+M21= phi21(t)total/I1
+
+volviendo a las fems si queremos calcular
+
+e11= -d/dt	*	(l1 I1(t))= -L1 di2(t)/dt
+e22= -d/dt 	*	(l2 i2(t))= -l2 di2(t)/dt
+
+e12(t)= -d/dt 	* phi12(t)= -d (M12 i2(t))/dt= -M12 d i2(t)/dt
+e21(t)= -d phi21(t)/dt= -d(M21 i1(t))/dt=  -m21 di(t)/dt
+
+e1= -l1 di1(t)/dt  -M12 di2(t)/dt
+e2= -M21 di(t)/dt - L2 di2(t)/dt 	

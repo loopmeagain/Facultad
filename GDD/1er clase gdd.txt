@@ -1,0 +1,10 @@
+enrinosa@gmail.com
+persistencia es el manejo de los datos 
+tiene dos componentes, uno la forma en la que se persisten los datos y otro en la forma de administrarlos
+
+parcial 13/11, 1 er recu 20/11, 2do recu 27/11
+1Ej sql
+1 Ej T-sql
+1 Teorica
+la recuperacion es modular
+

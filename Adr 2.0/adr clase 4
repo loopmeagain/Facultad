@@ -1,0 +1,21 @@
+adr clase 4
+
+en el edt en gestion de proyecto desglosado puede ir gestion de riesgos, gestion  de tiempos, gestion de gastos, gestion de rrhh1
+la edt se hace una vez ya cerrado el alcance, asi que hablar del relevamiento en el  edt no tiene mucho sentido. hablar del analisis tiene mas sentido, puede contar con un analisis de riesgos , especificaciones de requerimientos (la parte mas tecnica deberia saltar aca, el como vamos  a hacer lo que pidio el cliente)
+puede ser backend front end testing  integracion y salida del producto
+si una cosa lleva mas de una semana lo desgloso sino no
+a veces pueden no estar bien definidas algunas partes tecnologicas a utilizar, estas se pueden poner en la fase de definicion de herramientas tecnicas
+si me imponen alguna metodologia o tecnologia que no conozco, hay que agregar una tarea de capacitacion
+
+cuando siempre tenes que desglosar todo en dos partes que hacen la misma tarea, tipo mobile o web en este caso, es mejor hacer una rama a parte para web y para mobile
+
+no usar la palabra der para base de datos, usar la palabra documentacion de persistencia, que es mas abstracto, lo mismo pasa con documentacion de es arquitectura
+
+cuando se tiene que desgglosar algo en funcion de n req se puede aclarar que s para cada req en de tal parte
+
+Diseñar casos de prueba -> ejecutarlos -> realizar informes de casos de prueba
+
+en infraestructura se suele encarar en dos tareas globales
+ definiciones
+ 				tipo de servicio a contratar (que tipo de servicio y a que proveedor)
+ desarrollo

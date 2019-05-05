@@ -1,0 +1,167 @@
+clase 19-10
+epsilon, ro? , mu (resistividad y la permeabilidad magnetica)parametros electromagneticos basicos de un medio material
+vamos a trabajar con materiales 
+-homogeneos : epsilon ro y mu no varian, 	
+-lineales : respecto de E, el vector de flujo electrico o desplazamiento electrico
+-isotropicos:son independientes de la direccion
+
+vector p = q vector l 	=> tenemos un dipolo +q ---- -q separado a una distancia l  [p]= coulomb  m;
+donde vector p: momneto dipolo electrico
+deltav : volumen condensado
+n :dipolos por cm^3
+n deltav= cantidad de dipolos en el volumen condensado
+
+vectorP total= Sum <1,ndeltav> (vectorp subi);
+donde vectorPtotal es sector de polarizacion
+P= lim deltav ->0		1*vectorPtotal/deltav
+P=lim deltav ->0 	1/deltav 	*	Sum <1,ndeltav> (vectorp subi);
+vectorPtotal= C/m^2
+
+
+donde
+ 		Eo/k= Eo-Ep  =>
+ 		Ep=Eo(1-1/k) =>
+ 		Ep= Eo(k-1/k) => significa que el campo de polarizacion siempre va ser mas chico que el original
+
+ 		entonces
+ 		como Ep= sigmap/epsilon0
+
+ 		sigmap/epsilon0= sigma/epsilon0 	* 	(k-1/k)
+ 		sigmap=sigma(k-1/k)
+
+ 		Qp= -integralflujo(vectorP dS)
+ 		QT= Q(libre) + Qp
+
+ 		ley de gauss (original)
+
+ 		Flujo= integral (E ds)= Qneta/epsilon0
+
+ 		integral (epsilon0 E ds) =qneta
+ 		Q= integral(eo E ds)+ integral(Pds)
+ 		Q= integral((eo E + P)ds)
+ 		SOLUCION GENERAL:
+ 		integral (D ds)= Q
+ 		Dvector= epsilon0 E+ epsilon0 X(susceptibildiad electrica) vectorE= epsilon0(1+X)E donde 1+X=K= Epsilonrelativo
+
+ 		RESUMIDO LEY DE GAUSS GENERALIZADA
+ 		Dvector= epsilonr epsilon0 E
+
+
+Ejercicio 114
+a=2cm
+q=1uC
+K=3
+sups gaussianas A,B,C
+A=3cm
+B=6cm
+c=10cm
+a) 
+utilizamos la ley de gauss generalizada 
+tomamos una superficie gaussiana, con una esfera(o cascaron), va a pasar que de alguna manera va a aparecer una carga en el dielectrico.
+integral (D ds)= q => D4pi ra^2= q (de 1 uc)	=> Da= 1uc/4pi (3 EXP-3)^2 = 8,842 Exp -5 C/m^2 rversor
+
+D= epsilon E=> E= D/epsilon=> EA= 8.8 42 EXp -5 c/m^2 	/	3(8.85 EXP -12 F/m) = 3,33 versor r MegaVolt/m
+ED= 0 => D=0 por ser conductor electrico
+
+cuando yo aplique la ley de gauss en la sup gauss C
+Ec= 1uc/(4pirc^2)* 8.85Exp-12F/m 	= 	0,89 Exp6 V/m
+DC= epsilon0 EC= 8.85 Exp-12 F/m 0,89 Exp 6 v/m
+
+
+Que pasa en una frontera de dos medios materiales?
+
+Componentes de E y D en unn cambio de medio material
+
+si aca tenemos un material  epsilon 1  y pegado otro material de epsilon2, que es lo que pasa cuando hay un cambio de materiales. 
+Supongamos que viene un campo E desde e1 en direccion a e2, este campo eletrico va a tener dos componentes, una tangencial y otra normal, en el medio dos tambien se va a percibir una componente tangencial y una normal,
+
+E= Enormal+ Etangencial
+D= Dnormal + Dtangencial
+
+RECORDAR que la integral de linea sobre una curva cerrada es igual a 0
+
+entonces si se hace la integral de  
+d hasta a + a hasta b+ b hasta c +c hasta d =0
+
+lo que quiere mostrar es que de a hasta b y de c hasta d valen 0 porque delta h tiende a 0;
+resumen las componentes del campo al pasar entre dos medios materiales son iguales.
+Et1=ET2
+
+ahora entre los dos medios se coloca una superficie de gauss cilindrica,
+planteamos la ley de gauss en este caso, no tiene sentido que plante las tangenciales porque no contribuyen,
+
+integral de sup( D ds) = Q(libre) => la expresamos como sigma ds
+integral<tapa1> (Dn1 ds1)	+ integral<tapa2>(dn2 ds2) + integral<cilindro>( esta vale 0)	=sigma S
+-Dn1 S + Dn2 S = sigma S (sigma en dielectrico es igual 0)
+	Dn2 -Dn1			=  0
+	Dn2= Dn1
+
+ahora si entre un dielectrico y otro se coloca un conductor
+
+caso transversal al campo
+este casp particualr las lineas de campo dentro del capacitor son normales a la interfaz, lo que se va a conservar es el componente de Dnormal1 ,`pero va a variar la magnitud porque depende del medio (aca no va a haber componentes tangenciales)
+Dt1= epsilon Et1
+Dt2= epsilon2 Et1
+Porque Et2=Et1
+caso paralelo al campo 
+es el caso particular donde la componente tangencial en ambos dielectricos es igual porque Etan1 = Etan2 PERO NO va a haber componentes normales D
+
+En1=Dn1/epsilon1
+E2= Dn1/ epsilon2
+porque Dn1==Dn2
+
+
+124)
+
+A= 100cm^2
+q=8,9Exp-7 C
+E= 1,4 Mv/m
+
+C= K epsilon0 A/d
+usando la ley gral de gauss
+integral(D ds)=q
+D= q/A
+D=k epsilon0 E => K = D/epsilon0 E
+
+D= 8.9 exp -7 C / 100 exp-4 m^2= 8,9 EXP-5 c/m^2
+K= 8,9 EXP-5 c/m^2/(8.85EXP-9 F/m	*	 1.4 EXP-6 V/m)
+K=7,18
+qp=qb   = qf (k-1/k)
+	  qp= 8.89 Exp-7 c 0,86
+	qp	= 7.6Exp-7 C
+	sigmaP= qp/A
+	sigmaP= 7,6 exp-7 C / 0.1 Exp -4 m^2
+
+120)
+es equivalente a tener dos capa
+K1 esta en paralelo con K2
+C= A epsilon0 (k1+k2)/ d 2
+C= c1 + c2
+
+K1 epsilon1 A/2/d 	+ k2 epsilon2 A/2/d
+C= epsilon0 A/2d	*	 (k1+k2)
+
+122)
+C= A epsilon0 k1 k2/(k2d1 + k1(d-d1))
+
+para k2 la distancia va  aser d -d1 ; esta coneccion es similar a un capa en serie
+
+por la forma en la que esta diagramado
+Dn1 = Dn2 = D
+
+Ceqs= c1 c2/c1+c2
+c1= epsilon1 A/d1
+c2= epsilon2 A/(d-d1)
+
+sale solo
+pero el ej quiere plantearlo desde 
+D1= q/a
+D2= q/a
+C=q/v
+
+V=v1 + v2 por serie
+
+q/Ceq 	= q1/C1+q2/c2
+	 	= d1A/c1
+
+	 	bueno nos fuimos a casa pero se puede llegar 

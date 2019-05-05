@@ -1,0 +1,70 @@
+begin trans
+end trans
+engloban una transaccion, siempre los store procedure tienen que hacerse en transacciones
+cuando se ejecuta una instruccion levanta a memoria lo que vamos a usar
+por ej empezamos a hacer un store procedure, tiramos un select, va al disco levanta el select lo tira en memoria, si se hace un insert va a memoria. Baja de memoria a disco cuando se hace un commit o autocommit
+
+Isolation level, nivel de libertad de usuarios
+todos nosotros queremos comer una torta, los niveles de aislamiento es laforma en la que los voy a dejar acceder a la torta
+de auno, de ados en dos, etc
+
+hay cuatro niveles (ordenado de menor a mayor en nivel de control), los niveles no son solo para lectura
+
+Read uncommited (si leo no solo voy a ver lo que esta comitteado, sino lo que no esta comitteado tambien, de todas las sesiones)
+Read commited (puede tener lecturas fantasma y lecturas sucias, lee los datos de disco no de memoria) (insert si,update si)
+Repeatable read(insert si, update no)
+Serializable (bloqueo absoluto, ejecuto un comando a la vez)
+
+tipos de lectura:
+lectura sucia: es una lectura que estoy haciendo de cosas que voy a ver que puede ser que en este momento alguien los este modificando y que yo no me de cuenta y que despues cuando tire un select los vea modificados
+lectura fantasma: es una lectura que en el mismo instante dos usuarios estan ejecutando el mismo select y el resultado es distinto, es un caso especial de una lectura no repetible
+lectura repetible: es que yo tiro dos select iguales, uno a continuacion del otro y el resultado es el mismo, si eso ocurrio hay lectura repetible.
+
+
+Set isolation level <alguna de las opcciones de los niveles>; el seteo es por sesion
+------
+resolviendo finales
+si el commit no tiene nada al lado commitea todo
+1) c) el primer uno es poruqe cuando estoy en mi sesion, yo veo las cosas como si hubiera un autocommit
+2) si las dos estan serializable el que entra primero la bloquea, hasta que la trsansaccion uno no hace commit no le libera la tabla a la transaccion2
+3)al meter el insert y ser serialiazble le bloqueo la tabla, entonces cuando quiere hacer select@b no lo ejecuta, por lo que despues devuelve igual a @a porque rollbackeo. los tres devuelven la misma cantidad de filas
+
+
+13-Cree el/los objetos de base de datos necesarios para implantar la siguiente regla
+“Ningún jefe puede tener un salario mayor al 20% de las suma de los salarios de sus
+empleados totales (directos + indirectos)”. Se sabe que en la actualidad dicha regla
+se cumple y que la base de datos es accedida por n aplicaciones de diferentes tipos y
+tecnologías; 
+si la regla actualmente se cumple solo hay que hacer un trigger
+sino hay que hacer un SP para corregir el estado actual
+
+primero hay que hacer una funcion recursiva porque dice empleados directos o indirectos
+CREATE FUNCTION sueldos_empleados(@jefe numeric(6))
+RETURNS decimal(12,2)
+as
+declare @emp numeric(6), @salario decimal(12,2)=0
+declare e1 cursor for (select empl.Codigo,empl.salario
+						from empleados where empl_jefe=@jefe)
+open cursos c1
+fetch next	into  @empl, @salario
+while	@@fech,status=0
+		@total=@total+@salario+sueldos_empleados(@empl)
+		fetch next into @emp,@salario
+end
+close cursor c1
+dellocate cursor c1
+return @total
+
+
+CREATE TRIGGER ejercicio13 on Empleado after  insert,update
+as
+--primero hay que definir si vino por un insert o por un update
+
+	if select Count(*)  
+	from empleados (select empl.salario from empleados e2
+					where e2.empl_codigo=empl_jefe)>0,2* ...>0
+	rollback; --si uno esta mal esta mal todo, porque es un problema de integridad
+
+--u`pdate instead of es horrible. es mas facil dejar que ocurra la instruccion y  lo hago after, y luego hago un delete de lo que esta mal, hago un cursor solo con los que estan mal y hago el update, entonces cambiamos el isntead of por after
+
+para que inserted y deleted tengan varias filas es porque mande el insert de un select, no tiene integridad que haga un insert de un select con 10 filas y me cargue 8 filas

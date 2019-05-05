@@ -1,0 +1,88 @@
+
+habiamos visto que para calcular la dif de potencial 
+Vab= Vb-Va= - integral(vectorE vectorDl)
+
+Vp= integral<omega>(k dq/rp)= integral(k dq / |r-r'|) siendo omega el dom de integracion
+
+vimos superficies equipotenciales
+
+vector gradiente
+(lambda al reves= nabla)
+
+nabla= (d/dx; d/dy;d/dz)
+indica la direccion del maximo crecimiento o maxima variacion de la funcion escalar
+y cuyo modulo es igual a la derivada de la funcion con respecto a la distancia  en dicha direccion
+
+dV  	= - E dl
+		= - |E| |dl| cos (E X dl)
+		= - E dl cos(alfa)		donde E cos alfa es el componente tangencial Et
+		= - Et dl 
+dV/dl	= -Et
+
+lo que se puede concluir es que  el vector campo electrico  
+E(x;y;z)= - nablaV(x,y,z)= -dV/dx iversor - dV/dy	jversor-dV/dz 	kversor= -grad(V)
+
+porque el menos? si yo voy en contra del campo electrico el potencial crece, entonces tiene sentido que tenga el sentido contrario al gradiente
+
+guia vieja ej 56)
+
+se tiene un disco lleno de carga uniformemente  con densidad sigma de radio a 
+aca nos conviene para tener una interpretacion mas piola del problema lo vamos a hacer de forma vectorial
+
+quien es rprima ? el que me barre la carga
+r es el que va desde el origen a la carga
+y r- rprima es el vector desde rprima barriendo a la carga p
+como no hay cargas ene l infinito puedo usar la expresion VP=integral(k dq / |r-r'|)
+r=(0,0,z)
+r'=(x',y',0)
+r-r'=(-x';-y';z)
+|r-r'|= root(x'^2+y'^2+z^2)
+
+se puede hacer de varias formas una est tomando un monton de anillos, otra es tomando porcioncitas de angulo dtita,de ancho dr
+
+ds=dr' dl, donde dl es el diferencial de arco
+ds= dr' r' dtita'
+Vp= integral<omega,a>( k sigma r' dr' dtita'/root(x'^2+y'^2+z^2) ) -> llevo a polar
+x'	=r' cos tita'
+y'  = r' sen tita'
+
+Vp= ksigma integral<0,2pi><0,a>(r'dr'dtita'/root(r'^2+z^2))) llamamos u=2r'
+Vp= ksigma integral<0,2pi><0,a>(du dtita' u^-1/2)= ksigma/2 integral<0,2pi>( dtita' 2 root(r'^2+z'^2)) |<0,a>
+Vp= ksigma integral<0,2pi> ((root(a^2+z^2)-z))ditta')
+Vp= ksigma tita'(root(a^2-z^2)-z) |<0,2pi>
+V(b)= sigma(root(a^2+b^2)-b) /2epsilon0 --> funcion especializada z=b
+
+
+ej 27 
+hallar el campo electrico para z=B mediante el gradiente de v
+Ez= -d(V(z))/dz
+Ez= -sigma[((a^2+z^2)^-1/2 * 2z/2)-1]/2epsilon0
+Ez= -sigma/2epsilon0	*	(z/root(a^2+z^2)-1)
+Ez= -sigma/2epsilon0	(z-root(a^2+z^2)/root(a^2+z^2))
+Ez= sigma/2epsilon0 [root(a^2+z^2)-z/root(a^2+z^2)]
+Ez= sigma/2epsilon0 [1-z/root(a^2+z^2)]
+Ez= sigmaz/2epsilon0 	*	[1/z-1/root(a^2+z^2)]	si z<<<<a
+Ez= sigma/2epsilon0	 y se justifica la analogia al plano infinito no conductor cargado con sigma
+E(z=b)= (0,0, sigma/2epsilon0)
+
+si suponemos que el disco no es conductor, y nos acercamos muuucho, ese disco se deberia comportar como un plano infinito
+
+cuanto es el trabajo que tiene que hacer un agente externo para llevar una carguita q desde el punto z1=1,5m al punto z2=5m
+resolver mas facil por energia en lugar de plantear la integral del campo
+
+Wel <a,b>= q deltaVab
+donde Vab lo calculo con lo que hicimos antes
+
+Wext= - Wel
+
+ej 57
+
+Qext y Qint
+si no estuviera v1, tengo la esferita y tiene un q1, vengo conla otra esfera y la envuelvo
+se va a inducir un menos en la Qint y un mas en la Qext; ahora suscede que esta conectado a una bateria
+tener en cuenta que en toda la esfera grande esta al potencial dela fuenta de v1
+la carga que esta en la esfera interna tambien,
+cuando se pone la pila  v a aser Qext= q1+q', donde q' es la que impone la fuente; 
+
+tomo una superficie gaussiana para radios mayores o iguales que b
+V<infinito,r>= - integral<infinito,r>(E dl)= -integral(Qext dr/4piepsilon r^2)

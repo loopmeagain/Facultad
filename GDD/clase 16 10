@@ -1,0 +1,20 @@
+clase 16 10
+tipo de procesamiento
+
+batch
+tiempo real
+interactivo
+
+definimos como va a funcionar el sistema, dependiendo de que decision tomemos depende de como se va a diseñar la arquitectura del sistema
+el tp que estamos haciendo es en tiempo real(los datos reales se actualizan en el momento), mono usuario(standalone)
+batch es procesar las transacciones por lote, no ejecutar cada una en el momento que se ejecuto
+interactivo aparente ser en tiempo real pero es batch
+
+seguridad vs cost vs agilidad
+
+en funcion del tipo de procesamiento
+
+centralizado (mainframe)
+descentralizado (pcs en lan : le saca presion al server)
+distribuido
+satelital

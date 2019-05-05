@@ -1,0 +1,83 @@
+clase 16-11
+Ley de induccion de faraday
+
+e= -dphi/dt    e: fem inducida
+
+
+caso de varilla  que se desplaza en un campo magnetico uniforme la cual tiene velocidad constante v y para fines practicos, vamos a suponer que la varilla se cierra por una curva, puedo elegir la superficie, es independiente mientras tenga como contorno la curva c
+si la varilla es conductora va a tener un efecto, y si no es conductora, no va a circular corriente.
+si yo muevo la barra hacia la derecah y mantengo todo fijo, varia el flujo. el campo aca  no es variable en el tiempo,
+el flujo puede variar o porque varia el campo o porque varia la seccion.
+
+e=-dphi/dt= pero tambien es igual a = IntegralC(vxB dl) - integralC(db ds/dt) = IntegralC(E dl) ---> la perimer integral tiene que ver conque hay movimiento, y la segunda tiene que ver con la variacion del campo; como la variacion del campo aca no aporta nada, solo tenemos en cuenta la otra. LA ULTIMA INTEGRAL ES UN CAMPO NO CULOMBIANO, osea no conservativo
+
+si tuviera un observador del lado izquiero veria que las cargas positivas se van paraarriba y las negativas para abajo, del lado derecho se ve que al acumular carga en los extremos, se genera un campo electrco, de esta forma porque la carga es positiva, si fuera negativa seria al revez el sentido de acumulacion de la carga.
+
+Vamos a calcular de dos maneras a traves de la e con la variacion de flujo, y la otra version con las integrales.
+
+ej de final te cierran los dos lados  te pedian que halles la corriente inducida en el circuito, es como tener las dos mitades de carriles en paralelo, corriente para un lado y para el otro carril, literal era una resistencia en paralelo.
+
+1) version 1 para este ejericio la variacion de x en funcion del tiempo es la velocidad SOLO PARA ESTE.
+ 	version2 si tuvieramos la fem = q v x B, si yo hago la circulacion a lo largo de una curva cerrada, entonces de ahi sale el producto escalar, pero para hay una q que  en la primer integrald de la e no esta, entonces =>
+ 	 q v x B 	dl   esto al ser de la forma fmg dl es un diferencial de trabjo, si al trabajo yo lo divido por la unidad de carga obtengo una diferencia de potencial
+
+ 	 W/Q = 1/Q integral(Fmg dl)
+ 	 epsilon = W/Q= 1/q integralC(q v x B dl)
+
+ 	 recordar que el sentido  positivo es el antihorario
+ 	 de b a c la velocidad es 0 toda la parte esta del circuito esta quieta, por lo que las otras dos integrales dan 0
+
+
+ej 183)
+la diferencia es que aca el circuito es fisico son guias metalicas
+la fuerza necesaria para mantener la barra en movimiento; al aparecer una corriente inducida, entonces gratis no puede ser,  va a tener que haber alguien que este tirando la barra para, pero quien ese esa fuerza?
+
+Fmg= I dl X B
+c) Pel=Pmecanica
+ E^2/r= F . v
+ (bvl)^2/R = ILB v
+ epsilon=LBv   queda comprobado
+ej 185)
+
+supongamos un problema donde tenemos un campo magnetico uniforme que sigue una varilla circular en un campo uniforme
+
+como aplico faraday si es un movimiento circular?
+W= dtita/dt= cte => como es constante se puede tomar w=2pi/t
+aca lo que sucede es que cada elemento (los miles de millones de atomos) al estar rotando a w omega, va a tener distintas velocidades tangenciales Vtan(r)= w r 
+ amayor radio mayor velocidad tangencial, las velocidades de los elementos de la barilla todos son a 90º por lo que el producto vectorial , que es la fuerza magnetica sobre la carga. Las cargas se acumulan abajo y las negativas en el extremo.
+ para cada velocidad voy a tener un cierto radio porque la velocidad esta en funcion del radio
+
+ para calcular el flujo
+tenemos el area de la circunferencia
+dphi=B ds
+el diferencial de ds es lo que yo tengo qe saber, pero aca me esta variando la superficie
+voy dividiendo la circunferencia para encontrar una razon entre las fracciones de pi y los angulos
+
+Ejercicio guia nueva  16)
+el campo varia en funcion de la posicion, no del tiempo osea que la derivada en funcion del tiempo da 0
+la version con las dos integrales,  se plantea por cada tramo de la espira, en algunos el vector dl es 90 grados entonces se anula
+
+ACLARACION:  la ecuacion de las dos integrales se banca relativismo , la parte de IntegralC(vxB dl) es la fem de movimiento, si es que yo  estoy viendo la espira moverse, y la  integralC(db ds/dt) es la fem transformadora la que veria si yo fuera la espira
+
+en la espira vertical de adelante, asi que la corriente va antihorario por la regla de la mano derecha, se debe inducir fem pero como la intensidad del campo va  cayendo en funcion de  x, en la varilla de adelante va a haber menos fem que en la de atras,
+
+
+
+
+e= -e1 + e2
+lo que tengo que cuidar de no cometer error es en el signo de  como recorro la espira
+
+C=ABCDA
+
+integral(vxB dl) = integral<a,b>(v versor i x alfa Bo/(x+l)^2 versor j (0,0,-1)) + integral<b,c> () + integral<c,d>(v veror i X alfa B0/x^2 versorj) (0,0,1) +integral<d,a>       donde 
+ versor i x versor j = versork
+ 
+las integrales de bc y da se anulan por perpendicular a dl
+
+CD: alfa1(t)= (x,0,z1+t)  0<=t<=l
+AB: alfa2(t)= (x+l,0,z1+l-t)
+
+ya con la curva parametrizada
+-v0 B0/(x+l)^2 integral<0,l>(dt)  + v0B0/x^2 integral<0,l>(dt)
+
+e= -valfaB0 l/(x+l)^2 + valfaB0 l/x^2

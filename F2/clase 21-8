@@ -1,0 +1,150 @@
+Q=m c delta t
+SUM Qi =0
+
+Q ingresa Q>0 si sale Q<0
+si ingresa Trabajo W<0 si sale trabakjo W>0
+
+10)
+mx=200g
+PI= 30 g
+deltat=3
+P= 20W
+deltaT= 22,5ºc-17,6ºc=4.9ºc
+
+la potencia es la capacidad de un sistema para manejar la energia en un tiempo, la unidad es [W]= Jul/segundo
+P= dW/dt o para no confundir la w de trabajo con la de watt, P= dE/dt
+
+
+
+
+#equivalente mecanico del calor
+son dos poleas de forma tal que las masas cuando se sueltan pueden bajar y el rodillo que tiene cuerda en los dos sentidos, es para que cuando caigan por accion de la gravedad puedan hacer rotar el rodillo en el eje para batir el agua. jul metia un termometro dentro del dispositivo y pudo establecer la equivalencia entre la caloria en algo mecanico
+1 Cal=1000cal
+1cal=4,186J
+
+
+Qx				+	 QPI			- 	(el trabajo que va a generar la bateria) WBat	=	0
+MX *cx *4.9ºc	+ PI ch20* 4.9ºc	-											3600J	=	0 
+200g*Cx*4.9ºc	+30g cal/gºc *4.9ºc	-	3600	*(1/4.196)cal 							= 	0
+
+Cx=(860cal-147cal)/980 g ºc
+Cx=0,73 cal/gºc
+
+
+Calor latente de fusion y vaporizacion LF y LV
+hay una energia que se necesita para convertir los materiales de solido a liquido y de liquido a vapor
+a la misma temperatura, convertir hielo en agua a 0 grados (liquida)
+
+LF(calor latente de fusion)=>				QF 	=	LF m 
+
+LF(calor latente de varporizacion)=>		QF 	=	LV m
+
+LFh2o	= 	80 	cal/g
+LVh2o	= 	540 cal/g
+
+ ej hacer cubitos de hielo
+ m=1kg de h2o @0ºc
+ QSolidif=-LFh2o*1000g = -80000cal
+
+en la factura de luz se mide el consumo en Kw h => 1000W*h => 1000J/s * 3600s= 3 600 000J, sale 2,5 cada kw/h
+
+-80000 * 4.146= 334880J =~0.093 kw/h
+
+calcular la cantidad de energia necesaria para convertir 10 kg de agua a vapor
+
+11) #ej 11
+mhielo=10kg @ -30ºc 	=>	mVapor @100ºc
+
+Q1: hielo @-30ºc 	=>	hielo @0ºc
+Q2:	hielo @0ºc		=>	Agua  @0ºc (liquida)	-->involucro calor de latencia
+Q3: Agua  @0ºc		=> 	Agua  @100ºc (liquida)
+Q4: Agua  @100ºc	=> 	Vapor @100ºc			-->involucro calor de latencia
+
+Q1	= 	10^4g ch2o	(0ºc-(-30ºc))	=	165 *10^3 	cal
+Q2	= 	LF *mhielo 					= 	8*10^5 		cal
+Q3	=	10^4g cal/gºc *(100ºc-0ºc)	=	10^6 		cal
+Q4	=	Lv* mh2o					=	5400000 	cal
+
+12)
+mh2o=300g
+mhie=100g
+Qh2o				+	Qhie			+	Qh2o@80ºc				=	0
+300gcal/gºc	(0-0)	+ 	LFhie 100g 		+ 	mh2o cal/gºc(0ºc-30ºc)	=	0
+										-	8000cal/(-30cal/g)		= 	mh2o
+											266,7g					=	mg2o
+
+13) clasico de final/parcial
+
+en un recipiente termicamente aislado= calorimetro ideal
+
+mh20= 2kg @25ºc
+mhie= 350g @0ºc
+
+deberia pensar si la energia que tiene el agua alcanza para derretir todo el hielo
+
+energia total capaz de ser entregada por el h2o para derretir el hielo
+ => Q=mh2o ch2o (0ºc-25ºc)= -50000cal
+
+ QfHie= 80cal/g *250g=28000 cal => esto es lo que necesito para derretir el hielo, como tengo 50kcal entonces me alcanza para derretirlo y encima va a aumentar la temperatura porque sobra energia
+
+ Lf mhie 	+	mh2o ch2o (tfeq-0ºc)	+ mh2o ch2o (tfeq-25ºc)			= 	0
+ 28000 cal 	+ 	350g cal/g ºc *tfeq		+ 2000g cal/gºc tfeq-50000cal	=	0
+							(50000cal 	- 	28000 cal)/2350 calºc		=	tfeq
+														9,36ºc			=	tfeq
+
+b) dado que no alcanza la energia para derretir todo el hielo, va a quedar el sistema en equilibrio termico a los 0 grados ya que no alcanza la energia 	que es capaz de proporcionar el agua
+
+Qh20= -25000  	=qf (implica que el h20 cede calor al hielo)
+Qf 	= lf mhielo = mhielo 	= 25000cal/80cal/g 	=  312,5g se fundio 
+
+350g - 312,5 g=37,5g => composicion final del sistema 1312,5 g de h20 @ 0ºc , 37,5g de hieleo a 0ºc
+
+
+#transmision de calor
+H= flujo calorifico
+H=Q/deltaT
+[H]=cal/s
+ti>tf
+el flujo calorifico es directamente proporcional al area, osea que cuanto mayor area mayor va a ser el flujo, si vos tenes una fuente de agua, cuanto mayor diametro tiene si no se acaba el agua, va a fluir mas; en cambio cuanto mas largo es el material menos va a ser el flujo.
+cuanto mayor diferencia haya entre las dos secciones transversales, mayor va a ser el flujo
+tambien tiene que ver con el  material
+deltaX=longitud
+H=-k A deltaT/deltaX
+el menos en la formula, porque el delta T va a ser negativo, por una cuestion de compensar ese signo
+a nivel micro (analizando de forma diferencial) H=-k A dt/dx =>expresion general, donde  -k dt/dx es el gradiente de temperatura , en la direccion de x para este caso
+
+definicion de fuente= es un algo que no varia su temperatura a pesar de que haya flujo calorifico
+
+deduccion 
+h deltaX 				= -k a dt
+integral<t1,t2>(Hdx)	= -integral<t1,t2>(k A dt)
+H integral<t1,t2>(dx)	= -kA integral<t1,t2>(dt)
+H(x2-x1) 				= -k A (tf-ti)
+H deltaX 				= -k A (tf-ti)/(x2-x1)
+
+si fuera en lugar de a una geometria lineal fuera a una cilindrica
+
+el cilindro de adentro esta a una temperatura, el mas grande esta a otra distinta, va a fluir desde el de mas temperatura al de menor temperatura
+
+H=?
+A= 2PI r h
+H 						= -k 2pi r h dT/dr
+Hdr/r 	 				= -k2pi h dT
+H integral<ri,re>(dr/r) = -k 2pi h integral<th,tl>(dT)
+
+H 						= -k 2pi h(tl-th)/(ln(re/ri))--->Formula para simetria cilindrica
+
+[k]=cal/s ºc m= Wm/m^2 ºc
+
+
+Simetria esferica
+
+cada capa va a tener distinta temperatura
+
+S=4PIR^2
+H 						=	-k4PIr^2 dT/dr
+integral<ri,re>(dr/r^2) =	integral<tl,th>(-k*4PIdT/H)
+-1/r|<ri,re>			=	-k*4PI(tl-th)/H
+(1/r1 	- 1/re)			=	-k*4PI(tl-th)/H
+
+H 						=	-k4PI ri re (tl-th)/(re-ri)	-->Formula para simetria esferica

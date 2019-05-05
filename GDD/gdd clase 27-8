@@ -1,0 +1,66 @@
+	arrancamos en la primer unidad
+con grafos (conjunto de vertices y aristas, donde las aristas son relaciones entre los vertices)
+computacionalmente un vertice es un nodo y una arista es una relacion
+entonces un grafo es un conjunto de nodos y sus relaciones, permiten graficamente implementar relaciones entre distintos nodos, cada nodo tiene un contenido de informacion.
+en teoria de datos generalmente se trabaja con digrafos (grafos dirigidos) porque es necesario saber el origen y destino, porque es muy complicado encontrar relaciones simetricas.
+
+y que hacemos con grafos?, ver que propiedades se cumplen en un grafo, puede tomar tres propiedades diferentes,
+
+ reflexividad	[reflexivo, areflexivo, antireflexivo]
+ 
+cuando un nodo se relaciona sigo mkismo, 
+es reflexivo (todos los nodos deben tener bucles)
+cuando algunos cumplen y otros no es areflexivo
+antireflexivo, cuando ninguno tiene bucles
+ 
+ transitividad
+ a->b->c => a->c
+ si yo tengo una relacion entre 2 nodos indirecta, la relacion tiene que ser directa, porque por transitividad debe ser unificada/transformada; es la transformacion de relaciones indirectas en directas
+ es atransitivo cuando se cumpel para algunos si y para otros no
+ es antitransitivo si no se cumple para ninguno
+
+ simetria
+
+ si a esta relacionado con b b debe estar relacionado con a
+ asimetrico que almenos uno cumple con simetria
+ a se relaciona con b y pero ningun b con a
+
+ley de equivalencia se cumple cuando se cumplen las tres propiedades (ref, sim, tran), se dice que el grafo es equivalente
+del mismo modo puede ser aequivalente o antiequivalente
+
+clasificacion de los grafos
+segun su forma (Abstracto):
+	restrictos
+	es restricto cuando es antiequivalente (si y solo si)  cumple con unicidad y es univoco; un grafo restricto univoco es una estructura de datos,
+	restringimos el modelo para que el algoritmo sea mas simple, es mas facil de manejar, porque diseñar un modelo reflexivo o simetrico tienen mayor complejidad
+	despues hay que ver si mi problema entra en este modelo.
+
+	irrestrictos
+
+segun su representacion computacional (concreta):
+	representacion estatica: 
+		es aquella que se mantiene estatica frente a la dinamica de la estructura, no quiere decir que no cambia, sino que no cambia de acuerdo al movimiento de los elementos.
+		ejemplo: vector
+
+	representacion dinamica:
+		es aquella que sigue la dinamica de la estructura
+		ejemplo: lista (link struct)
+
+Estructuras de datos:
+	-pila
+	-cola
+	-lista				biunivocas
+-----------------
+	-arbol				univoca
+
+las preimeras 3 tienen la caracteristica de que no solo son univocas en predecesor sino que son univocas en sucesor, quiere decir que para que cumpla unicidad para sucesor y predecesor, cada elemento del dom x tenga una imagen distinta y sea inversible, eso hace que sea biunivoco, cuando la funcion y la funcion inversa son univocas
+
+dinamica de las estrcuturas es la forma en la que se mueven los elementos en la estructura
+
+ejericio 1 
+ tenemos un tablero de ajedrez matriz 8x8, contruir un algoritmo que empezando desde cualquier extremo y moviendose con un caballo complete todas las posiciones del tablero sin caer en una posicion ocupada
+
+ejercicio 2 
+marcar 8 cruces en el tablero que son 8 reinas y no pueden estar en jaque entre ellas
+
+

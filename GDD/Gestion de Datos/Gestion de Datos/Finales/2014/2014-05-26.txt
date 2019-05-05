@@ -1,0 +1,10 @@
+http://www.utnianos.com.ar/foro/tema-aporte-final-gesti%C3%B3n-de-datos-26-05-2014
+
+select s.SOL_ID, s.SOL_URLActividad 
+from dbo.Solicitudes s
+where s.SOL_URLActividad is not NULL
+--order by s.SOL_URLActividad desc
+union all
+select SOL_ID, ISNULL(SOL_URLActividad, 'Sin Descripcion') as SOL_URLActividad 
+from dbo.Solicitudes
+where SOL_URLActividad is null

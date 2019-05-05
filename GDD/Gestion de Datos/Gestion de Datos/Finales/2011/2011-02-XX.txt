@@ -1,0 +1,65 @@
+Integridad: Que el dato sea el correcto.
+Consistencia: Que los datos no se contradigan.
+
+1.a) FALSO. Según lo que tengo en la carpeta PK y FK también son para integridad, aunque no sé si aseguran que el dato sea el correcto, más bien sirven para la consistencia. No fue tan detallista el profesor en la diferencia entre integridad y consistencia.
+
+1.b) VERDADERO. Si el crecimiento es exponencial respecto al grado, tiene que ser un Arbol B, por lo tanto la complejidad de búsqueda es logarítmica.
+
+---
+
+2.a) Nunca lo nombraron en clase.
+
+Wikipedia: 
+
+• ACID (atomicity, consistency, isolation, durability) is a set of properties that guarantee database transactions are processed reliably. In the context of databases, a single logical operation on the data is called a transaction. For example, a transfer of funds from one bank account to another, even though that might involve multiple changes (such as debiting one account and crediting another), is a single transaction.
+
+• En bases de datos se denomina ACID a un conjunto de características necesarias para que una serie de instrucciones puedan ser consideradas como una transacción. Así pues, si un sistema de gestión de bases de datos es ACID compliant quiere decir que el mismo cuenta con las funcionalidades necesarias para que sus transacciones tengan las características ACID.
+
+En concreto ACID es un acrónimo de Atomicity, Consistency, Isolation and Durability: Atomicidad, Consistencia, Aislamiento y Durabilidad en español.
+
+    Atomicidad: es la propiedad que asegura que la operación se ha realizado o no, y por lo tanto ante un fallo del sistema no puede quedar a medias.
+
+    Consistencia: es la propiedad que asegura que sólo se empieza aquello que se puede acabar. Por lo tanto se ejecutan aquellas operaciones que no van a romper las reglas y directrices de integridad de la base de datos.
+
+    Aislamiento: es la propiedad que asegura que una operación no puede afectar a otras. Esto asegura que la realización de dos transacciones sobre la misma información sean independientes y no generen ningún tipo de error.
+
+    Durabilidad: es la propiedad que asegura que una vez realizada la operación, ésta persistirá y no se podrá deshacer aunque falle el sistema.
+
+2.b) Regalado, hablar de DW.
+
+---
+
+3.a) Es la creación de un procedimiento, por más que el procedimiento sea recursivo si no se lo llama desde otro lado jamás se va a ejecutar. Lo único que pasa es que la segunda vez no lo crea porque ya está creado, y la tabla queda igual.
+
+3.b) Hace el producto cartesiano de la tabla con ella misma, aplica la condición de que el número de la t1 sea mayor que el número de la t2, y finalmente muestra una sola fila con el mínimo del campo número de la tabla t1 y el máximo del campo número de la tabla t2.
+
+Ej: Valores 2, 5, 8, 9
+
+2	2
+2	5
+2	8
+2	9
+5	2
+5	5
+5	8
+5	9
+8	2
+8	5
+8	8
+8	9
+9	2
+9	5
+9	8
+9	9
+
+Aplica la condición t1 > t2
+
+5	2
+8	2
+8	5
+9	2
+9	5
+9	8
+
+Mínimo t1 y máximo t2:
+5	8

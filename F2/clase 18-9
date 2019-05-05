@@ -1,0 +1,130 @@
+trabajo W -energia potencial electrostatica v- potencial electrostatico V
+la fuerza electrostatica y el campo electrostatico, son conservativos, entonces se puede utilizar la funcion potencial
+se quiere levantar una masa a una distancia h de la tierra hacia una h1 mas alta, para ello sera necesario realizar un trabajo, que aumenta la energia potencial que tiene.
+
+W= integral<a,b>(vectorFuerza vectordl)= integral<>(|F| |dl| cos(vectorFuerza X vectordl))
+
+primera observacion : si lo movemos hacia arriba hay una variacion en la energia potencial gravitatoria >0, y el trabajo de la fuerza peso<0(					   entre el dl y la fuerza peso hay pigrados),
+					  si lo movemos hacia abajo la variacion en la energia potencial gravitatoria <0, y el trabajo de la fuerza peso  >0 (entre el dl y la fuerza peso hay 0 grados)
+
+supongamos que tenemos una carga positiva cerca de otra carga, se repelen por ser del mismo signo, entonces se genera un trabajo frente a la fuerza que hace que se repelan las cargas si es que lo quiero acercar. si se trata de ir en contra del campo, el W<0 (dl esta en el mismo sentido que Fext y en sentido opuesto de Fel)
+
+ACLARACION la Fel dsta solamente para que sea a velocidad constante y que no haya aceleracion lo unico que importa es la relacion entre el diferencial de longitud y el vector Fuerza electrica
+
+Wel= -deltav
+deltav<a,b>= vb-va	= -integral<a,b>(vectorF vectordl)
+				  	= -integral<a,b>(q2 E dl)	 porque Fel=q2 E (campo electrico segun un q1)
+				  	= -q2 integral(kq1r dl/rp^2)  => r dl forman un dr
+				  	= -q2 q1 k integral(dr/rp^2)
+				  	= -q2 q1 k (-1/rp) |<a,b>
+				  	= k q1 q2 (1/b 	- 	1/a)
+
+
+si a tiende a infinito => v(r)=kq1q2/r (recordar que la energia es un escalar)
+ej 
+hallar la expresion de calculo de la energia en un sistema de 3 cargas puntuales (Potencial v)
+q1 q2 q3
+
+traer  la primera es gratis porque no hay ninguna q (se parte de que las tres estan en el infinito en distintos puntos infinitos)
+v1=w1=0
+v2=kq1q2/r12
+v3=kq1 q3 /r13	+	kq2q3/r23
+vsist= v3+v3
+
+si tenemos un dv/q (la variacion de energia por cada carga) obtenemos dV la diferencia de potencial, va a ser deltaVab=deltaVab/q
+[deltaV]= J/Coulombs = volt
+dW/q=-DV V=(f(x,y,z))
+
+47)
+es importante que te digan la difrencia de potencial tomada desde donde (si es que piden diferencai de potencial)
+dW/q=-dV => -1/q dW=> integro, Vab=-1/q integral(f dl) =>  Vb- Va= -1/q integral(q E dl)	=> las q desaparecen (esto solo pasa porque el campo es conservativo), Vb-Va= -integral(Edl)
+						Vo- Vinfinito	= - integral<a,y1>(kq1 dr/r^2) -integral<a,x2>(kq2 dr/r^2)
+										= -kq1 (-1/r)|<a,y1>	-kq2 (-1/r)|<a,x2>
+										= kq1 [1/b	-	1/a] + kq2[1/b	- 	1/a]  	=> como a tiende a infinito 1/a=0
+										= k(q1/y1+q2/x2)
+y en el espacio
+V(x,y,z)=?
+V=kq q2/r 	1/q2
+V=kq/rp-> asi que a secas este es el potencial de una carga en el espacio
+
+V(0,0)=Vq1+Vq2+Vq3 (version de superposicion para el ejercicio de las 3 cargas)
+en general para una distribucion de cargas puntuales
+ Vp= Sumatoria<1,n> (Vi)
+ Vp= kq1/r1 + kq2/r2 +kq3/r3+...+ kqn/rn
+cuando son puntuales, es una distribucion discreta
+pero la distribucion puede ser continua.
+
+ej 56)
+potencial electrostatico debido a una distribucion continua de carga
+
+supongamos que tenemos una varillita a distancia de un punto p (sobre la varilla se trazan los ejes x y ), la varilla esta cargada con densidad lambda
+
+	Ep= k lambda(1/b	-	1/l+b) i
+	en el caso particular de x
+	Ex= k lambda(1/x-l	-	1/x)
+	 se  puede hacer de dos formas
+	 forma1
+	 tengo que pensar como si viniese de infinito hasta x, porque el agente externo lleva la carga desde infinito hasta el punto p
+	 Vp	= -integral<infinito,x>(klambda dx(1/x'-l	-	1/x')), donde integral(dx'/x'-l)=ln(x'-l), integral(dx'/x'=ln(x'))
+	  V(x) 	= -k lambda ln(x'-l/x')|<infinito,x>
+	  V(x) 	= -k lambda (ln(x-l/x)- 0(por la evaluacion de la impropia en infinito (ln(1)=0)) )
+	  => si quiero el Vp (x=l+b)= -klambda ln (b*l+b)
+	  forma 2 (mas directa)
+	  si vos calculas
+	  Vp= integral<omega,>(kdq/rp)
+	  o
+	  Vp= integral<omega>(kdq(r-r'))
+	  si mi distribucion es la linea, voy a hacer un vector que vaya desde el origen hasta el punto y el r' es el que va desde el origen hasta cada diferencial de carga, omega en este caso es r1
+	  r=(x,0)
+	  r'=(x',0)
+	  |r-r'|= root((x-x')^2+0)
+	  Vp= -integral<0,l>(klambda dx'/(x-x'))= -klambda ln(x-x')|<0,l> pone lo que tiene prima como variable
+	  Vp= -klambda ln(x-l/x)
+	  Vp(x=l+b)= -klambda ln (b*l+b)
+
+
+Potencial a una distancia x de un plano no conductor (planos equipotenciales)
+
+#dibujo
+
+conocemos el campo electrico por gauss del plano
+Vb-Va= -integral(sigma/2epsilon0) iversor dx, siendo dl=dx i+ dy j+ dz k 
+     =-sigma X/2epsilon0 |<a,b>
+     =-sigma(b-a)/2epsilon0 	(como b>a, el potencial va a caer si me alejo del plano, si voy en contra del campo aumenta)
+     en forma generica, vamos a definir potencial 0 (porque lo que nos importa es la diferencia de potencial)
+     porque la expresion de Vp hecha anteriormente es solo valida cuando no tengo cargas en el infinito, entonces es necesario definir un potencial 0 para poder armar una definicion generica de vp
+
+     si asumo que V(x=0) = V0 : se va a verificar que la diferencia de potencial de Vb(b=x)-Va (a=0)= sigma(x-0)/2epsilon0
+     V(x)- V0= -sigma X/2epsilon0
+     V(x)= -sigmax/2epsilon0	+ V0
+     para que valor x el v=0?
+
+     0= -sigma(xraiz)/2epsilon0	+	 V0	=>	Vo/sigma/2epsilon0	=	xRaiz=>
+     xraiz=2epsilon0 v0/sigma
+
+     tambien podriamos adoptar como potencial 0 en el origen
+
+     V(x=0)=0
+
+     hay una diferencia muy importante entre el potencial y la diferencia de potencial, siempre que me acerco del plano aumenta, independientemente de donde defina el 0
+una funcion potencial es una que se puede asignar a los campos conservativos, y por lo tanto la integral de linea no depende de la trayectoria, sino que solamente depende de la expresion en el punto final e inicial (AM2)
+
+en el caso del hilo conductor tampoco se puede usar la formula Vp chitera (la que tiene omega) porque hay cargas en infinito,
+E=Q/2pi epsilon0 r h => E= lambda/2pi epsilon0 r
+
+entonces para calcular potencial 
+Vab =Vb-Va= - integral(lambda rversor dl/2pi epsilon0 r), donde  rversor dl= dr
+	= - lambda/2piepsilon0 	*	integral(dr/r)
+	= -lambda/2piepsilon0 	* 	ln(r)|<a,b>
+	= -lambda/2piepsilon0 ln(rb/ra)
+aca los cilindros de distintos radios son equipotenciales
+
+si en un parcial  final prreguntan cual es el trabajo para transportar una carga de un punto a a un punto b y te dan las cordenadas x y z, lo unico que me interesa para calcular el trabajo es la diferencia de potencial
+|Tipico Parcial|
+ej: calcule el Welectrico necesario para transportar una carga q desde A hasta B
+
+A=(a,0,0) 
+B=(0,b,0)
+
+Welectrico= -q deltaVab
+puedo elegir caminos como en mat superior para los sistemas estables (contando los puntitos en los ejes, pero teniendo en cuenta que lo tengo que hacer sobre la superficie equipotencial (sobre el radio del cilindro equipotencial))

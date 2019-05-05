@@ -1,0 +1,47 @@
+1.a) Medio tramposa, porque también existen los vectores dinámicos. Sin tomar en cuenta eso, un vector estático puede tranquilamente almacenar un árbol. De hecho en Huffman el árbol resultante se guarda en un vector.
+
+1.b) Sí, porque el grado de todo nodo no maximal es dos.
+
+---
+
+2.a) El Quicksort si vienen ordenados los números tarda más que si vienen desordenados, supongo que porque el pivote tiene que ir comparando con todos los demás números, por eso es importante que el pivote sea un número intermedio en la lista.
+
+2.b) Regalado, hablar de vistas. Hay diferentes tipos?
+
+---
+
+3.a) Agregar un campo deuda en la tabla Cliente y hacer un Trigger de INS, DEL y UPD que actualice ese campo.
+
+PL-SQL
+
+CREATE TRIGGER TRG_DEUDA
+AFTER INSERT ON Ventas
+FOR EACH ROW
+
+BEGIN
+  IF(:new.fecha_cobro is null)
+	THEN
+	update Clientes
+	set deuda = deuda + :new.importe
+	END IF;
+END;
+
+Parecidos con UPD y DEL.
+
+3.b)
+
+T-SQL
+
+
+
+SELECT C.id, SUM(CASE
+		WHEN fecha_cobro IS NULL THEN 0,
+		WHEN DATEDIFF(day, fecha_venta, fecha_cobro) <= 5 THEN 10
+		WHEN DATEDIFF(day, fecha_venta, fecha_cobro) <= 15 THEN 5
+		WHEN DATEDIFF(day, fecha_venta, fecha_cobro) <= 30 THEN 2
+		ELSE 0 
+		END)
+FROM Cliente C
+INNER JOIN Ventas V on V.id_cliente = C.id
+GROUP BY C.id
+ORDER BY count(*)

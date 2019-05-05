@@ -1,0 +1,153 @@
+if 	condicion
+	begin
+	end
+
+else
+begin
+end
+
+begin y end son equivalentes a las llaves
+
+while	<condicion>
+begin
+%%codigo
+break
+continue
+end
+
+Cursor es una variable que recibe el resultado de un select, genere el equivalete de un dataset y permite iterarlo
+
+declare cursor <nombre>(este no tiene que tener arroba) |parametros extra| for  (select - - - -)
+open
+%%aca itero el cursor
+close <nombre>
+deallocate <nombre>
+
+parametros extra: 
+local/globald
+static/dynamic
+static, una vez que obtienelos datos no cambia (como una foto del sistema en x momento)
+dynamic, refreshea la info del cursor (no recomendable usar para los grandes volumenes de datos)
+forward_only/scroll
+forward?only: solo nos deja movernos hacia adelante en el cursor
+scroll, hacia adelante y atras (es mucho  mas lento e implica muchos mas recursos)
+si es scroll
+fetch 	
+		-first
+		-last
+		-next
+		-prior
+
+forward only
+		-next
+
+cuando se hace open no queda apuntando al primer elemento entonces despues de abrirlo siempre hay que hacer un fetch next	
+@@ las variables de control del lenguaje arrancan con @@
+@@fetch_status	-> despues del ultimo fecth te devuelve el estado
+
+si es 0 esta todo ok
+
+open 
+fetch next
+while @@fetch_status=0
+begin
+
+fetch next into @c1,@c2
+
+end
+
+close
+
+deallocate
+
+pero donde van las cosas del select?
+supongamos que en el for hay un select c1 ,c2
+cada vez que avanzamos en el while se debe copiar el contenido en alguna variable
+
+cuando vamos a usar esto, cuando no haya chance de no usarlo, ocurre cuando tengo que hacer un tratamiento diferencial en funcion de un resultado, por ej, cambiale la comision a los que cumplan con alguna condicion diferencial(si la condicion se debe evaluar a traves de un select, se debe usar uncursor), en las migraciones vamos a tener que usar cursores, por etapas, hacer los insert por partes.
+
+me dan una tabla gigantezca (supongamos), adentro puede tener cualquier cosa del der, una tabla con 50 columnas, aveces vienen 3 completas a veces vienen 5, hay que hacer una migracion,  va a haber que crear un reverse engine de foreign key por que para  pasar determinadas columnas voy a necesitar otras.
+
+existen dos tipos de tablas (medioverdad) maestras y transaccionales. lo primero que hay que hacer en la migracion es cargar las tablas maestras, porque sino vamos a tener problemas con las FK, hacer esto de una, porque con cursores es totalmente horrible.
+voy a hacer un insert de un select de alguna condicion de los datos que me dejen meter todos los rubros, despues los vendedores, etc.
+cuando termine voy a usar un cursor para llenar las transaccionales, con un select que tenga todas las filas que todavia no meti.
+TLDR muchos insert globales que llenan las tablas maestras, y despues un cursor que va a traer todo menos lo que ya meti, de esta forma el cursor va a recorrer solo una vez y no va a tardar una vida.
+
+
+commit
+rollback
+el motor por defecto es autocommit, significa que genera por defecto transacciones de forma automatica, en la consola.
+
+se puede definir propias transacciones
+ begin trans
+
+ end trans
+ commit
+ %%si de aca en adelante hay un error, lo de arriba ya se comiteo  no se puede rollbackear
+
+
+ si hay una base que tiene un gb y hay un giga disponible y se ejecuta un store procedure, se lleva todo a memoria, cuando baja eso eal disco? cuando se hace commit, cada vez que se hace commit no es liviano justamente por eso, baja la performance hacer muchos commit; de la otra forma permite que la concurrencia se mantenga, a traves de isolation levels.
+
+ si hacemos un trigger, tenemos que recordar que trabaja con dos tablas, inserted y deleted, OJO con el rollback,porque si hice un insert de 100 filas, y haces un rollback, es como si no hubieras hecho ningun insert.
+ si hay que meter de los 100 los que vivan en buenos aires, lo que se eseperaria es que los 90 que viven en bs as entren,se pueden meter todos con un trigger before, y borrar despues los que no son de bs as.
+
+
+
+ ejercicio 10
+cuando me pidan el que mas compro o el que mas algo es un select con top 1, como nos damos cuenta de que tenemos que usar un subselect, porque necesito hacer 2 group by, o dos condiciones de select
+
+ select producto_detalle, (Aca va el cliente que mas compro) 
+ 							(select top 1 fact_clie
+							 from  facturas join item_factura on fact_tipo+fact_sucursal+fact_numero=item_tipo+item_sucursal+item_numero
+							 where item_producto=prod_codigo
+							 groupby fact_cliente
+							 order by sum(item_cantidad) DESC)	
+ from productos
+ where prod_codigo in
+ (select top 10 item_producto
+ from itemfactura
+ groupby item_produycto 
+ order by sum(item_cantidad) DESC)
+ or
+ (select top 10 item_producto
+ from itemfactura
+ groupby item_produycto 
+ order by sum(item_cantidad) ASC)
+
+
+top1 vs max, max devuelve el valor maximo, top1 devuelve quien tiene el valor maximo
+si quiero que salgan los 10 que mas compraron y los 10 que menos compraron, hago el select del que quiero que aparezca primero, uso union y el otro select que quiero que vaya ultimo.
+
+
+Bien hecho:
+tiene que mostrar el detalle y si o si sacarlo d efamilia,  como hay que saber que productos son de esta familia, hay que joinear con producto
+select fami_detalle 
+from familia join producto on fami_id= prod_familia
+
+hasta aca tenemos familia como cantidad de productos haya , pero queremos los que se vendieron so...
+
+select fami_detalle, count(distinct prod_codigo), <-- si no hago distinct me devuelve segun la aparicion de los productos en renglones
+												 sum(item_precio*item_cantidad)
+from familia join producto on fami_id= prod_familia join item_factura on item_producto=prod_codigo
+where fami_id in *
+group by fami_detalle
+order by count(distinct prod_codigo)
+
+*
+select fami_id, count(distinct prod_codigo), 
+												 sum(item_precio*item_cantidad)
+from familia join producto on fami_id= prod_familia join item_factura on item_producto=prod_codigo join facturas
+where  YEAR(fact_fecha)=2012
+group by fami_id
+having sum (item_precio * item_cantidad)> 2000
+
+
+IMPORTANTE ORDEN DE EJECUCION 
+SQL is implemented as if a query was executed in the following order:
+
+1FROM clause
+2WHERE clause
+3GROUP BY clause<<<
+4HAVING clause
+5SELECT clause
+6ORDER BY clause

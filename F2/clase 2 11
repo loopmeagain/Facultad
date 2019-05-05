@@ -1,0 +1,188 @@
+Magnetismo
+
+-campo magnetico (vector induccion magnetica o vector densidad de flujo magnetica) vectorB
+
+-Fuentes de campo magnetico ley de biot savart  & ley de ampere, flujo magnetico
+
+
+-ley de induccion de faraday, ley de lenz
+
+-autoinduccion e induccion mutua
+
+- corriente alterna
+
+el campo magnetico B existe, y se puede verificar que la fuerza que provoca B se produce sobre cargas en movimiento
+ esta ley obedece
+
+ vectorFmagnetica= q vectorV X vectorB 	
+ [B]=N/(c m/s)= N/ A m= Tesla
+
+ esto quiere decir que si tengo una carga q con velocidad v 
+ el orden del producto vectorial me define el sentido. v va primero que B
+
+ vXB= |v| |b| sen (alfa)
+alfa entre 0 y pi  antihorario=saliente horario=entrante se puede pensar en un destornillador cuando se gira antihorario el tornillo sale de la superficie cuando se gira entrante entra en la superficie
+
+--------------------------------
+|							   |
+--------------------------------
++++++++++++++++++++++++++++++++++++ 	
+|   	   						  |
+|                                 |
+            .->->->->->->->->->->                     
+|                                 |
+|                                 |
+----------------------------------
+--------------------------------
+|							   |
+--------------------------------
+
+selector de velocidad
+
+las placas son placas aceleradoras que cuando entra una particula la tira contra un lado
+el campo electrico va a ir del positivo al negativo, por lo que va a haber una fuerza de tipo electrica sobre la carga, que empujaria la carga hacia los negativos por esto el campo es en misma direccion  pero sentido contrario para que se mantenga alineado a la salida, pero para que salga por la guia deben ser de igual modulo
+por tanto la condicion es 
+Fel= Fmg
+q.v.B. sen(alfa) = Eq
+	v B= E
+
+	v=E/B 		asi se calcula la velocidad a la que se dispara esta particula
+
+ej 135 
+
+es de esto
+
+a) la carga q se va a ir a la carga positiva si  v B > E si es verdadero
+b)V
+c)F
+d) F
+
+
+fuerza magnetica sobre un conductor con corriente I :
+
+imaginemos un conductor  sobre el eje y el cual transporta corriente y en el sentido positivo, y B paralelo al eje z, 
+I=dq/dt
+si hacemos un zoom en un conductor en una seccion de cable, las cargas van a una velodcidad V= dx/dt
+
+vamos a suponer un diferencial de fuerza si tengo un diferencial de carga
+
+dFmg=I dq Vx B
+dfmg=I dt V xB => I dx v^(versor asociado al desplazamiento de esta carga) X B
+dfmg= O vectordl X B	
+
+en general el  desplazamiento es dl
+particularmente podra coincidir con dx dy o dz
+
+ej 134)
+
+l=1m 
+I=10 A
+alfa=30°
+|B|= 1,5T
+
+Fmg= I l B (sen 30|) versorb
+Fmg= 10A 1m 1,5 N/A m 0.5
+Fmg= 7,5 N
+el sentido es en direccion del  eje x  con sentido positivo
+vectorialmente seria
+Fmg= 7,5 versor k N
+
+
+Dibujo de la espir apara explicar como se comporta la fuerza electromagnetica ante las variaciones del formato de la espira
+Idl= elemento de corriente
+
+en la parte de la semi circunferencia al ser simetrico el arco se compensa excepto en el centro que es el unico lugar donde va a tener fmg
+
+fmgy= fmg sen tita
+
+dfmgy=  Idl  X B sen tita
+dfmgy= Idl B sen 90 sen tita
+
+dl=r dtita
+
+dfmgy= I r dtita B sen tita
+FMGy= 2 integral<0,pi/2>(IRB sentita dtita ) el 2 es por que es simetrico
+Fmgy= 2 IRB -cos|<0,pi/2>
+Fmgy= 2IRB versorj
+
+en el sector horizontal
+fmg= I2rb -versorj
+
+en los secotres verticales 
+fmg= IRB versor i
+
+o la forma vectorial
+
+fmg=  Q 	|	i 	j 	k |
+			|	vx 	vy 	vz|
+			| 	Bx	By 	Bz|
+
+fmg= q  	|	i 	j 	k |
+			|	dx  dy 	dz|
+			| 	Bx	By 	Bz| 
+dl= dx i + dy j + dz k	
+ej 138
+ahor aen la semicircunferencia ya no se cumple lo de antes que siempre el angulo era constante
+
+en los sectores verticales son  fmg=0
+en el sector semicircular
+
+dfmg= I dl X B
+dfmg= I Rdalfa  B sen alfa 		siendo alfa el angulo entre dl y b
+la dfmg ya tiene direccion en este caso es en sentido de los z negativos
+Fmg =  integral<0,pi> (IRB sen alfa dalfa) = IRB -cosalfa|<0,pi>
+fmg= 2 IRB -k
+
+
+movimiento de una carga puntual en un b uniforme
+
+Fmg = m * anormal
+qv xB = m  V^2/R
+q v B= m v^2/R
+qB= m v/R
+R= m v/qB
+aca no realiza trabajo la fuerza magnetica
+
+
+ej 152
+
+e= -1,6 exp -19 C
+me= 9,11 exp -31 kg
+B= 0,1 T
+Ecinetica= 2KeV
+angulo entre v y B= 89°
+alfa=1
+
+v va atener una componente tangencial y una normal
+
+me piden el periodo T, paso P y el radio R
+el periodo es verlo en el xy cuanto tarda en recorrer un giro
+paso es la distancia entre una helice y otra
+
+vtan=  2pi R/T
+
+omega= 2pi/T [rad/s]
+T= 2piR/vtan
+ para el periodo uso la vtan
+
+
+para el paso tengo que usar la velocidad normal
+P= T Vnormal
+
+el eV es el trabajo que se requiere para transportar  a la carga de un electron a traves de una diferencia de potencial de  1V
+
+E= 1/2 m v^2
+v= root(2E/m)
+v= root(4 exp3 1,6exp-19 C V/ 9,11exp-31kg)
+v= 2.66 exp7 m/s
+con esta v sacamos el paso
+y despues con esto sacamos el radio
+
+una vez que tenemos el radio de R=m v/qB
+
+sacamos el periiodo con la vtan
+R= 9,11 exp-31  10kg vtan/ 1,6 exp -19 C  0,1T
+R=
+
+T=2piR/vtan
+T= 

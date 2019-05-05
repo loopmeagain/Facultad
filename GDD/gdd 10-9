@@ -1,0 +1,40 @@
+-pasos
+	- se aplica  a los grafos dirigidos
+	si puedo llegar a un nodo desde un nodo siguiendo el sentido de las flechas
+	-longitud cantidad de aristas entre nodo de origen y nodo destino
+-caminos	
+	- se aplica  grafos no dirigidos
+	- longitud cantidad de relaciones menos 1(esto da mal si el nodo pasa por un paso reflexivo)
+
+	los pasos entre un nodo y si mismo tienen longitud 0
+
+
+algoritmos para buscar pasos
+-deepth first
+analiza por rama
+-breath first / wide first
+en lugar de analizar por rama analiza por niveles (longitud)
+
+el gps si estas a pie buscaria caminos entre las ubicaciones
+y si vas en auto busca pasos porque es relevante el sentido que se puede recorrer una calle
+
+en un grafo enriquecido la relacion puede tener datos (por ejemplo velocidad)
+
+int caballo (x,t,tablero,jugada)
+	tablero[x][y] = ++jugada;
+	if (jugada==64)	
+		return1;
+	for(i=0;i<8;i++)	//8 porque hay 8 jugadas posibles para hacer
+	{
+		if(x+fila[i]>=0 && x+fila[i]<8 && 0<=y+columna[i] && y+columna[i]<8	&& !tablero[x+fila[i]][y+columna[i]])
+
+		if caballo(x+fila[i],y+fila[i], tablero, jugada)
+			return 1;
+		tablero[x+fila[i]][y+columna[i]]=0;
+	}
+	return 0
+
+backtracking/ fuerza bruta
+ la forma en la que encuentra la solucion es volviendo sobre las pistas	
+
+ 

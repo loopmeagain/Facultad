@@ -1,0 +1,59 @@
+Capacidad- capacitores
+
+en electricidad capacidad se refiere a la capacidad de un sistema para almacenar la energia en forma de campo electrico
+para eso se encierra con dos chapas para mantener el campo aislado  y una de las capas queda con carga positiva y otra a masa
+C= Q/V
+[c]=Faradio= C^2/J
+
+Primero se halla el campo electrico
+segundo se hala el potencial
+tercero se calcula la capacidad
+
+Capacitor esferico
+integral (E ds)= Q/epsilon0
+E 4pir^2= Q/epsilon0
+E=Q/qpir^2 epsilon0
+V= -integral<a,b>(E dl)= -integral<a,b>(Q dr /4pir^2Epsilon0)
+Va-Vb= Q/(4 pi epsilon0) (1/r) |<a,b>
+Va-Vb= Q/4piepsilon0 (1/a 	-    1/b)
+Cef= Q/(Q/qpiepsilon0(1/a - 1/b))
+Cef= 4pi epsilon 0 ab/b-a
+
+Capacitor cilindrico
+
+E 2pi r h=q/epsilon0
+E= q/ 2pi epsilon0 r h --> q/h=lambda
+E= lambda/2pi epsilon0 r
+Vba= - integral<a,b> lambdadr/(2piepsilon0r)=- lambda/2pi epsilon0 	*	ln(a/b)
+
+Ccil= Q/ (-q/h2piepsilon0 ln(a/b))
+Ccil= 1/(1/2piepsilon0h * ln(b/a))= 2pi epsilon 0 h/ln(b/a)
+
+Capacitor de placas planas paralelas
+
+	como d es muy chico comparado con el area de las placas es como si fuera el caso de dos planos infinitos no conductores
+
+	E= sigma/epsilon0
+
+	V=- integral<0,d>(-sigmadx/epsilon0)
+	V= sigma x/epsilon0 |<0,d>
+	V= E. d
+	C= Q/E.d= Q/(sigma d/epsilon0)= Q/(Q d/Aepsilon0)
+
+
+Conecciones capacitores
+al reves que las resistencias
+en serie = cuando las cargas de los distintos capacitores conectados son distintas en las islas que comparten
+en paralelo= cuando las cargas de los distintos capacitores son iguales en las islas que comparten
+
+ejercicio 99
+c1=2uf
+c2= 6uf
+
+E=10v 
+
+si cargo los capa e invierto uno como las islas que se tocan tienen  las misma carga, entonces pasan de estar enserie a estar en paralelo
+
+ej 100 
+q1= c1 v= 20 uC
+q2= c2 v= 60 uC

@@ -1,0 +1,75 @@
+Arquitectura de software
+mariano gesik
+tenesmos dos casos o tenemos un proyecto o tenemos un plan d eproyecto
+la diferencia es que si tengo un proyecto o solo un sistema de info o un servicio o un producto soft, la cosa es mas senncilla, ahora a medida que empiezo a entrar en empresas grandes me encuentro con planes de proyecto, donde cada uno de los proyectos conviven con distintos servicios y productos software
+
+por que tengo que contratar un arquitecto? porque define de forma abstracta como se relacionan los distintos elementos de tecnologia que componen el sistema
+ejemplos de elementos de tecnologia: app servidores, datacenters, lenguajes, databases,etc
+el arq de soft no se fija en como funcionan esos elementos internamente, utilizan el concepto de interfaz
+en donde se divide lo publico de lo privado 
+
+hay un monton de arquitecturas de soft que se pueden aplicar, pero como se aplica la arquitectura correcta
+el arquitecto tiene que atender al usuario, al cliente, al pm y a cada uno de distintas formas, tiene que hacer que los tres esten conformes, porque estos tres van a usar productos soft, servicios y sistemas de informacion automatizados
+
+ya estoy viendo que el arquitecto no tiene que ver solo con el desarrollo de soft, sino que tiene que cumplir con muchos mas roles, por eso es un rol valorado
+
+
+decisiones de diseño a tener en cuenta
+procesamiento distribuido?
+software dividido en capas?
+comunicacion sincro o asincro
+se depende del hard? 
+se depende del so?
+
+dentro de la arq hay cuatro contextos, tecnico negocio ciclo de vida del proyecto
+tecnico todo lo referido a tecnologia
+negocio, las cuestiones economico financieras legales, tal vez tengo convenios con ibm
+ciclo de vida del proyecto, cascada, iterativo incremental, espiral, etc; se definen fases que se dividen en actividades  de que forma se se llevan a cabo para no tener tareas repetitivas, eliminar problemas de manejo de tiempos, buscar motivacion, etc.
+profesional, tengo la gente capacitada para la implementacion de arquitectura que tengo en mente?
+
+ hay cosas que el arquitecto debe satisfacer, para que los productos que van a ser utilziados por la gente cumplan ciertos atributos de calidad
+ disponibilidad
+ interoperabilidad - tiene que ver con la capacidad que tienen los componentes para relacionarse con otros componentes
+ adaptabilidad- 
+ performance-
+ seguridad- 
+ usabilidad- facil de aprender y facil de usar
+ entre el 30 y 50% de los costos de desarrollo deben estar orientados en testear para garantizar la calidad del producto
+
+ tacticas de arquitecturas y patrones
+
+
+tres formas de recopilar info
+
+documentacion
+entrevistando interesados
+entendiendo los objetivos del negocio
+
+
+arquitectura en los proyectos agiles
+defincion de backlog
+definicion de sprint
+hay ciertas arq de soft que adentro de ellas tienen la filosofia de interactuar con metodologias agiles, por lo tanto tengo que ver si me sirve o no.
+
+Gestion y gobierno
+evaluacion de arq
+voy a implementar esta arquitectura, lo que pasa en la vida real, es que el AS sabe que arq hay pero no la comunica al resto, tengo que poder llegar a la gente para poder comunicarlo, y cuales son las AR elegidas para discutirlo
+planificacion
+elegi una arq de soft, empiezo a desarrollar y a ver las interacciones, si tengo problemas voy a tener que cambiar la politica de eleccion
+
+Arquitectura Cloud 
+servicio a demanda, vos te conectas a un servicio y pagas por lo que usas
+pool de recursos, estas empresas que dan arq cloud dan la sensacion de que los recursos nunca se terminan
+independencia de ubicacion
+elasticidad rapida - esacalabilidad rapida
+servicios medidos- me cobran lo que uso
+
+cloud privado, contrato y los uso en mi organizacion
+cloud publico, contrato y les brindo serivcios a la comunidad
+
+seguridad - depende de la sensibilidad de los datos, te va a importar tener seguridad extra a demas de depender solamente del servicio cloud
+performance	-
+disponibilidad-
+
+bibliografia
+software architecture in practice thir edition capitulos 1-16 u 21-26

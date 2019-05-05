@@ -1,0 +1,65 @@
+arboles
+no son biunivocos(los biunivocos tienen un unico sucesor y un unico predecesor)
+- el grado de un arbol es la cantidad maxima de nodos hijos que puede tener el arbol
+-nivel: un nivel es la distancia a la cual esta el elemento respecto de la raiz 
+-profundidad: cantidad de niveles de un arbol
+
+por que un arbol es distinto a otra estructura de datos?
+yo para sacar n un elemento de una lista, a lo sumo tengo que obsrevar todos los elementos de una lista (la busqueda es por nivel).
+el arbol a no ser biunivoco tiene la ventaja de que permite implementar varias relaciones a la vez (no es lineal), entonces estar a la izquierda  o a la derecha tiene un valor semantico distinto porque al tolerar distintas relaciones, se puede "prefiltrar", por ejemplo si tengo un arbol donde los de hijos de la derecha son mayores, y los de la izquierda son menores, entonces si quiero buscar el maximo miro solamente los hijos de la rama derecha.
+
+
+cantidad de elementos por nivel => grado^n
+cantidad de elementos arbol => (grado^cantidad de niveles)-1
+(
+c<grado^profundidad
+ln c < profundidad x ln(grado)
+ln (c - grado)< profundidad
+
+el crecimiento de la funcion de cantidad en funcion de niveles es exponencial
+cuanto mas aumente la cantidad de elementos en una tabla mas eficiente es un arbon en comparacion con cualquier estructura que tenga busqueda lineal.
+
+-balanceo : 	todos los subarboles que componen un arbol tienen el mismo peso o tengan una diferencia indivisible (por ej si tengo un arbol que tiene 19 a izq y 20 a derecha); si un arbol es de grado 3 tiene 3 subarboles
+
+-completitud: un arbol es completo si todos los elementos del arbol cumplen el grado(tienen que tener como hijos la cantidad maxima determinada por el arbol) o son hojas
+
+perfectamente balanceado
+un arbol esta balanceado en todos sus niveles
+
+tipo de estructura
+dinamicamente un arbol es una lista  donde cada nodo tiene n punteros en funcion de la cantidad
+
+estaticamente
+voy recorriendo por nivel y de izq a derecha
+
+arbol binario de busqueda
+implementa dos relaciones (una izq, otra der), dado un elemento por izquierda van a estar los elementos menores o iguales que n, y por derecha los mayores
+
+8,10,3,5,20,37,2,15
+
+				8
+		3				10
+	2		5				20
+						15		37
+
+como se balancea un arbol
+recorrido siempre de arriba a abajo izq a der
+notaciones
+infija (el operador esta fijo entre los operandos), post fija(el operador estafijo despues de los operandos)
+barridos de arbol: la forma en la que puedo leer el contenido de un arbol (no es lo mismo que recorrer un arbol, que se recorre siempre de un orden convencional), tengo tres momentos distintos en los que puedo leer un nodo 
+		-preorden: llegar aun nodo  e imprimirlo previamente a recorrerlo
+		-postorden: llegar al nodo y no leerlo  al instante sino cuando me voy del nodo.
+		-inorden: cuando cambio de rama del nodo (en el medio).
+				
+				a
+
+		b 				c
+	d 		e 				f
+
+
+	pre: 	abdecf
+	post:	debfca
+	in:		dbeacf
+
+
+

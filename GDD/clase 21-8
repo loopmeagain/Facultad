@@ -1,0 +1,120 @@
+sql es un lenguaje que esta dividido en dos sublenguajes ddl(data definition language) y dml(data manipulacion language)
+el modelo relacional sobre el que se aplica el der y las relaciones descritas, el ddl es para definir las tablas y las relaciones entre las tablas. dml tiene que ver con la manipulacion interna de los datos.
+ddl es como un abm de tablas(create, alter, drop), y dml un abm de los contenidos de las tablas
+
+
+
+	_____________
+	|	codigo	|
+	|-----------|
+	|	detalle	|
+	|___________|
+create table <nombreTabla>
+(codigo int, detalle char(40));					<--- entre parentesis va toda la info de las comlumnas que va a tener la tabla
+
+drop table <nombre> (no importa si tiene datos lo borra porque al ser ddl, de definicion los datos no le importan)
+
+no se puede cambiar los identificadores de las columnas #volvimosALos70
+
+
+´supongamos que nos habiamos olvidado el campo localizacion
+	_________________
+	|	codigo		|
+	|-----------	|
+	|	detalle		|
+	|	localizacion|	
+	|_______________|
+ALTER TABLE <nombreTabla>
+( 	ADD		<nombre_columna> tipo
+	MODIFY 	<nombre_columna> tipo
+	DROP 	<nombre_columna> ?tipo	
+)
+
+a las primary keys y foreign keys se las llama constraint (restriccion/limitacion), para el modelo relacional, la PK y la FK son restricciones porque estas relaciones que se pueden crear estan reduciendo el dominio de valores que puede entrar en un conjunto, 
+si yo digo que la pk de alumno es el legajo, estoy diciendo que no puede haber dos legajos iguales, y de esta forma estoy limitando el dominio de entrada.
+
+lo normal es crear la tabla y alterar despues para poner el constrait, por que es la forma correcta? supongamos que se crea una tabla se crea la pk y despues la fk no va a funcionar porque cuando quiera crar la fk va a faltar la otra tabla, entonces creo una tabla la pk la otra tabla y la fk, da error porque necesito la pk de la segunda tabla para crear la fk....
+---> entonces el orden para realizar las cosas es  crear tablas, alterar tablas para crear pk y despue relacionarlas a traves de  las fk
+
+create [...]
+alter table <nombreTabla>
+add constraint primary key (unPk,otraPk,...,)[constrait nombre]
+add constraint foreign key (unFk,otraFk,...,) references <table> [constraint nombre]
+
+								^_ el orden de (,,,) las keys es importante, porque son unicas
+
+dml es un abm de filas
+insert, delete, update, select
+
+INSERT <nombreTabla> [(campo1,campo2,...)] VALUES (valorCampo1,valorCampo2,...)
+						los corchetes significa que son opcionales, si es opcional hay que poner la cantidad de valores que corresponda a las columnas, si hay alguno que tenga null no se pone nada entre comas
+						...VALUES(`a`,1,,3)
+delete from <table> [where <condicion>]
+update <table> set unaColumna = valor,...., [where condicion]
+
+tambien se puede insertar muchos
+INSERT <table> select
+
+un modelo relacional tiene constraints que pueden ser de dos tipos, por campos o por tablas
+constraint por tabla quiere decir que afecta a la tabla y a todos sus integrantes, ej una fk o pk
+por campo es cuando yo no restrinjo el contenido de la tabla, sino que restrinjo el contenido de un campo, por definicion una columna tiene un dominio, los valores que puede aceptar.
+
+create table <nombreTabla>
+( 	unaColumna char NOT NULL
+	nombre
+	apellido
+	sexo char check in ("FM")[constraint nombre] <---- defino que tiene que ser o F o M (not null), el [] es para aclarar 
+)
+esto es importante porque evita errores, porque desde el motor me evito que metan fruta porque el programador se olvido de validar
+
+
+si yo quiero borrar una factura tengo que borrar primero todos los renglones de esa factura, siempre en relacion inversa a la FK, por ej si quiero borrar un cliente, tengo que borrar todos los contenidos que tenga el cliente como FK.
+integridad referencial es la garantia que te da un motor de que no vas a tener cosas sueltas.
+
+no se puede reducir el universo cerrado de las definiciones en formato de grupo, si se quiere modificar solo se puede incrementar las opciones de las definiciones, pero nunca reducir.
+
+no se puede usar having sin un group by
+
+from medefine el conjunto del que se alimenta, el select me da el universo que estoy analizando, y despues se filtra la informacion
+tipos de condiciones < > =  And or not between isNull isnotnull like("c%")
+IN VS EXIST
+diferencias IN representa interseccion y  EXIST representa pertenencia 
+columna in ("") <- conjunto vacio, da siempre true
+columna exist ("") <- da siempre false ningun elemento pertenece al conjunto vacio
+
+si yo pongo dos tablas en el from hace un producto cartesiano con las columnas y las filas
+
+select 
+from clientes C1 join facturas F1 on <condicion> 				<- condicion es el filtro del producto cartesiano
+
+por ej
+
+select clie_nombre	nombre
+from clientes C1 join facturas F1 on clie_codigo	=	fact_cliente 				
+
+left joinm trae todos los clientes que tienen facturas tantas veces como facturas tengan, y los que tienen factura null una sola vez
+
+quiero que traiga todos los clientes y queremos saber cuantas facturas tienen
+
+o tiene un group by o tiene un distinct 
+
+select distinct  clie_nombre	nombre, isNull(count(fact_numero),0))
+from clientes C1 join facturas F1 on clie_codigo	=	fact_cliente 				
+group by clie_nombre			<--- recordar no usar alias en group by
+
+cuando tiene sentido el count cuando se le antepone un distinct
+
+otro caso donde puedo usar una funcion de grupo sin group by
+
+select count (*)0
+from clientes
+
+esto funciona solamente porque todas las columnas que edevuelve la consulta son calculadas
+los productos cartesianos son for anidados
+
+select from es un 
+for(!eof)
+if where
+
+los subselect dependiendo de donde se ponen tienen que devolver cosas del tipo que corresponde a la semantica en donde se este utilizando, por ejemplo si se usa en un 
+select (select), clie_nombre <--- este select tiene que devolver un valor 

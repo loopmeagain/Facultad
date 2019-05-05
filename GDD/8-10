@@ -1,0 +1,39 @@
+procesos de compresion
+se separan dos tipos de procesos de compresion
+a) con perdida (mayormente vinculado a multimedia)
+b) sin perdida
+
+b)
+metodo de huffman
+el problema es la forma de represnetacion que tiene la computacion, que es la representacion? el problema es el alfabeto  (ascii) `porque es redundante, de longitud fija y no maneja ocurrencia o prioridad (si una letra la utilizas mucho, deberia reducirse su almacenamiento, Que vs q, señor vs Sr, etc)
+
+"lunes a la mañana"
+lo primero que tenes que hacer es recodificar el el archivo  con un nuevo alfabeto
+armo un vector,
+|L|u|n|e|s|a|Ø|m|ñ|
+|2|1|2|1|1|5|3|1|1| 17 
+
+ordernarlos de mayor a menor ocurrencia 
+y codificar del alfabeto, arrancando de un arbol voy partiendo por mitades y generando la codificacion
+
+alfabeto AØnlseumñ,17 voy a generar dos hijos dividiendo las ocurrencias a ala mitad
+
+								AØnlseumñ,17
+						aØ,8					nlseumñ,8
+				a,5				Ø,3			nl,4				seumnñ,5
+										n,2		l,2			se,2		umnñ,5
+														s,1		e,1	  u,1		mñ,2
+																			m,1		ñ,1							
+los 1 son bajar a derecha y los 0 bajar a izquierda
+
+lunes a la mañana =  10111101|00110111|00010001|10100010|.... esto da caracteres aleatorios en ascii que equivalen a nuestro zip
+
+como hace para saber para descomprimir
+hace el camino inverso al que hizo a la ida, lee el caracter comprimido y genera la cadena de unos y ceros que esta arriba, entonces me muevo en el arbol  hasta que no nos podemos mover mas (desde la raiz)
+los arboles nose guardan siempre es un array lo que determina que es un arbol es la forma de recirrer el array
+
+tarda mas cuando comprime 
+abre el archivo dos veces, primero debe leer el earchivo para armar la tabla comprimir, y despues para generar la compresion
+pero los compresores comprimen mejor, por que? porque comprimen a nivel nibble o mas bajo utilizando los operadores << >>
+
+por que comprime mas rapido, porque programan mejor que yo

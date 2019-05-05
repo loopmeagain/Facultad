@@ -1,0 +1,55 @@
+SW de base:
+
+Me va a dar el sustento que como aplicación no tengo. Todo lo que son servicios de virtualización están incluidos. Me provee servicios y gestiona recursos.
+Controladores de cluster son SW base; gestiona el cluster.
+
+SO:
+
+Además de gestionar recursos, también es responsable de gestionar el acceso (permisos) al sistema (HW+SW).
+En los servers/DC es muy importante el tema de la gestión de accesos.
+
+BD:
+
+Gestión avanzada de acceso a los recursos. En los inicios gestionaban sus recursos sin interactuar con el SO, ya que en muchos casos no había SO (solo HW y BD).
+
+-------
+Si el SW de base funciona bien, el sistema funcionará bien o mal; dependiendo del HW, de las aplicacíones que corren arriba (como gestiona los recursos que le dá el SW base) o aplicaciones que no son compatibles entre ellas en cuanto al tipo de recursos que consumen (Ej: Dos aplicaciones que consumen demasiada memoria).
+-------
+Si el SW de base funciona mal, el sistema funcionará mal.
+-------
+
+SO - uso personal vs comercial - seguridad: Tener en cuenta información sensible, objetivo del sistema, etc.
+
+Qué tengo en cuenta para elegir un servidor: Qué tipo de recursos voy a administrar, seguridad de info delicada, performance de recursos, etc.
+
+Componentes de SO:
+
+-Gestión de procesos: Sensación de multitasking al usuario.
+-Sistema de archivos: Sino hay mala gestión de espacio. Administra que espacio para cada FS.
+-Sistema de comunicaciones: El SO "habla" con los recursos y las aplicaciones. Para saber qué recurso dar/quitar a qué aplicación.
+
+Clasificación de SO:
+
+-Por tipo de adm. de tareas.
+	-Monotarea.
+	-Multitarea.
+	-Tiempo real: criticidad, evaluación de riesgos, etc.
+	-Tiempo compartido.
+-Por tipo de adm. de usuarios.
+	-Monousuario.
+	-Multiusuario.
+-Por manejo de recursos.
+	-Centralizado.
+	-Distribuido: Por ej. el SO que gestiona cluster.
+
+
+Elección de un SO:
+-Compatibilidad de aplicaciones
+-Costo: Porque es bastante importante para el cliente.
+-Seguridad: Incluyendo la administración.
+-Performance: Tiempo de respuesta.
+-Vida útil.
+-Soporte: Ante errores, bugs de seguridad, bugs de funcionalidad. Importa porque delego responsabilidades.
+-Escalabilidad: Principalmente en cuanto a recursos.
+-Estabilidad: Si mi requerimiento es crítico, esté punto adquiere importancia.
+-Complejidad: Tener en cuenta el conocimiento previo de los usuarios y un posible costo de capacitación.

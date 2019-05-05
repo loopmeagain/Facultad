@@ -1,0 +1,19 @@
+-pasos
+	- se aplica  a los grafos dirigidos
+	si puedo llegar a un nodo desde un nodo siguiendo el sentido de las flechas
+	-longitud cantidad de aristas entre nodo de origen y nodo destino
+-caminos	
+	- se aplica  grafos no dirigidos
+	- longitud cantidad de relaciones menos 1(esto da mal si el nodo pasa por un paso reflexivo)
+
+	los pasos entre un nodo y si mismo tienen longitud 0
+
+
+algoritmos para buscar pasos
+-deepth first
+analiza por rama
+-breath first / wide first
+en lugar de analizar por rama analiza por niveles (longitud)
+
+el gps si estas a pie buscaria caminos entre las ubicaciones
+y si vas en auto busca pasos porque es relevante el sentido que se puede recorrer una calle

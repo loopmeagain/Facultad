@@ -1,0 +1,78 @@
+clase 16-10
+Dielectricos
+si yo conecto la bateria al capa con dielectrico, hasta cuando se carga? hasta que se llena, queda el circuito abierto.
+C0 se va a llenar con q0 a una V0 reteniendo la energia en forma de un campo E0
+si yo lo cargo y abro el circuito voy a medir V0
+ahora introduce un dielectrico entre las placas, el campo va a ser menor, al bajar el campo, y mantener la distancia, la tension va a bajar tambien, 
+Vo era =|E0| . d
+
+V0/V= k   siendo k constante dielectrica del material y v la nueva tension que aparececuando meto el dielectrico
+E0/E=k
+se observa que el campo se debilita k veces
+
+C=k Co
+
+Material 			K
+Vacio				1
+aire 				1,00059	
+aire(100atm)		1,0548
+polietileno			2,25
+mica				3<k<6
+mylar				3,1
+Poliester			3,3
+
+en el aire la ruptura dielectrica es cuando se tiene un campo E de una intensidad aprox de 3 x10^6 V/m
+si ahora tenemos una fuente, supongamos que  ya hay un dielectrico en el mismo circuito que antes ,metido mientras se esta cargando con la fuente; como la tension la impone la fuente, aumenta la capacidad y la cantidad de carga que puede almacenar
+
+ej 113
+K=3,5
+c=1 uf
+
+
+qo?
+
+co= 1uf / 3.5 = > q0=co V => qo=1o^-6F * 50 v/3.5= 1.42 * 10 ^-5 C
+
+132)
+
+K=2,5
+A=0,1m^2
+C=25 nf
+
+cppp= k e0 a/d
+q= 25nf * 100v
+q= 2,5 uc
+v= E d
+E= v/(k e0 A/c)
+E= 100 v 25 * 10^-9 F/(2,5 8.85*10^-12 F/m *0,1m^2)= 1,13Mv/m
+
+d
+tener un cap medio afuera medio adentro un dielectrico es como tener dos cap en paralelo(porque estan a la misma dif de potencial) con area /2 cada cap, entonces la capacidad es la suma de las capacidades
+c'= co/2 + co * k/2
+c'= c0/2 	* (1+k)		donde c=co K => co= 25nf/2.5= 10 nF
+c'= 5nf * (1+2.5)= 17,5 nf (es menor a C= 25 nf lo cual tiene sentido)
+q'=C' v => q'= 17,5 nF = 1,75 uC
+
+al sacarle el dielectrico la c va a ser mas chica
+
+
+
+123)
+Ccil= 2 pi epsilon0 h/(ln (radio grande/radiochico))
+
+Ccil= 2pi epsilon0 0,1m/ (ln(0,015m/0,01m))
+Ccil=137 nf
+U=1/2 c v^2
+
+como E0/E= K
+E= Eo/k
+E= 200V / 5.4
+E=37,03 v
+antes del dielectrico
+U=2,74mJ
+despues del dielectrico
+C=k co
+C= 5.4 * 137nf= 0,73uf
+U= 1/2 0,73 uf 37.03^2=0,5 mJ
+
+pedirle el resto a uri

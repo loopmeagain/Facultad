@@ -1,0 +1,73 @@
+clase gdd 4-9
+
+Funciones
+	-como toda funcion, tiene que retornar un valor
+	-no puede modificar el estado de los datos (no puede hacer insert /delete/ update), por que se supone que estoy haciendo una consulta, 	no seria coherente.
+	-se puede utilizar en un select
+	-puede devolver cualquier tipo de dato permitido.
+CREATE function <nombre> (, , , ,)
+returns <tipoDeFuncion> (si queremos devolver un dataset tipoDeFuncion=table)
+as
+cuando tiene sentido hacer una funcion? cuando voy a hacer un procedimiento repetidas veces que tienen selects
+
+Stored Procedures 
+	-no retorna valor
+	-puede modificar el estado
+	-no se puede utilizar en un select, porque no retorna un valor y porque modifica los datos
+	-se guarda en la base de datos de forma encapsulada(solamente esa db lo puede usar)
+	tecnicamente retorna un valor, pero no podemos manejar el retorno, devuelve true cuando retoro correctamente y false cuando paso algo
+CREATE procedure <nombre> (, , ,) -> tiene dos tipos de parametro in y out (por default todos son in); in es por valor y out por referencia
+as
+
+hay veces que uno quiere modificar algo en la db entonces tiene que ir a un store procedure, y a parte quiere que le retorne algo, por ejemplo modificar todos los clientes que compraron chupetines y cuantos son. Lo que se hace es hacer una funcion que cuente quienes comieron chupetines y lo usamos en el SP. para evitar que la concurrencia me afecte el conteo usamos como out nuestro entorno para que cuente los que analice cuando hice la consulta y no el de tiempo real.
+
+tip interesante: c se lee de derecha a izquierda
+const int max se lee como max es un entero de tipo constante (osea que no se lo puede castear)
+int const max se lee como max es contante y es un entero (osea que no puede cambiar su contenido)
+
+Triggers
+un trigger es igual que un store procedure a nivel del codigo que puedo poner adentro y lo que puede hacer (no retorna valores, etc); pero tiene sus propias caracteristicias
+-modifica estado
+-no tiene parametros
+-no se invoca (no lo podemos llamar para ejecutar, se ejecuta solo)
+-esta asociado a una tabla particular
+el trigger se dispara ante la ejecucion de un evento (insert update delete), si un trigger se dispara ante la ejecucion de un evento tiene que estar vinculado a una tabla para saber cuando se dispara el evento; 
+CREATE TRIGGER <nombre> on <tabla> before/after insert,delete,update
+as
+pero quiero ejecutar el trigger antes de el evento o despues de la ejecucion del evento? before/ after es para eso
+en sql server en lugar de before/after => instead of/ after
+
+instead of ejecuta el trigger en lugar del evento (osea que el evento tendriamos que realizarlo dentro del trigger)
+
+el trigger internamente posee dos tablas (inserted y deleted) que fuera del ambiente de ejecucion del trigger no existen.
+es como si tuviera dos variables locales.
+por ejemplo si el trigger es de insert, en inserted se va a guardar aquello que quieren insertar (se mimetiza con la tabla, copia su estructura), si se ejecuta un update, inserted va a tener las tablas como van a estar actualizadas, y deleted antes de estar actualizadas...
+cuando querria usar? para controlar antes de hacer algo o verificar despues  de algo
+por ejemplo cada vez que hago un insert en la tabla de items tambien hago un insert en la tabla de stock
+el trigger se une con la transaccion, gracias a la atomicidad , si falla  hay un rollback
+
+
+Mostrar para el o los artículos que tengan stock en todos los depósitos, nombre del
+artículo, stock del depósito que más stock tiene.
+
+select prod_detalle, max(stoc_cantidad)
+from productos join stock on prod_codigo=stoc_producto
+where stoc_cantidad>0
+group by prod_detalle
+having count(*)= select count(*) from deposito
+
+
+select
+
+
+union 
+
+select
+
+order by solamente al final se puede poner, porque es como si fuera un solo select
+
+la unica condicion es que se puede hacer solo si las columnas son simetricas (IDENTICAS respecto del primer select al segundo)
+devuelve la union de los dos select sin repetidos, si se quiere con repetidos se usa union all
+se usa pocas veces, solamente cuando las tablas tienen columnas que se repiten
+
+

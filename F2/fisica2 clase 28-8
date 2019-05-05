@@ -1,0 +1,119 @@
+radiacion
+
+H~ T^4-T^4
+H~~ e (emisividad) 
+H~~A
+H~~ sigma= 5,67 * 10^-8 W/m^2K^4 -> constante de stephan bolzman
+
+H	=	sigma e A (T^4-T^4)
+
+#espectro Visible
+C= lambda *f 			f:(Frecuencia) c: la velocidda de la luz en el vacio
+						lambda: longitud de onda
+
+la emisividad esta comprendida entre 0 y 1 y es la relacion entre la razon de radiacion de una superficie dada y la de un area igual pero de una superficie radiante ideal a la misma temperatura.
+ 
+si un cuerpo recibe y emite a la misma razon se puede decir que esta en equilibrio
+si emite mas de lo que recibe, el cuerpo se enfria
+si recibe mas de la que emite, se calienta
+
+un cuerpo negro es un cuerpo que absorbe toda la radiacion
+
+
+ejercicio persona desnuda en el cuarto
+cuerpo negro => e=1
+Tambiente=20ºc
+Apersona= 1,4m2
+T=33ºc
+
+cuando uno se toma la fiebre se esta poniendo en equilibrio termico, considerando la piel como la resistencia termica
+
+	33ºc temperaturaSangre -----/\/\/\/\------- temperatura ambiente 20ºc
+							rthpiel
+
+		H	=	sigma e 1,4m2 ((20ºc).ToKelvin()^4-(33ºc).ToKelvin()^4)
+		H	= 	sigma e 1,4m2 (306k^4-293k^4)
+		H	= 	111W
+
+
+
+ej2 
+
+placa de acero de 10 x 10 cm, que esta a t=800ºc e=0,6K
+calcular la razon total de emision por radiacion (sin tener en cuenta el ambiente, solo lo que es capas de emitir a secas)
+no solo hay que considerar una cara, sino las dos
+		Htot	= sigma e (2A) T^4
+		Htot	= 900W
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+ElectroEstatica
+
+tiene que ver con el estudio de las cargas, las fuerzas que se ejercen entre si, y las manifestaciones de energia que hay entre ellas
+
+los atomos estan compuestos basicamente por un nucleo,  y una nube electronica; por ejemplo el cobre que tiene un numero atomico de 29 (tiene 29 electrones), y 29 protones, ambos conviven en el nucleo.
+La carga es justamente el exceso de electrones (mas electrones de los que tendria que tener el material en estado neutro, ahi estaria cargado negativamente;por otro lado si tuviear un material de un determinado elemento y por alguna razon lel faltan electrones, porque por alguna razon le fueron arrancados, entonces este material, va a quedar positivamente porque le estan faltando electrones para cumplir con la neutralidad). Las propiedades que tienen los atomos cuando le faltan electrones, es de tener una vancante, y mediante esta atraer electrones
+
+cuando frotas un plastico
+		la piel pierde electrones
+plastico	<-----------	piel
+			----------->
+(-)							(+)
+
+en la naturaleza existen dos tipos de carga, positivas y negativas
+
+los positivos se repelen, los negativos entre si tambien, pero signos cambiados se atraen
+
+principio fundamental de la carga
+la carga no se crea ni se destruye sino que se transfiere
+ion+ es la estructura atomica que ha perdido un electron
+ion- es la estructura atomica que ha ganado un electron
+
+ley de coulomb 
+se armo una balanza de torsion para poder medir cuantitativamente el tema de la fuerza entre las cargas 
+
+F~~ q1q2
+~~ 1/d^2
+~~ K
+			 ->
+en el vacio |F|=k |q1 q2|/d^2
+K=9*10^9N m2/C2		---> en el vacio
+k tiene que ver con el medio
+
+K=1/4pi epsilon0 =>v  epsilon0:permitividad electrica del espacio
+
+epsilon0 = 8,85 10^-12 [C2/nm2]  o [faraday/m]
+F12= k q1 q2 r12/|r12|
+#grafico cargas
+
+r: el vector que apunta a la posicion donde quiero saber la el campo vectorial fuerza (campo)
+r': el vector que apunta a la carga originadora (fuente)
+
+F 	= 	k q1 q2 r-r'/(|r-r'|^3)
+
+# ejercicio 6
+algo importante a tener en cuenta es que aparece el principio de superposicion, es un principio que establece que cada carga puede interactuar sin cortar las demas, y se superponen los resultados obtenidos para obtener el resultado final
+q1=1C
+q2=-2c
+q3=3c
+a=1cm
+b=2cm
+
+f1= f31+f21
+
+f31 q1-q3 apunta a los negativos
+q1 -q2 apunta a los positivos
+	f31		=	 k |q1| |q3|/a^2
+	f31		=	27 x 10^9 N
+
+	F21 	=	k |q2| |q1| / b^2
+	F21 	= 	4,5 10^9 N
+
+el vector se puede escribir ademas segun su angulo
+
+tita= arctg (y2-y1/x2-x1)
+
+|F1|=root((27 10^9)^2+ (4.5 10^9)^2)= 2,7 10^10 N
+titaf1= arctg(-27 10^9 / 4.5 10^9)= -80 º
+F1=2.7 10^10 N <280º

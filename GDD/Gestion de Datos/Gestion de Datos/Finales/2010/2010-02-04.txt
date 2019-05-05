@@ -1,0 +1,17 @@
+1.a) Verdadero, nunca puede ser completo con cantidad de nodos par.
+
+1.b) Falso, la tabla de hash tiene un máximo estático que se pone de antemano.
+
+---
+
+3.a) 
+
+Sería como hacer las constraints PK y FK manualmente usando Triggers.
+
+Trigger de DELETE en T1 para que no se pueda borrar la "PK" si tiene alguna "FK" que la referencia.
+
+Trigger de INSERT y UPDATE en T2 que verifique la existencia de la "PK" a la cual referencia.
+
+3.b)
+
+Da error porque para que sea FK debe existir la PK.

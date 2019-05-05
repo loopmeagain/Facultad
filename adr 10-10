@@ -1,0 +1,27 @@
+Seguridad de la informacion
+
+la informacion es valiosa para la toma de decisiones; ademas la informacion es un activo, por lo cual surge la necesidad de protegerla, para ello existe la seguridad de la informacion.
+
+tres palabritas magicas: confidencialidad:, integridad: no debe poder modificarse si no se tienen los permisos, y disponibilidad: que este disponible y para la gente que debe estar disponible para las personas adecuadas
+
+el valor de la informacion depende no solo de su temporalidad sino del tipo de analisis y el campo de estudio
+
+iso 27001 distingue incidentes vs eventos (también existen cobit-gobernanza-, itil-buenas practicas-..).
+	la diferencia esta entre la connotacion negativa de un evento consciente
+	la informacion fluye a traves de la organizacion por medio de procesos que no siempre son en sistemas informaticos,
+	si lo que sucede es un evento de connotacion negativa(por ej pierdo un dato ya sea por error o mala intencion), estamos hablando de un incidente de seguridad
+	si no tiene connotacion negativa es un evento de seguridad, que puede o no llevar a una connptacion negativa a largo plazo
+
+	recomendacion: hay que tener un marco regulatorio para saber hasta que punto auditar.
+
+hay normas de de seguridad para implementacion como forma de proceso continuo que me de la tranquilidad de ante posibles escenarios haya determinado un camino a seguir; de antemano es imposible prevenir el 100 % de los incidentes, para eso es necesario definir un marco.
+
+Fases:
+	1) accion inmediata para tratar de detener o minimizar el impacto; cuando el incidente ya paso, investigarlo para obtener informacion
+	2)reporte de incidentes a autoridades, sobre los datos afectados, los riesgos de la perdida de esos datos y su manipulacion
+
+no repudio de origen y destino, si x envia algo a y, se garantiza que el que lo envio lo envio y el que lo recibio lo recibio
+itil y cobit dan marcos regulatorios
+itil determina cajitas de flujos de informacion, y en cada caja de itil la preocupacion es que la info que se gestione en esa caja este asociada a los estandares de politica de seguridad recomendados para esa area
+
+Una empresa tiene el objetivo de obtener rentabilidad. Por lo tanto, tenemos que proteger el negocio. Cuando hablamos de seg de la informaciòn hablamos de proteger datos como activo y los activos fìsicos que nos permiten procesar esos datos (procesadores, discos, servidores...).

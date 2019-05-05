@@ -1,0 +1,86 @@
+Escalabilidad y disponibilidad de datos y operaciones de negocio
+
+sistemas de almacenamiento de datos
+si nos remontamos a la evolucion de los sistemas de almacenamiento, deberiamos arrancar con almacenamiento centralizado (mainframe),  cuando pasamos a sistemas que no son mainframe, tipo pc o servidores, la evolucion del almacenamiento incorpora la dinamica de almacenar datos donde los datos quedan grabados.
+
+sistemas de almacenamiento accedidos de manera directa (DAS) - ACCESO POR BLOQUE-
+mediante una interfaz se puede agregar a un dispositivo de procesamiento como si le fuera propio y la administracion esta delegada a esa misma unidad de procesamiento.
+
+limitaciones del esquema: poca escalabilidad, porque la capacidad de expansion esta limitada por la cantidad de puertos que necesito para conectar los discos.
+
+cuando muchas cpu que pueden usar una misma unidad de almacenamiento, solamente un so puede escribir en un lun en un momento dado.
+
+luns para generar particiones para administrar los datos
+
+Limitantes de DAS:
+	Si se rompe el storage, todas las unidades de procesamiento quedan aisladas. Puede haber backups.
+	Poca escalabilidad, porque cada storage es de poco tamaño. Esto hace que para escalar tenga que agregar mas discos y ocupe mucho espacio fisico.
+	La cantidad de equipos que pueden accederlos son finitos (Depende de la cantidad de interfaces).
+	Invisible para equipos que no estén conectados de forma directa.
+
+SAN: Red de almacenamiento dedicado. No hay servicios, solo protocolos de disco. Para conectar los Host con los SAN, necesito equipos de comunicacion; switches de SAN. Un Host tiene posibilidad de conectarse a todos los storages y los storages pueden ser accedidos por todos los Hosts. Tiene una placa de red de tipo SAN, pero luego es similar a DAS.
+	Escalabilidad horizontal.
+	Si necesito mas almacenamiento, puedo hacerlo verticalmente u horizontalmente.
+En configuración de alta disponibilidad, hay réplica de switches SAN. Si uno queda fuera de servicio, sigo estando online.
+Ventajas:
+	Gran AB. Muy performante.
+	Recursos disponibles para todos los dispositivos de la red.
+Desventajas:
+	Costos. El propio SAN es costoso, pero sobretodo, los dispositivos de red para SAN son más costosos que los comunes.
+
+NAS: Nos provee un sistema de almacenamiento basado en FS, que está disponible a través de una red de datos (conectable a internet). No maneja bloques sino FS. Como comparte FS's, que le pertenecen, tengo la ventaja de que el NAS maneja los permisos y la concurrencia. En esencia es una unidad de almacenamiento, con una unidad de procesamiento y un SO. 
+Ventajas:
+	Menores costos que SAN; no hay que montar una red de comunicación tan costosa, udsa la red LAN. 
+	Me permite abstraerme de manejar la concurrencia. Controlado por su propia unidad de procesamiento.
+Desventajas:
+	Menos performante. Menor AB.
+
+Persistencia distribuida
+Ventajas:
+	Escalabilidad. Hoy en día es mucho más facil incorporar componentes, escalando en alamacenamiento y en performance; se pueden distribuir el trabajo de escritura.
+	Disminuye la probabilidad de fallas, por la posibilidad de replicar facilmente la info en los distintos storage. Similar a RAID pero distribuido en distintos equipos.
+Desventajas:
+	Mayor esfuerzo de ingeniería. Tengo que entender el negocio para entender que técnica es mejor.
+	Menor capacidad, porque usa parte de su capacidad para garantizar disponibilidad.
+
+
+Disponibilidad de los datos: Tengo que asegurarme que la falla de un componente no me haga perder datos. Vamos a estar pensando en la redundancia de componentes, redundancia en fuentes de energía, redundancia en switches, mas de un acceso a la red, etc.
+
+Performance: El rendimiento también hace a la disponibilidad. Si tardo en acceder a los datos -> timed out -> Imposibilidad para acceder.
+
+Soluciones para acceder a los datos: La disponibilidad y los costos son directamente proporcionales. Se analiza cuánto dinero se pierde en una posible caida de servicio.
+	Cintas magnéticas:
+		Mucho tiempo de recuperación.
+		Menos frecuencia de backup.
+		Bajisimos costos.
+		Menos costos de mantenimiento.
+		Se suelte utilizar para temas de auditoría. 
+		También para backups que se guardan a distancia por resguardo a catástrofes.
+		También para televisión, donde está programada la info a usar, entonces una pequeña capa de sw me tiene disponible los datos necesarios en un determinado momento.
+
+		RAID
+
+		0- Aprovecha el 100% de su capacidad. Agrupa dos discos como si fuera uno. 
+		1- Duplica los datos. Tengo redundancia. Muchos costos, ya que el espacio disponible es siempre el 50%.
+		2- Un solo disco con su redundancia.
+		3- Al menos 3 discos físicos. La penalidad en la pérdida de un disco, es 100% datos.
+		5- Al menos 3 discos. Paridad distribuida. La pérdida de un disco, no es completamente datos, sino que tiene parte paridad.
+		6- Doble paridad. Más overhead en operaciones de escritura. Mas costos por tener dos discos de paridad. Mas seguro, puedo perder hasta dos discos y sigue funcionando.
+		0+1 o 1+0- Mas disponibilidad y performance. Menor posibilidad de errores en 1+0.
+		5+0- Nada raro.
+		5+repuesto(spare)- Ante una eventual falla, entra en servicio el de repuesto. Me resguardo del tiempo que lleva reemplazar un disco que sale de servicio.
+
+		Plan de contingencia y recuperacion ante desastre
+
+		RPO: Cuántos datos estoy dispuesto a perder.
+
+		Replicación sincrónica: Escribo en las redundancias antes de commitear. (datacenter primario).
+		Replicación asincrónica: Commiteo y asincrónicamente escribo en las redundancias. (datacenter secundario).
+		Replicación períodica: Fotos períodicas de mis datos. Este y los anteriores permiten recuperación instantánea.
+		Cinta: El tiempo de recuperación no es instantáneo.
+
+		RTO: Cuánto tiempo puedo estar sin servicio, parcial o totalmente.
+
+		Medidas preventivas: Mitigar impacto de fallas (RAID).
+		Medidas de detección: Controles para detección.
+		Medidas correctivas: Se dispara contingencia.

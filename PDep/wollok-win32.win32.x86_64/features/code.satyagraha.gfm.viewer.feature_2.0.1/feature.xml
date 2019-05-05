@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="code.satyagraha.gfm.viewer.feature"
+      label="GFM Viewer feature"
+      version="2.0.1"
+      provider-name="Satyagraha">
+
+   <license url="">
+      Eclipse Public License 1.0
+   </license>
+
+   <plugin
+         id="code.satyagraha.gfm.viewer.plugin"
+         download-size="7526"
+         install-size="8580"
+         version="2.0.1"
+         unpack="false"/>
+
+</feature>

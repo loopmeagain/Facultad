@@ -1,0 +1,77 @@
+--20)
+--nunca se puede resolver una query que dependa de dos where distintos, los de 2011 y 2012 se deben ahcer separados
+
+select top 3 , , , case when count(*)>=50 then (select count (*) from facturas
+												 where fact_vendedor= empl_codigo
+												 and fact_total>100
+												 and Year(fact_fecha)=2012
+												)
+					else 0.5 * (select Count(*) from facturas
+								where Year(fact_fecha)=2012
+								and fact_vend in (select empl_codigo from empleados e 
+								where empl_jefe=empl_codigo)
+													)
+								), --aca va  otro case exactamente igual  pero con 2011							
+from empleado join factura
+-- siempre tratar de detectar cual es la columna dominante , y aquellas cosas que no voy a poder resolver en un mismo select y tenga que traer con sub querys
+--25)
+
+select año, familia,cantrubros, count(distinct prod_rubro), --aca va las cosas referentes al mas vendido (seguro es un select top1 from facturas con fact total order by desc), count(distinct fact.tipo+fact_suc+fact_numero),sum(item.precio*item.cantidad/(select sum(fact_Total) from facturas where year(fact_fecha)=año))
+from facturas --(de donde es el unico lugar que puedo sacar el año) 
+join items join productos --(para tener familias)
+--por ahora mi universo es este
+where prod_familia= (select top 1 prod.familia from facturas join items join productos
+					where year(fact_fecha)=año
+					groupby prod.familia
+					orderby sum(item.precio * itemcantidad) desc)
+
+
+group by año,familia
+order by year(fact_fecha), sum(item.precio*item.cantidad/(select sum(fact_Total) from facturas where year(fact_fecha)=año)) 
+
+--corrije por columnas
+-- el ej de transact es un trigger y un sp
+-- tip hacer parcialmente el parcial (?
+
+
+
+-- tengo que ver si las columnas que me piden las puedo sacar del from, si la columna tiene un where que excluyente de la query general debe ser una subquery; si arrancamos de un from morimos con este from porque sino lo que andaba va a dejar de andar
+--si dice para todas las familias, es un left join, y te garantiza que el from es de familias
+
+--15  de transact
+-- esta funcion recibe un producto como parametro
+-- deberia hacer un select para saber si tiene componentes, si tiene componentes esos componentes los tengo que traer conun cursor sino, devolver el precio del componente
+--cuando tenes que iterar si o si vas a usar un cursor
+-- los uno a n  tienen los triggers mas complicados, porque supongamos que yo cargo la f1  y empiezo a llenar los items, hay dos formas inicialmente de insertar esto, primero para poder insertar los renglones, tengo que insertar primero la factura, porque es uno a n
+--  despues tenemos dos opciones, si los items los tenemos en memoria es muy probable que hagamos un for o un while y vayamos haciendo inserts, si alguno falla hay que rollbackear todo, sacarlos a mano. se pueden cargar a una tabla temporal y cargar todos en una transaccion si hay alguna con error  la rollbackeo
+if select count(*) from componente=0
+		return precio
+
+else 
+cursor com.cantidad
+while
+@precio= @precio + cantidad* funcion()
+
+--16
+--es un trigger que no va a controlar, no va a cancelar la operacion,  sino que deja negativo el stock en el deposito, por tanto es un after
+-- lo primero que hay que hacer es un tratamiento para cada producto con un cursor, una vez que levantamos el cursor de inserted, lo primero que tengo que ver del producto es ver si tiene composicion, si tiene una composicion le bajo los productos de la composicion del stock, sino solo del producto.
+-- como habria que hacerlo nivel god: trigger instead of si no tiene composicion inserto de cuajo, si tiene composicion levanto otro cursor y por cada componente ejecuto un el mismo trigger, es un caso de recursividad con trigger, nested trigger (esto excede nuestros skills jaja)
+create trigger ej16 on item_factura for insert
+as cursor of inserted
+while 
+begin
+excep sp_actualizar_stock(producto,cantidad)
+end
+
+en el sp levanto un cursor de componentes
+if select(Count(*))
+	sp bajar_stock(producto cantidad)
+cursor componentes
+while 
+excep sp_actualizar_stock(componente,cantidad)
+end
+return;
+-- esto es asi porque un producto puede estar compuesto por productos compuestos, por tanto es de naturaleza recursiva
+--este ej era un delirio
+-- las funciones no pueden llamar sp que hagan modificaciones en la db, porque las funciones no pueden modifica la db
+-- el mayor error en el uso de triggers es olvidar que es una tabla; ES MUY RARO QUE NO ARRANQUE UN TRIGGER CON UN CURSOR.
