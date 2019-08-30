@@ -1,0 +1,158 @@
+Tp 6
+
+transmision de errores 
+
+1)  Ber = Bit con errores/ cant total de bits 
+    Ber=  20/200000 = 0.0001
+
+2)
+	CRC= control de redundancia ciclica
+	lo que tenemos que saber es que este CRC es un algoritmo de 8 pasos
+	pero se puede resolvers in usar el algoritmo, puede pasar que tengamos que explicar los pasos en la teoria
+
+	M(x)= 10110101101
+	y  teniendo como polinomio generador
+	G(x)= x^4 +x +1
+	M(x)=? = M(X)+R(X)
+	RTX sinc=? 
+	tenemos un ensaje y lo unico que vamo s a hacer es detectar si hay errores pero no vamos a corregir nada es solo de deteccion
+
+	tanto en el tx como en el rx tiene que haber el mismo polinomio sino sale cualquier cosa
+	el mensaje que se transmite es M(x) mas el resto de dividir polinomios, entones se lleva el mensaje a un polinomio, se dividen y se agrega el resto
+
+	vamos a dividir polinomios con la compuerta XOR
+
+	agarro el mensaje y le sumo tanta cantidad de 0 a la derecha como tenga el grado del polinomio generador
+
+	1 0 1 1 0 1 0 1 1 0 1 |0 0 0 0 estos ultimos cuatro los agrego porque son del grado del generador
+
+	como divido?
+
+	el polinomio hay que escribirlo de manera binaria y ponerla abajo del mensaje y hago una xor por ada bit
+
+	X^4 + x^3 *0+ x^2 *0 + x + 1
+
+	1		0		0		1	1
+
+
+	  
+	mensaje		101101011010000
+	polinomio	10011
+				00101
+
+	una vez que se usa la primera vez la compuerta,  tengo que volver a  poner el generador abajoa apartir del bit significativo de pasarlo por la xor, en este caso tengo que bajar los bits que me faltan para poder volver a aplicar la compuerta			
+
+	mensaje		101101011010000
+	polinomio	10011
+				0010110 			el 10 es lo que bajo para poder volver a usar la compuerta (lo bajo del mensaje)
+				  10011
+				  00101
+	vamos de vuelta	
+mensaje		101101011010000
+				10111
+				10011
+				0010001
+				  10011
+				  00010000
+				     10011
+				     000110    RESTO => 0110
+
+mi resto tiene que tener el mismo tamaño que el grado del polinomio generador
+
+El mensaje es el mensaje mas el resto => 101101011010110
+Rendiimiento= 11/15 *100= 73%
+
+esto es del lado  del transmisor
+
+del lado del receptor hay que hacer lo mismo solamente que ahora el mensaje es el mensaje mas el resto
+
+10110101101|0110|0000
+
+va  repetirse lo mismo hasta llegar al resto que se agrego en el otro entonces puedo salvar de hacer ooootra vez lo mismo y copiar lo que hice en el transmisor
+
+osea lo mismo que hice hasta llegar a  10110101101
+										
+										
+
+										10011
+										10011
+										00000  SI EL RESTO DA 0 SIGNIFICA QUE NO TIENE ERROR,  si no da con error hay que seguir, sino da 0 en ningun momento, hay que avisarle al tx  que vino error para que retransmita
+
+
+8)
+la parte de la izquierda para casa, la de la derecha la hacemos ahora que quiero saber cual es el mensaje y cual el resto
+
+M(X)= 1011000111000111101010
+G(x)= x^8+x^3+x^2+x+1
+
+es grado  8 
+los ultimos 8 bits son del resto y el resto el mensaje
+
+b)
+pasamos a binario el generador
+
+g(x)=1 0 0 0 0 1 1 1 1
+				RESTO 		generador
+10110001110001 | 11101010 | 00000000
+
+100001111
+
+00110110010
+  100001111
+  0101111010
+   100001111
+   00111010101
+     100001111
+     0110110101
+      100001111
+      0101110101
+       100001111
+       00111101010
+         100001111
+         0111001011
+          100001111
+          0110001000
+           100001111
+           0100001111
+            100001111
+            000000000
+            No tiene error	
+
+            Rendimiento =  14/ 22= 63%
+
+
+4)
+A=  0011
+B= 1011
+C= 0110
+D=0010
+
+checksum consiste en ir realizando sumas, hacer complemento a1 y si en el receptor cuando se repite el proceso da 0 no hay errores
+
+A= 0011
+B= 1011
+
+A + B=     1110    Si hay overflow agarramos lo ponemos abajo y lo volvemos a sumar
+ C    =    0110
+A+B+C =   10100  OVERFLOW, lo mando para abajo
+A+B+C =    0100 + 0001  =  0101
+D     =    				   0010
+						   0111 = a+b+c+d
+
+						   Ahora hago complemento A1 
+						   Ca1(a+b+c+d) = 1000
+
+						   transmito a b c d y el ca1
+
+						   R= 16/20=4/5 = 80%
+a+b+c+d= 0111
+c1     = 1000
+       = 1111 
+C1     = 0000  da todo 0 entonces no hay error
+
+
+
+los ej del parcial son exactamente iguales a estos
+
+SNR entra en el segundo parcial 
+

@@ -1,0 +1,102 @@
+15-4 
+Teorema Nyquist  (este se usa para los canales ideales sin ruido)
+
+Señales binarias
+
+Vt= 2 deltaF
+
+señales multinivel
+
+Vt= 2 deltaF log2 n
+n= nro de niveles de señal
+
+C= vt
+
+señales digitales {    BER =  BIT ERROR  RATE  = BITS Okey transmitidos / Bits totales transmitidos
+Teorema shannon hartley (este es para canalesno ideales, con ruido)
+
+C= Vt log2 n
+						{   n= (1+s/n)^1/2 y  Vt= 2 deltaf
+C=  2 deltaF log2 n
+
+C=  2 deltaF log2 (1+s/n)^1/2  [bps]
+
+C=  deltaF log 2 (1+s/n) [bps] ---> Formula final
+
+S/n= potencia de señal / potencia ruido
+
+s/n [db]= 10 log s/n
+
+la relacion s/n es una perdida por eso se expresa en db, pero hay que pasarl o a veces para usarlo en la formula de C
+
+
+1)
+ s/n =  30 db 		donde			30 hz      =>  DeltaF= 3000 hz
+ 									3300hz
+C= deltaF log2 (1+s/n) [bps]
+
+en la formula de C no puedo usar la relacion s/n en db, este es el cazabobo
+
+S/n [db]= 10 log s/n
+
+30 = 10 log s/n 
+s/n= 1000 veces => se lee como que la potencia de la señal es mil veces la señal del ruido
+
+C= 3000  log 2  (1+1000) =  29900 bps
+
+2) 
+	a) deltaF= 3000 hz    c=10000 bps
+
+	C=  deltaF log2 (1+s/n)
+	10k =  3k log2 (1+s/n)
+	s/n= 9,07 veces
+
+	S/n [db] = 10 log 9,07
+
+	S/n[db]= 9,58 db
+	b)
+	 y c) lo mismo
+
+	 b) = 0   y c) = 30 db
+
+ habria que hacer una grafica de s/n en eje y  delta f en eje x y deberia parecerse a una descardga de capacitor
+
+ 3)
+ cual es la c maxima de transmision ? 
+ Vt= 2deltaF para señales binarias
+ Vt= 2 deltaF log2 n para señales multinivel
+
+ 4) AB=ancho de banda
+ AB = 4kz = DeltaF
+ SnR =	20 db
+
+ C = delta f log 2 (1+s/n)
+ c= 4 log2 (1+s/n)										s/n[db]= 10 log s/n
+ C= 4k log 2(1+100)										20= 10 log s/n
+ C= 26632 bps											S/n= 100 veces
+ pero me pedian saber la snr duplicando  la velocidad del canal
+ 2C= 53265 bps
+53265 =  400 log2 (1+s/n)
+s/n= 10 200 veces
+
+s/n[db] =   10 log 10200 =  40 db
+
+7)
+AB= 4 khz
+snr= 20db
+
+c= 26632 bps (es igual hasta aca al 4))
+dice que l apotencia del ruido es el doble
+C= delta f log2 (1+s/2n) [bps]
+c= 4000 log 2 (1+50) =  22689 => disminuye 15%
+
+8) 
+  s/2n = > s/n  = 1/2
+  c= 64kbps
+  64kbps =  deltaf log2 (1+ 1/2)
+  deltaf =  109408 hz = ancho de banda
+
+  s/n [db] =   10 log 1/2 =  -3 db
+
+  si estamos usando todo esto que se arranca del teorema de shannon hartley, es que estamos usando transmision multinivel
+  

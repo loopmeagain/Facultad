@@ -1,0 +1,150 @@
+tp 7
+Ejercicio 1 
+
+
+		l=39
+tx ------------------ ANTENA      Perdida en espacio libre   antena ---- rx 
+
+P1 = 35 W
+linea = 30 m
+f=400 nhz
+tabla
+
+Frecuentia Operativa [Mhz]	|	10	|	50	|	100	|	200		|	400		|	1000
+Rg 213/u  At[db/100m]		|	2	|	4,9	|	7	|	10,5	|	15,5	|	26
+
+P(Db)  = 10 log 10 p1/p2
+
+4,65= 10 log 35/p2
+p2= 12 w
+
+2)
+
+g= 30 db
+
+perdida del espacio libre= > LP= 32,4 + 20 log frecuencia+ 20 log distancia
+
+
+Ecuacion Radio enlace
+
+Ptx - perdidas en cable del tx + ganancia de la antena tx - perdida espacio libre + ganancia antena rx  - perdida cable rx  -Fd = srx
+
+o que es muy parecida a la original
+
+ptx- perdidas + ganancias = srx
+
+Lp= 32,4 + 20 log 400 mhz +20 log 1
+Lp= 84,44db
+perdidas= 4,65 db *2 + 84,44 db  = 93,54 db
+ganancias= 30db *2  = 60 db
+
+p1= 35 w
+dbm= 10 log p1/1mw
+stx= 45,44dbm
+
+45,44dbm- 93,74 db+ 60 db= srx
+11,7 dbm= srx
+
+ la unica complejidad de esto en el parcial es que va a tener ruido la señal
+
+C= delta f log2 (1+s/n)
+el ruido es una perdida asi que tambien  va en la ecuacion
+
+
+3)
+f=300mhz
+media  longitud  de honda => lambda /2 
+ C= lambda * f
+ C= 3* 10^8 m/seg
+
+ lambda= C/ f
+ lambda =  3*10^8/ 300Mhz
+ lambda =   1 mts
+
+ pero es de media longitud de onda => lamda=  0,5 mts
+
+ en el ej anterior nos podian preguntar sobre la longitud de onda y no hay mas magico que usar esto
+ hz= 1/seg
+
+
+
+ 4) 
+
+ Cual deberia ser la longitud de onda deberia ser de un celular que labura a 1 ghz
+si es de media longitud de onda
+ lambda =  C /1ghz
+ lambda =  0,3
+
+ es de media onda => 0,15
+
+ 5) 
+
+ Antena  = 75 cm 
+
+ fr =  88-108 Mhz
+
+ no tengo lambda, pero se cuanto mide la antena
+ la frecuencia es el promedio de las dos, porque necesito que la antena este en el medio para que llegue tanto al tx como al rx
+
+ que tipo de antena es? cuando me preguntan esto es de que tipo de onda 
+
+ lambda=  3*10^8/  98 * 10 ^6  =  3mts
+
+ la antena es de 75 cm  
+ lambda / x  = 0,75 mts
+3mts / 0,75 =  x
+x= 4
+
+
+
+la distancia al horizonte es la distancia de la antena hasta el horizonte, es una linea que va de la antena y roza tangencialmente la superficie de la tierra
+
+el alcance visual es el alcance visual de las dos antenas
+
+Dh= 3,61 root(H) [km]  - formula cuando es sin considerar la curvatura de la tierra
+Dh= 4,14 root(H) [km] -  formula cuando se considera la curvatura de la tierra
+
+av= 2 DH cuando estan ubicados simetricamente, sino AV = dh1+dh2 [km]
+
+si la altura de las antenas son diferentes hay que usar la  av que no es simetrica, y en las formulas va en metros
+ 7) no me acuerdo
+H= 20 mts
+Dh =  4,14 root(20mts) km
+Dh =  18,51 Km  -> a pesar de que la h va en metros esto siempre da en km ,esta re cheateada la formula esta
+
+Av= 2 dh [km]
+
+8)
+ cuando hay uhf las dos antenas se tienen que estar viendo
+radio de  la tierra =  6370 km
+
+av= 50 km => dh= 25 km
+dice que hay que considerar la curvatura de la tierra
+dh =  4,14  root(h)
+
+h= 36,46 mts
+el enunciado es contradictorio, dice ambas cosas con curvatura y sin curvatura,  porque dice no considerar la difraccion 
+pero  para que me dan la R?  teniendo en cuenta el radio de la tierra hasta el pie de la antena , y el radio hacia la distancia del horizonte, uso pitagoras para sacar la H 
+ A mi cuando me dan la R tengo que calcularlo usando el metodo de pitagoras, lo mas probable es que nos pida la respuesta y que lo verifiquemos conel otro metodo
+considerando la curvatura = 49 mts
+sin la curvatura= 36,46 mts
+
+con pitagoras h= 47,97m
+ 
+chequeando con pitagoras vemos que aparentemente el enunciado buscaba que se haga considerando la curvatura de la tierra
+
+9) considerar este ejercicio sabiendo que una de las antenas no puede superar los 10 mts de altura
+como es uhf, la otra va a tener que tener una altura mucho  mas alta para que se puedan ver
+h1=  10 mts
+h2?
+dh1 =  3,61 root(h)
+dh1= 11,41km
+
+av= 50 km
+ av=  dh1 +dh2
+ 50= 11,41 + dh2 = 
+dh2 = 38,59 km
+
+dh2 =  3,61 root(h)
+h= 114,27 mts
+

@@ -1,0 +1,59 @@
+gestion de abastecimiento
+Definir los req
+ 	Hacer participe  a quienes necesitan del bien o servicio en la organizacion
+ 	especificar claramente que se desea comprar y para que fin
+ 	realizar bases de licitacion precisa y claras
+ 	tener el OK  tecnico/ tecnologico del area correspondiente
+
+Seleccion del mecanismo de compra
+	Licitacion publica   si vale mas de 300k
+	licitaion privada  entre 75k y 300 k
+	contratacion directa hasta 75k
+	tramite simplificado : hasta 10 k
+
+	se puede particionar las compras para salir por licitacion privada porque es mas rapida
+Lamado y recepecion de propuestas
+	en las licitaciones se definen los plasos, redactan y publican las bases y se resuelven las consultas
+
+Evaluacion de ofertas
+MEP, este metodo es subjetivo
+	1) armar el cuadro de pesos relativos
+	a que le voy a dar mayor y menor relevancia
+	n1= es lo que representa contra el resto  de los aspectos el porcentaje de la relevancia
+	n2= representa el porcentaje dentro de las subclasificaciones en el n1
+	n3= representa la puntuacion plana (no porcentual que representa cada uno en el total)  seria  obtener el porcentaje n2 de n1 = n3
+
+
+	2) armar el cuadro de valoracion de atributos
+
+		3 tipos de atributos
+		mutuamente excluyente
+		binario
+		aditivo
+
+		para el costo si o si se va a usar una funcion se define un costo maximo y uno minimo con un margen de seguridad
+		el costo implica que conozcamos la vida util de lo que estamos comprando
+		precio de 
+		garantia
+		valor residual
+		f(costo) =  100 * (CM-Costo/CM-cm)
+	3) armar el cuadro de ponderacion de propuestas
+
+
+		VPP= CM-Cm/Peso del costo
+
+		que representa?  cuanto estoy dispuesto a pagar en plata por un punto mas de ponderacion
+		sirve para valorar cuando tengo dos propuestas muy cercanas o  para verificar si pondere mal
+		el resultado del benchmark puede ser parte de la evaluacion de propuestas
+
+	la tabla de requerimientos es totalmente opcional (indipensable preferido, no desesdao y no considerado)
+Adjudicacion 
+se cierra y se decide a quien se compra
+se debe formalizar acuerdos de facturacion garantias pago servicio tecnico etc
+la adjudicacion debe estar documentada y publicada oportunamente
+
+Recibimiento
+recibo del bien o servicio segun lo acordado en las bases de la licitacion
+recordar colocar en las bases no solo las necesidades de compra, sino instalacion, soporte y servicio post venta segun el producto adquirido
+
+Seguimiento y monitoreo

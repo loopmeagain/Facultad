@@ -1,0 +1,96 @@
+Caracteristicas 							             	Pcm30				    PCM24
+Frecuencia muestreo 							           8khz				     8khz
+Nro bits  datos /  muestra (formato)			     8					   7
+nro de canales telefonicos						        30					   24
+nros canales señal y sinc 						        2 					   -
+Vt 												                 2,048 Mbps 	    1,544 Mbps
+duracion tama 									            125 useg 			   125 us
+nros bits trama 								             256 				      193
+ley compresion 									             Ley A 				   ley U
+velocidad muestreo 								         8000 muestra/seg 	8000 m/seg	
+vt binaria por canal 							        64000 bps  			    56000 bps
+norma 										              	Europea-E1 			Bell - T1
+delta fc 										               64 000 hz 		  	56 000 hz 
+delta ft 										               2,048Mhz			  1,544Mhz
+
+
+
+velocidad binaria = velocidad muestreo * bits muestra
+capacidad = vt=   velocidad  binaria* cantidad de canales
+deltaFc= 1/duracion trama * bits muestra
+deltaft=deltafc * cant de canales
+en el parcial nos va a decir sin tener en cuenta ... por ej los canales de señal y sincronismo y en vez de usar con pcm 30, 32 canales para sacar vt, tener que usar 30 porque no tengo que tener en cuenta los 2 de señal y sinc
+los que pueden variar son formato, nros de canales telefonicos, nros de canales señal y ruido, vt 
+
+formato pcm 24
+
+8 bits x canal(24) = 192
+ 	-7 bits de datos
+ 	-1 bit señaly sinc
+1 bit final trama
+ Total= 193
+
+ 128 niveles ->7 bits
+ 256 niveles ->8 bits
+ Capacidad? velocidadd muestreo * bits muestra * cant canales
+ c=  8000 * 7 bits * 1 canal (porque no me dijeron la cantidad) = 56000 bps ESTA ES LA CAPACIDAD DE UN CANAL
+
+ c= 8000 m/seg * 8 bits *1 = 64000 bps
+
+ a) pcm 24 = > c= 56000 *24  = 1,344 Mbps 
+  pero si tengo que tener en cuenta el bit de señalizacion y sincro ya no son 7 bits,sino que son 8
+  y si tengo que tener en cuenta ademas el de final de trama serian 9 (aca deberia dar el valor de la tabla 1544 mbps)
+ nosotros calculamos la velocidad de transmision de los datos no de la trama
+
+
+
+
+ cartilla de ej complementarios
+
+ 1)  velocidad binaria? deltaF (ancho de banda)
+  tx= 30 canales de voz y 2 canales de señalizacion y sinc => osea que es pcm 30
+  Pcm->TDM pregunta teorica de taquilla
+  si los
+  vb=64000 bps por canal
+  vt=  2,048 mbps
+  delta c= 64000
+  ancho de banda= 2,048
+
+  c= vm * bits muestra =  cantidad de canales =   8000 muestras/seg * 8 bits/ muestra * 32 canales=  2,048 Mbps
+  delta ft=  1/duracion trama * bits de muestra * cantidad de canales =  1/125 us * 8 * 32  = 2,048 Mhz
+
+
+
+  
+
+  pagina 241 del libro  de castro, figura 4.61
+
+  4)  24 canales de voz
+  pcm 
+  256 niveles de cuantificacion por muestra
+  delta f 4khz
+  calcular capacidad del canal sin considerar la info de señalizacion osea que es pcm 24
+
+  256 niveles -> 8 bits por muestra->  7 bits datos y 1 de señalizacion 
+
+  C=  v muestre * bits muestra * cant canales
+  c= 8000 m/seg * 7 bits /m * 24 = 1,344 Mbps
+
+  6) es exactamente lo mismo pero el enunciado esta mas rancio
+
+
+  8) 
+  			tx= 2 señales de tv digitalizadas mediante un enlace pcm de 512 niveles de señalizacion /muestra
+  			ancho de banda= 6mhz
+
+  			c= 2 ancho de banda log 2  n 
+  			c= 2 x 6 log2 512  =  108Mbps  esto es para un canal
+
+
+  9)
+  		 se desea transmitir doce señales analogicas mediante  pcm
+  		 se dispone de un ancho de banda de 2 khz  y se desea una resolucion de 6 bits por muestra
+
+  		 c=  2 2 * 6 = 24 Kbps para un canal
+
+  		c= 25 kbps * 12 =  288 kbps

@@ -1,0 +1,179 @@
+f8-4
+Tp n4
+Transmision banda base
+
+
+Codigos:
+binario
+polar    rz (retorno a cero), nrz (nretornoazero)
+bipolar rz, nrz
+ami
+hdb-3
+manchester
+manchester diferencial 	
+miller
+
+
+tasa de informacion
+ n=simbolos de  alfabeto
+probabilidad equiprobable
+P(x)= 1/n
+I(x)= log2 1/p(x)    [shanon]
+I(x)= log e 1/p(x)  [NAT]
+I(x)= log 10 1/p(x) [Hartley]
+
+1 hartley= 3,32 shannon
+1 NAT= 1,44 shannon
+1 Hartley= 2,30 nat
+
+Entropia
+H= -sum(p(x) log2 p(x))   [shanon/simbolo]
+
+tasa de informacion
+
+T= H/tau      [shanon/seg]
+
+tau= sum(p(x) * t(x)) [seg/simbolo]
+
+Entropia 
+incertidumbre media en la ocurrencia de caos
+simbolo
+tau duracion media de los simbolos
+
+
+si dice que es equiprobable se usa  p(x) = 1/n, sino hay que hacer otra cosa
+
+1)  N= 32 simbolos que tiene el alfabeto
+	palabra= 4 caracteres
+	como es equiprobable p(x)= 1/32 
+	I(x)= log2 32 shannon= 5 shannon -> esto es a un simbolo
+	pero me preguntan por 4 => son 20 shannon
+
+2) 010101000001
+ ACA NO DICE NADA QUE SEA EQUIPROBABLE	
+	I(0)=?
+	I(1)=?
+	H=?
+
+	P(0)= 8/12
+	P(1)= 4/12
+	I(0)= log2 12/8 = 0,585 shanon
+	I(1) log 2 12/4 = 1,585 shannon
+	H= - sum(P(x) * log2 p(x)) = -( 8/12 * log 2 8/12  + 4/12 * log2 4/12)  shannon/simbolo
+	H= 0,92 shanon/simbolo
+
+	cuando la fuente es equiprobable la entropia * n = la informacion
+
+	3)
+	 dados 3 mensajes con la siguiente probabilidad de ocurrencia
+	  p1= 20%
+	  p2= 50%
+	  p3= 30%
+	  cuando aparezca la palabra promedio hay que pensar en la entropia
+
+	  I=? h=?
+
+	  I(p1)= log 2 1/ P1=2,32 shannon 
+	  I(p2)= log 2 1/ P2= 1 shannon 
+	  I(p3)= log 2 1/ P3= 1,73 shannon
+	  H= - (0,2 log2 1/0,2+ .5 log2 1/.5 + .3 log2 1/.3 )= 1,48 shannon / simbolo
+
+	4) simbolos diferentes y equiprobables
+	 N=128
+	 P(x)= 1/128 
+	 I(x)=  log 2 128 = 7 shannon
+	 I(6simbolos)= 7 shanon * 6 = 42 shanon
+	 H=  - ((1/128 log 2 128) * 128)  = 7   aca comprobamos que la entropia en los equiprobables es igual a  la informacion
+
+	5) 
+	 A B C E L
+	 P(A)= .25
+	 P(B)= .25
+	 P(C)= 1/8
+	 P(E)= .25
+	 P(L)= 1/8
+
+	 sacamos la informacion de cada una de las letras y despues los sumamos  
+    I(CABLE)= 12 shannon
+    
+    6)
+    	N=2
+
+    	I(5 caras)= ?
+
+    	sacamos la info de una cara y despues la multiplicamos por 5 tiros
+    		I(5)=
+    	lo mismo para el dado 
+    	n=6   I(4)=
+
+
+    de aca en adelante vienen los de parcial
+    
+    7) equiprobable es la cantidad de n, buscar esta palabrita magica para no confundir el n
+    	demostrar que una imagen vale mas que mil palabras
+
+    	Imagen 600 lineas por 300 puntos  => N = 8  lo que busco es la info para ese puntito pra las 8 variantes de brillo
+    	P(x punto)= 1/ 8  I(x punto)= log2 8= 3 shanon de un punto, pero hay  600*300 =>  I(180000)= 3 shanon * 180000 = 540000 shanon
+    	P(x palabra) = 1/100000  I(x palabra)= 16,6    para mil palabras I(1000) = 16 600 shanon
+    	vocabulario de 100000 valores eq
+
+    	I(imagen)> I(palabra)
+
+    8) y 9) es teorico, hacerlo en casa
+    
+    10) modo grafico
+    	I= 640 x 480
+    	N= 256
+    	I(imagen)= ? 	TiempoTotalTransmision=? 
+    	canal= 33600 shannon/seg
+    	modo texto
+    	25 lineas * 80 columnas utilizando ascii de  8 bits  ambas imagenes se trnasmiten sin comprimir
+
+    	ascii de 8 bits  => todas las combinaciones posibles son 2 a la 8 por lo que  n=256
+grafico=
+    	P(x)= 1/N
+    	P(x)= 1/256
+    	I(x)= log2  1/p(X) = log2 256
+    	I(x)= 8shannon 
+    	I(imagen)= 640*480*8shanon= 2457600 shanon
+    	TTT(imgagen)= 2457600 shannon/  33600 shanon /seg = 73,125 segundos
+Texto es igual hasta  I(x) porque ntambien es 256
+I(texto) =25*80*8shanon= 16k shannon
+TTT(texto)= 16k shanon/ 33600 shanon/seg= 0,48 seg
+
+11) T[bits/seg]= [shannon/seg]
+	P(pto) = 2/3
+	TTT(pto)= 0.2 seg
+	P(raya)= 1/3
+	TTT(raya)= 0.4 seg
+
+	Tasa de informacion= entropia/tau  
+	 h= - sum(p(x) log2 1/p(X))
+	 tau= sum(p(x)*t(x))
+	 h= -(2/3 log2 2/3 + 1/3 log2 1/3) = 0,94 shannon/simbollo
+	 tau=  2/3 * 0,2 + 1/3 *0,4 = 0,266 seg/simbolo
+	 T= 0,92 shannon/simbolo / 0,266 seg/simbolo = 3,459 shanon / simbolo
+
+
+12) 
+  N=128  
+  t=20 imagenes /seg
+  T=?  C=?
+  imagen = 625* 500 puntos  
+
+  P(x)= 1/128    I(x) =  log2 1/p(x)= 7 shannon
+ 	I(imagen)=  625 * 500 * 7 =  2187500  shanon /imagen
+
+ 	T(20 imagenes)=  2187500 shannon/imagen * 20 imagen/seg =   43750000 shannon/ seg  => esto es la tasa de informacion y es igual  a la capacidad
+
+
+13) Imagen = 400x500  n=128
+	palabras n=10k
+
+
+	p(x)= 1/128  i(x)= 7 
+	i(imagen)= 400*500 *7 = 1 400 000
+
+	i (palabra)= log 2 1/10k = 13,29 shannon
+
+	 1400 000 / 13,29 = 105342.23

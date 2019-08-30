@@ -1,0 +1,241 @@
+Tita= 2pi/M  	M: cantidad de fases
+
+codigo GRAM
+
+Variacion=  1 bit entre fases adyacentes
+			2 bits entre fases opuestas
+
+
+Vt =  1/t log2 n
+
+M me va a determinar que tipo de modulcion psk va a ser
+M-PSK
+16-psk
+8-psk
+4-psk
+
+M = va a ser igual n 
+
+el enunciado va apedir tres cosas, el angulo de dsefasaje, el codigo de gray con distitnas fases, y hacer el diagrama de fases
+
+16 psk
+
+tita= 2pi/16 
+tita= 22,5 °
+
+b)  codigo de gray
+	si es de 16 => tengo 4 bits
+	0000			0°
+	0001			22,5°
+	  --------
+	0011			45°
+	0010			67,25°
+	 --------
+	0110
+	0111
+	0101
+	0100
+	---------
+	1100
+	1101
+	1111
+	1110
+	1011
+	1010
+	1001			315°
+	1000			337,5°
+
+c) se divide la circunferencia en las 16 fases con los angulos, una torta dividida en 16 triangulos
+parto desde el eje x positivo y me muevo antihorario para poner en donde estan las divisiones los codigos de gray
+
+d) 
+
+vt= 1/t log2 n 
+
+n es 16
+
+Vt = 4 Vm
+
+
+8psk
+
+tita= 45°
+
+ 000		0
+ 001		45
+ 011		90
+ 010		135
+ 110		180
+ 111		225
+ 101		270
+ 100		315
+
+la grafica es lo mismo que anterior pero ahora esta divivida en 8
+
+vt=  1/t log2 n
+vt= 3 vm
+
+para verificar agarro cualquiera
+
+por ej 
+
+la linea que conecta 
+001
+con 111
+ agarra esta fase
+
+ 001
+ miro los adyacentes
+ 000 y 011
+
+ entre adyacentes varia un bit
+ la que esta 000 contra 001 varia un bit
+en la que sigue que es 011 varia el bit que sigue
+
+y si sigo la fase hasta el otro extremo tienen que variar 2 bits
+
+4 psk
+
+90°= tita
+
+00 0
+01 90
+10 180
+11 270
+vt = 2vm
+
+en el parcial vamo a entrar por el vt, despejamos n  y ahi sabemos apartir del en que n psk es y ahi uso este algoritmo
+el dia de parcial nos va a pedir a partir de un tren de pulso que le dibujemos en el eje de coordenadas las 3 funciones la modulada, la modulante y la portadora
+
+modulante es digital, un tren de pulsos
+l aportadora es analogica podes hacer todos senos
+
+la modulada
+
+
+
+ejemplo 0111000010  a partir de esta hacemos la modulannte es simplemente el tren de pulsos
+en la portadora hacemos los senos que necesitemos
+y en la modulante dibujamos en funcion del desfasaje que tiene en gray, agarro de a dos, voy a la tabla y voy dibujando la senoidal desfasada
+
+en el parcial va a ser 8 psk
+
+modulacion pcm va seguro en el parcial
+
+se dispone de un modem que trabaj con un 16 psk, calcule el desfaseaje de estasdos que adopta la señal modulada
+
+tita=  2 pi/ 16 = 22,5°
+
+3) partiendo del ej anterior que relacion hay entre la vt y vm
+vt= 1/t log n 
+vt = 1/t log 16
+vt= 1/t 4
+vt  = vm 4
+
+4) se tiene un modem 8psk indicar de la señal moduladora, portadora y modulada indicar flujo e entrada y salida
+
+
+						
+Moduladora/Modulante--->MODEM---> Mpodulada
+						  ^
+						  |
+						  Portadora
+
+
+Moduladora= digital
+
+portadora= analogica, porque la modulada tiene que ser analogica, ypara eso necesito una analogica
+
+
+si fuera al reves, y tuviera un codex
+
+				Analogica-> CODEX -> digital
+							  ^
+							  |
+							  digital
+
+5) tipico de parcial
+vt=  9600 bps
+vm= 2400 baudios
+ multinivel
+ psk
+
+ que tipo de psk hay que usar para transmitir a la velocidad de transmision requerida, y me pide todo
+
+vt/vm= log2n
+9600/2400 = log2n
+n=16
+
+16Psk
+y despues el resto ya lo tengo hecho arriba de todo
+
+
+peeeeero si le toca tomar a leppen va a tomar uno de estos:
+
+se dispone un canla de comu que soporta una v de modulacion maxima de 1200 baudios y se desea alcanzar una  vt= 2400 bps
+pide a) que tiepo de fase debera emplearse osea que mPSK
+b) tita
+c) codigo
+d) diagrama
+e) que relacion hay entre vm y vt
+f) realice un grafico de la portadora modulante y modulada para la proxima secuencia  1001011111100010 e indicar que tipo de señales son cada una
+
+vt / vm= log2 n 
+2400 / 1200
+n= 4
+4PSK 
+
+tita=360/4= 90°
+
+c)
+00	0
+01	90	
+11	180	
+10	270
+
+d)
+				01
+	11						00
+				10
+
+e)vt= 2 vm
+
+    Moduladora->modem  ->modulada
+    			portadora
+
+    me dan una señal binaria para transmitir, entonces la moduladora es digital, la portadora tiene que ser analogica, y la moudlada analogica
+
+   portadora, vamos a usar el seno
+
+   cada 2 bits tengo que hacer una funcion seno porque aca, depende de la cantidad de bits es a igual cantidad de bits igual de funciones de la protadora por bit
+
+   tengo 2 bits entonces dibujo un seno entero por cada 2 bits, si tuviera 3 bits seria un seno por cada  3 bits
+
+   agarro 10 de la tabla equivalente en analogica y lo dibujo, luego con 01 luego con 10 y asi... expreso 1001011111100010
+   esta señal modulada tambien vale por cada 2 bits
+
+
+
+Modulacion por frecuencia 
+FSK
+ 0 = 200 hz
+ 1= -200 hz
+ Libre=  100 hz
+
+ deltaF= 4khz
+
+ el grafico arranca desde -200  donde tengo un pulso , entre -200  y 200 0 , y en 200 tengo otro pulso y en 100 hz es libre
+
+ el ancho de banda es desde -200 hz  hasta los 200 +100 = 500 hz
+ cuantos canales entran? tengo un canalo por cada 500 hz, asi que entran 8 canales
+ este ejercicio lo copian y lo pegan en los finales
+
+ en el parcial va a entrar
+ U5 s/n
+
+ U6 deteccion de errores checksum o crc
+
+u7 s/n con perdida del espacio libre y antenas
+
+u8 PSK - plm
+buscar la guia de ejercicios complementarios que entra en los parciales y finales 

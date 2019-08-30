@@ -1,0 +1,30 @@
+ejercicio tacografos
+
+
+ideal: que se pueda cofigurar la periodicidad de la registracion de eventos que deberia ser de entre 1 a 10 segundos 
+dias de retencion 60 dias minimo
+base de datos sql server, opreferentemente mysql
+
+gabinete: seria recomendable que este hecho de acero reforzado
+			espesor de 1 a 5 mm, cuanto mas grueso mejor
+display minimo 3 '' a 5mm , preferencia que sea multilinea
+
+tiene sensor de temperatura si no
+tiene sensor de movimiento  1 2 4  u 8 pulsos por vuelta
+
+descarga: recomendado puerto serie
+		  mas que recomendable que sea a partir de gprs
+		  valor agregado que contemple ack
+
+
+
+1000 usd = costos+ margen de seguridad + garantia
+
+
+
+
+el valor residual es lo que voy a ganar al finalizar proyecto, aca dice 25% de 1000, osea que el COSTO MAXIMO EL FINALIZAR EL PROYECTO VA A SER  1000- 25% 100= 750
+
+Si el valor residual es 250 usd, como minimo el Coste minimo del producto tiene que ser al menos 250 usd
+
+F (x)=   ((750-x)/750-250) *100  =  (750/500 - x/500) *100 =  (1,5 - x/500) *100 = 150-x/5 

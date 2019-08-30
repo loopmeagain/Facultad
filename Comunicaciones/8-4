@@ -27,7 +27,7 @@ I(x)= log 10 1/p(x) [Hartley]
 1 Hartley= 2,30 nat
 
 Entropia
-H= -sum(p(x) log p2 p(x))   [shanon/simbolo]
+H= -sum(p(x) log2 p(x))   [shanon/simbolo]
 
 tasa de informacion
 
