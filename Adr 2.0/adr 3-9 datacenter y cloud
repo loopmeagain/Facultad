@@ -1,0 +1,22 @@
+adr 3-9 datacenter y cloud 
+
+datacenter como conjunto de recursos fisicos logicos y humanos
+la funcion principal es brindarnos informacion para tomar decisiones aunque generalmente esta asociado a dasr servicios de infra, por eso es dificil convencer a las personas que tienen que hacer las inversiones
+
+algo muy importante en el datacenter es poder medir la eficiencia de un datacenter, se mide a traves del PUE o el DCIE, el pue es la eficiencia energetica\
+
+pue =  demanda total del datacenter/ demanda equipos de ti
+
+el standar de pue esta en 1.7
+google es el mas eficiente con un pue de 1.11
+
+para elegir un datacenter lo primero que miras es en que tier en el standar tia
+
+para 24x7 en disponibilidad, como no se puede garantizar por lo menos tener dos enlaces, que tengan ultima milla distinta o dos tipos de enlaces distinto por ej un satelital y otro por fibra
+
+lo mismo pasa con la llegada de servicios de electricidad y refrigeracion
+
+la imagen se llama cloud computing service model
+grafico de service providers responsibilities increases y subscriber s control disminishes
+
+estrategias de migracion a cloud

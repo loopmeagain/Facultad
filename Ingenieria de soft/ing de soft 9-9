@@ -1,0 +1,133 @@
+Etapas de construccion de soft
+
+queremos hacer un software  para obtener el listado de  inscriptos del curso
+
+solucion mas simple, un form que en funcion de los parametros y tire una query  a la base y muestre los datos
+
+el pm debe garantizar que todos hagan lo que tienen que hacer en el tiempo que tiene que hacerlo
+
+para ordenar estos procesos de construccion hay marcos de trabajo
+
+
+scrum, tdd, kanban, projecto tradicional, lean
+
+como podemos hacer para trabajar con todas esatas personas trabajen ordenadas
+
+la primer forma o  la tradicional es la que se conoce como via gestion de proyectos
+
+un proyecto es algo temporal, ES UNICO,  que tiene inicio y fin  tiene recursos, y tiene por objetivo la construccion de un producto o servicio de software
+
+cosas que componen un proyecto : 
+ 	Plan (hitos, entregables)
+ 	Riesgos
+ 	Presupuesto
+ 	Restricciones
+ 	Alcance
+ 	Stackholders
+
+ 	al ser temporal el proyecto, existe un marco de tiempo que es comprendido entre el comienzo y el fin de este
+ 	el proyecto tiene 5 dimensiones
+ 	Personas
+ 	Calidad
+ 	Funcionalidad
+ 	Costo
+ 	Cronograma
+
+ 	cada una de estas dimensiones tiene un tipo, y existen tres tipos de dimensiones
+ 	conductora / driver es la que se toma como principal  como guia del proyecto, siempre es la mas importante
+ 	restriccion 		es no negociable
+ 	grado de libertad 	son las dimensiones flexibles, que pueden variar
+
+
+
+ejemplo de software para  ventas  para navidad
+
+el hecho de catalogar una dimension como driver o como restriccion es una  cuestion de motivaciones distintas
+
+es driver cuando  hay una motivacion  para cumplir ese objetivo, pero no es catastrofico no alcanzarlo en su completitud, si es obligatorio se vuelve restrictivo
+es distinto decir, hay que disminuir el costo de amazon, a que te digan, hay que bajar todo de amazon para reducir el costo.
+
+si yo quiero construir soft como lo construyo
+
+sw orientado a gestion de proyectos
+
+hay una organizacion que tiene recursos  tiene un producto software y tiene   usuarios
+si yo quiero gestionar mi equipo orientado a proyectos
+
+Primero tengo una lista de requerimientos que pueden ser bug/features
+Decido el alcance
+Que requerimientos / que priorizacion
+Planificacion y calendarizacion :  Tengo una lista de tareas, estimaciones, asignaciones, y dependencias (intertareas / recursos)
+Ejecutacion y seguimiento(PM hace el seguimiento)
+Riesgos
+
+cuanto mas antes se informe que hay un conflicto y que hay que replanificar mejor
+
+SCRUM es un fw que se basa en un concepto de timeboxing, yo tengo un tiempo predefinido y distintos elementos
+
+product backlog es una lista de tareas definidas , esta pensado para ambientes complejos porque es emergente.
+
+el marco de tiempo definido es el sprint  durante ese sprint, se van sucediendo cosas y haciendo trabajo, en un punto hay un fin del sprint y se entrega un prod entregado
+
+este marco pertenece a las metodologias agiles
+
+kanban
+es un tablero con distintas columnas
+voy poniendo cosas que quisiera hacer o que inevitablemente tenga que hacerm en el backlog
+la ultima columna es done, o lo hecho
+en el medio va mi proceso que yo defino como a mi se me ocurra con una validacion, cuando esta validado pasa a done
+y la regla es como sabemos que ponemos algo en done
+por ej, tomo una pregunta y el que pregunta me dice ok 
+si algo se mueve de columna tiene que llevarse si o si hasta el final
+las columnas entre done y backlog tienen un limite de WorkInProgress
+
+el mas prioritario se pone arriba para que cuando haya un recurso libre agarra el que esta arriba de todo, asi no hay dudas sobre que hay que hacer primero
+
+falencias: Starvation de tarea, se queda abajo porque siempre hay mas prioridad
+
+
+en la sprint planning  el po dice cuales son las prioritarias, pero el equipo decide cuales entran en el sprint
+cuando una tarea es muy grande, se divide para poder hacerlo en distintos sprints
+
+diferencia entre tarea y user stories
+
+story el usuario quiere haer un pedido, pero para esa story hay un monton de tareas, armar la tabla de pedidos,  sincronizar el estado de los pedidos con los que lo estan controlando.
+
+duracion  de sprint planning
+2 horas por cada semana de sprint
+
+el po va a intentar es defender el valor, mientras que el scrum master va a defender el proceso, va a intentar que el equipo de desarrollo tenga la menor cantidad de impedimentos, es un facilitador cuando alguno de los desarrolladores tienen una traba.
+
+los desarroolladores son autogestionados, ellos tienen que hacer todo, pero algunos especialistas tenes que tener,
+esos perfiles se llaman T hay muchos que saben de todo, pero hay uno que sabe una bocha de algo
+
+
+stakeholders son los interesados, 
+la daily tiene 3 objetivos
+decir que hiciste entre la ultima dayly y hoy
+que es lo que pensas hacer hasta la proxima dayly
+que impedimentos tuve 
+
+quien va a las daily, en el mejor escenario todos los del equipo de desarrollo, el scrum master, el po a veces va  a veces no,
+ el stakeholder tambien puede estar pero no es muy comun.
+
+cuantos deberian estar en el equipo de desarrollo de 3 a 9, porque sino la cantidad de vias de comunicacion que tienen que haber entre los integrantes supera la duracion de las daylys
+
+El product backlog solamente lo toca el PO
+
+la duracion maxima es el 10% de la duracion del sprint
+
+y sepueden hacer tantas reuniones de refinamiento como sean necesarias
+
+el sprint review es una ceremonia donde  se comunican el scrum master algunos representantes del equipo de esarrollo, el po y opcionalmente el stakeholders, la idea es reveer todo lo que se hizo en el sprint, todo lo que se va a hacer
+el objetivo de la review es demostrar lo que hicimos, lo que no hicimos, y lo que se va a hacer mas adelante con lo que no se hizo
+esto demuestra el avance del producto para el po y los stakeholders para poder decidir como va a seguir esto y controlar en funcion del rumbo que tiene el proyecto para modificar el po backlog
+cuando dura el sprint review? una hora por cada hora del sprint
+la reunion la lleva adelante el scrum master, porque es el que defiende todo lo que se hizo, el po es el encargado de traer a los stakeholders
+
+tipos de demo
+0 ppt
+1 video o vivo
+2 deploy
+
+ret_o_matic 			como hacer retros y sobre que pivotear

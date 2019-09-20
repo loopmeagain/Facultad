@@ -1,0 +1,14 @@
+adr 10-9
+si dicen que la app es multicapa, suponer que no es web a menos que diga que es multicapa web, o preguntarlo almenos.
+si se corta internet se puede usar un modem 4g 
+los cursos como son estaticos los puedo meter en una nas, o tambien puedo usar un fileserver
+todo lo que son dispositivos moviles se conectan a la nubesita de interent esta nube de internet le pega al router, y a traves de un firewall a la parte que contenga la aplicacion
+cada sucursal tiene una ip publica y ademas una ip vpn
+
+gateway es un componente fisico que te orienta o determina hacia donde van los paquetes
+la vpn es una red que virtualmente simula conectarse a una lan a pesar de estar en otro planeta
+
+mpls es un servicio que pdoes contratar para tener una sola red, y sbore esa red tener n servicios
+antes tenian la red telefonica y de datos fisica, y se fue llevando todo a la convergencia, meter todo en una misma red
+
+investigar las CDN

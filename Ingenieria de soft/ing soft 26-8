@@ -1,0 +1,106 @@
+Condicion para que una persona que ingrese a un equipo no sea un problema
+que tenga un nivel de expertise para que su curva de aprendizaje sea baja
+
+que haya  bajo nivel de demanda de comunicacion, para que su ingreso no afecte tanto  al resto de los recursos y necesite preguntar mi l cosas
+
+que hayan tareas paralelizables, que ni bien entren ya pueden resolver una tarea.
+se me va un flaco y tengo gente para elegir como elijo?
+Primero, todas las tareas que faltan para la deadline son independientes? porque sino no tiene sentido, porque lo meto y no puede realizar tareas
+
+Hay alguno con expertise?  no solo tecnologoia sino todos los circuitos que tenemos, cosa de  masomenos contarle el proyecto pueda entedender rapidamente y se pueda a coplar en el equipo
+
+Tiene bajo nivel de comunicacion? si tiene que hacer pulling para saber lo que tiene que hacer estamos al horno porque afecta a todos.
+
+
+Nuestro objetivo es construir software y lo quisieramos hacer ingenierilmente y con calidad
+
+calidad: 
+metricas sobre las que construyo
+que tan bueno es mi producto
+que requerimientos cumplen y de quien
+
+
+calidad de software
+Escalabilidad de sw
+robustez
+portabilidad
+mantenibilidad
+seguridad
+reliability (capacidad para recuperarse de un fallo)
+
+tengo que definir como evaluo que algo es mejor que otro
+necesito parametros para medir que tan mejor entre si son las opciones
+
+Visiones de calidad
+cuando uno habla de calidad simepre tiene que tener en cuenta que los marcos de calidad se trabajan con visiones, y hay varias visiones
+
+
+la primer vision se llama trascendental de la calidad
+Algo tiene calidad por que si. nuestras percepciones nos dicen que es de calidad y no hay justificacion
+
+esta vision es totalmente sesgada
+
+
+vision del usuario
+en esta vision  un producto de sw tiene calidad si se satisfacen  los requerimientos implicitos y explicitos del usuario
+
+los que el usuario no me dijo porque asumio que yo los tenia que saber,  es un factor de calidad detractor
+
+vision de la manufactura
+si yo sigo un determinado proceso el producto que construyo  es de calidad.
+yo puedo apegarme a un proceso, pero el proceso puede tener un error algun dia.
+ al ejecutar el proceso genero experiencia, aprendo de los errores y corrijo el proceso
+
+guia roles herramienta
+
+la guia define que roles usan que herramienta para lograr un objetivo
+el proceso  puede ser comun a todos pero como lo implementa depende de la empresa
+
+
+vision del producto
+establece que un producto de sw es de calidad en funcion del grado de cumplimiento de sus atributos (robustez, portabilidad, etc), para evaluar estos atributos existen tres modelos
+McCall, Modelo Bohen, Iso25000 estos modelos definen que de esos atributos vos necesitas entender y descomponer para poder definir un producto de software
+
+Vision de valor
+es la que maximiza la relacion costo/beneficio
+compre un marcador hace 2 a;os lo pague 2 pesos y sigue funcionando y nunca lo recargue, este marcador es excelente
+
+no es que hay una vision que sea mas objetiva que otra, si bien la mas subjetiva es la trascendental,  en las discusiones sobre calidad, se van a estar discutiendo generalmente entre las visiones de usuario, producto y valor; lo que hay que hacer es identificar que vision de calidad esta parado el cliente y tratar de llevarla a la vision de calidad que mas me convenza
+
+good enough software
+
+triangulo bueno (funcionalidad) barato(costo) y bonito(tiempo en desarrollarlo)
+elegir 2
+
+cuando uno esta desarrollando soft hay que entender que es lo suficientemente bueno para poder desarrollarlo no es necesario que siempre sea lo mejor
+
+CMMI
+ es un modelo que mide la madurez de un proceso de desarrollo de software
+ watts humpfrey pensaba que los preocesos de desarrollo de soft se podian modelar, ese primer proceso que surgio fue CMM= capability madurity model, que contiene las mejores practicas de software del momento para desarrollar software
+
+ cmm planteo que toda organizacion se halla en un proceso de madurez, y relevaba que tan preparado estaba para desarrollar software, a traves de un modelo escalonado de calidad, en el que la organizacion se comparaba contra el modelo  a traves de un examen  de calidad. en general hay 5 niveles, el primer nivel es el inicial, el segundo es el repetible, el tercer nivel  es el  definido el cuarto nivel es el administrado, y el quinto nivel es el optimizado continuamente.
+
+ cada desarrollo de soft involucra ciertas areas de preoceso  y cada nivel define las areas de proceso requeridas para ese nivel. un area de proceso por ej es la gestion de requerimientos
+
+ cuando se empieza a recolectar historia,  al tener esta historia se puede armar un tablero o un mecanismo de control podes identificar si el proyecto esta bien o esta mal
+
+ ante  las transeadas de falsificar evidencias, surge cmmi que lo que hace es suponer siempre que mentis y tenes que demostrarle que cumplis con los niveles, adiferencia de cmm que solo con la evidencia aceptaba que decias la verdad
+
+para la semana que viene vamos a arrancar con como se trabaja con una vision de trabajo de iso 25000 en el slack asociado a la unidad 2 
+agarrar un soft y ver como medimos ese atributo
+
+niveles cmmi
+inicial es todo caotico, nivel startup recien armada, codeamos a los bifes sin orden ni control
+repetible  ya tenemos una forma mas o menos repetible de hacer algo, por ej hacer una migracion de datos o como deployear algo
+definido entra un chico nuevo  yo estoy capaz de darte un instructivo y puedas arrancar
+administrado  ya estas gestionando metricas sobre los proyectos para saber como van los proyectos con solo mirar los tableros
+
+optimizado ya tenemos tantas mediciones como para poder predecir el futuro del proyecto y ademas si y estas en este nivel podes hacer que  en un proyecto pueda implementar nuevas tecnologias;
+
+cada nivel del modelo excepto el inicial, define sus areas de proceso
+
+en el parcial no se toma subatributos 
+se toma para que sirve a iso y los atributos grandes
+
+en final siempre entra una de subatributo
+

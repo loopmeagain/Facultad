@@ -1,0 +1,92 @@
+principios de seguridad de informacion
+
+tiene tres pilares
+integridad que no pueda ser alterado
+confidencialidad  nadie que no pueda tener el mensaje pueda accederlo
+disponibilidad que pueda accederlo cuando lo necesite
+
+diferencia entre evento de seguridad e incidente
+
+evento ocurrencia identificada que indica  una posible violacion
+
+incidente de seguridad evento inesperado que tiene una probabilidad de impacto negativa sobre la seguridad e la informacion
+
+si hay un incidente hay que tener un plan de respuesta
+
+accion inmediata para detener o minimizar el incidente
+investigar el incidente
+restaurar los recursos afectados
+reporte del incidente a canales apropiados
+
+estos pasos se pueden solapar pero son en este orden
+ estos pasos son de la mirada de la empresa no desde la persona que lo descubre, el reporte  no es para avisar que hay un problema sino que es cuando ya despues de que ocurrio todo el incidente armar un informe explicando lo sucedido
+
+ no repudio origen
+ 			el mensaje fue enviado por la parte especifica
+ no repudio destino 
+ 		prueba que el mensaje fue recibido por la parte especifica
+
+ el no repudio implica que ya sos responsable
+
+
+ tipos de usuario que deberian existir
+
+ propietario 				es el due;o de la informacion, es el responsable del valor que tiene la informacion para el negocio, determina 							   quien accede a que informacion y el control que existe sobre estos sados
+ adminisrtador
+ usuario principal
+ usuario de explotacion 	alguien por ejemplo que hace reportes, no puede transformar la informacion, solo consultarla
+ usuario auditoria			depende de la poltica de seguridad ve absolutamente todo o no, pero ve los datos con audittracking
+
+
+
+ seguridad fisica
+ backups
+ alta disponibilidad
+ 	-dos fuentes de alimentacion
+ gestion de centros de procesamiento primarios y secundarios
+
+ acciones y herramientas
+ analisis de vulnerabilidades en codigos y apps
+ adecuado usos de ambientes de dev, test y prod
+ testing
+ controly  auditorias de acceso
+ restriccion de la visibilidad de datos
+
+
+ blockchain
+  cumple con los 3 principios basicos
+  es confidencial hasta ahi, algunas cosas son confidenciales, por ejemplo en el bitcoin necesito saber si o si el saldo de un usuario para poder operar, entonces yo es cuantos bitcoins tiene x usuario
+
+  es un tipo de grid computing
+  los nodos son heterogeneos y no hay un nodo que managee a los otros
+   y el gobierno es descentralizado
+
+
+  ITIL en seguridad habla de la legalidad
+
+  tenes que tener encuenta tanto la legislacion vigente y los problemas que podes tener por incumplirlos
+
+  fases de implementar un marco de seguridad con itil
+
+
+  ONTI te dice este es un modelo de politica de seguridad
+  si por ej queres ser un ente que ofrezca firmas digitales, tenes que cumplir minimamente con este modelo
+
+  el marco legal argentino incluye 
+  no repudio
+  autenticidad saber quien genero ese dato
+  auditabilidad
+  legalidad
+  confiabilidad
+  proteccion en cuanto a la copia de informacion
+
+  firma digital
+  permite garantizar autoria e integridad de los documentos digitales
+  LA FIRMA DIGITAL no es repudiable
+  pero la FIRMA ELECTRONICA SI
+
+  si la firma no es entregada por una entidad que se respalde en onti  es simplemente electronica ,de otra forma es digital y no repudiable
+
+  datos sensibles
+  salud
+  religion

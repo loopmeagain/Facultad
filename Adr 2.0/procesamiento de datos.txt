@@ -1,0 +1,103 @@
+procesamiento de datos
+
+infraestructura con confiabilidad(que tan seguro estamos de que la finalizacion de la tarea ha sido exitosa) rendimiento(tener la seguridad de que va a terminar en un determinado tiempo) y sustentabilidad economica (costo/rendimiento)
+
+es un error que solamente esta involucrado la unidad de procesamiento
+tambien estan relacionadas las unidades de almacenamiento, comunicaciones, el soft de base y el soft de procesamiento
+
+que es lo que esperamos especificamente de las unidades de procesamiento
+confiabilidad
+disponibilidad
+tolerancia a fallas
+escalabilidad
+compatibilidad
+administracion remota, la idea es que puedas prender una unidad de procesamiento a distancia
+mantenimiento en caliente
+
+diferencia entre disponibilidad y tolerancia de fallas
+
+si falla algo puedo seguir operando pero con un nivel menor al cotidiano  si caerme,y disponibilidad  tengo que poder seguir operando al mismo nivel que siempre ante fallas eventuales
+
+los mainframes generalmente se pueden reparar en caliente
+mainframe orientados a procesar cantidades bestiales de transacciones de informacion en un mismo lugar
+supercomputadoras orientadas a realizar procesamientos super complejos  con requerimientos de computo altisimos no distribuidos
+
+no tengo una manera sencilla  para interactuar el mainframe con una base de datos externa, ouna api para leer cosas a traves de un mainframe, tiene problemas de interoperabilidad
+los mips no son comparables, si los flops
+
+tower<rack<blade
+rack tiene mas espacio, mayor escalabilidad en cuanto espacio, y los rack ya vienen preparados para alta disponibilidad, ya vienen con doble fuente los racks.
+
+los blade son muy similares a los rack server, pero consumen menos energia, reducen mas espacio todavia y se pueden cambiar los discos en caliente. el blade no tiene fuente, y son mas chicos en espacio
+
+blade es una tecnologia, no una marca.
+
+problema de los blade: costo inicial 
+
+convergencia en infraestructura:
+se basa en tener los distintos tipos de recursos consolidados, osea, yo tengo un cluster de almacenamiento por un lado administrado por un tipo x,  tengo mi capacidad de procesamiento en otra, y mi admin de redes en otra,  y estan todos consolidados.
+hoy la tendendia es ir a la hiperconvergencia: se tiende a tener concentrado en servidores que ya manejen los tres tipos de componentes, en vez de tener un gran clusted de almacenamiento ,tengo peque;os servidores fisicos que manejo de forma virtual.
+
+si tengo una arq convergente y tengo problemas de almacenamiento compro mas discos y se acabo el problema
+si tengo una arq hiperconvergente, tengo que comprar un server mas
+
+ventajas de la hiper conv : escalabilidad ilimitada, disminucion del consumo de energia, despliegue rapido (es mas facil meter un server nuevo), reducir el espacio
+
+la hiperconvergencia es una arquitectura
+la hiperconv ayuda a montar clouds privados
+virtualizacion
+se puede virtualizar almacenamiento, redes,almacenamiento y procesamiento.
+yo puedo tener servidores virtuales 
+
+si yo contrato un servicio  no me va a calentar mucho saber si la arq es hiperconv o no, pero si tengo que administrarlo SI.
+
+segmentacion logica: estos son mis servidores para mail, estos para encuestas, etc
+
+Containers
+diferencia entre vm y containers
+en la vm tiene un componente intermedio , que no esta en los containers
+los containers facilitan la integracion continua
+facilita la administracion de entornos
+y facilita el versionado de entornos
+va muy pegada a a la arquitectura de microservicios
+
+desventaja en container
+te haces de los permisos sudo y podes romper todo
+
+los containers usan memoria cuando la necesitan, las vms ni bien cuando levantan ya estan usando memoria
+Clusters
+
+que es y que no es un cluster
+
+n equipos que funcionan bajo una unica solucion de software (que desde afuera parece algo unico) que va  aprocesar
+una supercomputadora es un cluster, pero un cluster no siempre es una superpc
+
+uno de los nodos siempre es el que maneja a los cluster
+
+SIEMPRE ESPECIFICAR QUE EL LOAD BALANCER ES UN CLUSTER
+
+tener enc uenta 
+
+balanceo de carga
+alto rencimiento
+alta disponibilidad
+
+se deberian poder prender y apagar los nodos en funcion de la demanda
+
+los clusters se pueden combinar
+
+grid computing
+a diferencia de los clusters que son todos homogeneos,  en grid computing se valoriza que sean heterogeneos porque van a  ofrecer servicios distintos
+
+sistema de cache
+
+hay distintos tipos de cache, del que vamos a hablar es  cache explicitamente implementada como arquitectura
+
+en memcache los usuarios eacceden a un load balancer el balanceador de carga le pega a los web servers. el servidor antes de ir a buscar los datos a la base de datos, la va a buscar al cache
+en esta diapositiva es una arquitectura template de un servicio web.
+
+la diferencia entre memcache y varnish es en el contenido que almacenan
+varnish estatico, publicacion de fotos, videos.
+memcache dinamico
+
+en varnish el cache esta metido directamente en medio del flujo, es el que va a responder si tiene el contenido que se le esta pidiendo

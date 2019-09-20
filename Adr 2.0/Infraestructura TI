@@ -1,0 +1,83 @@
+Infraestructura TI
+ tiene tres aspectos
+ tecnologico, organizativo y de gestion
+ definicion de componentes
+ tendencias
+ gestion
+
+ se puede separar en 7 elementos\
+ gestion de datos y almacenamiento
+ consultores e integradores (serian los operadores e implementadores)
+ redes/ telecomunicaciones
+ software empresarial (todo software que necesite la organizacion para operar entra aca, tambien licensiamientos)
+ plataforma de so
+ plataformas de hard
+ plataformas de internet
+
+scopes futuros para los tres aspectos
+	 tecnologia
+	 edge computing
+	 IOT 
+	 Big data
+	 Mobile
+
+gestion
+Business inteligence
+reuniones virtuales
+
+
+organizacion
+
+herramientas sociales para fortalecer las relaciones con proveedores clientes y empleados
+home office
+
+
+gestion y gobierno
+
+el gobierno deberia estar centralizado porque tener distintas implementaciones en distintos puntos de negocio es una locura de coordinacion
+lo que si puede ser distribuido es el manejo de los costos
+
+
+tco=  capex + opex
+
+capex= costo de adquisicion
+opex = utilizacion+ no utilizacion
+
+
+costos a tener en cuenta
+
+compra hw
+compra soft
+cinstalacion
+capacitacion
+soporte
+mantenimiento
+infraestructura
+fuera de servicio
+espacio y energia
+
+cuando se elige una compra de infra deberia tenerse en cuenta todo esto
+
+
+
+parcial
+
+en un proyecto hay un resultado unico e irrepetible conun comienzo y fin
+el proceso tiene como resultado siempre lo mismo
+
+cuando me imponen el maximo total no le aplico el margen sde seguridad para arriba
+
+
+el de costos bien hecho
+
+Item 						min 				max
+Precio compra 				500k 				
+Margen de seguridad 		-25k
+gastos patente 				21375
+flete y acarreo 			33250 
+residual 					-95k
+							434625 				620k 
+
+
+
+el residual se calcula sobre el precio de compra menos el margen

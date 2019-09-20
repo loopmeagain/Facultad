@@ -1,0 +1,79 @@
+ADR 27-8
+
+Almacenamiento y disponibilidad de los datos
+
+DAS
+son aquellos que estan conectados de manera directa al servidor
+lo importante es que no hay ningun otro componente entre el servidor y el almacenamiento
+es un caso, no hay ninguna red en el medio
+
+que ventaja tien esto? es rapido y hay menos puntos de falla
+
+SAN
+
+es una RED de almacenamiento 
+
+utiliza fibra para conectarse y protocolos bastante especificos, la red esta aislada de la que usan el resto de los protocolos
+
+hba= server
+ha=storage
+
+en san puedo configurar una unidad de almacenamiento como si fuera un das, pero en realidad es una san, cosa que no puedo usar en la nas
+
+NAS 
+actua como una red de almacenamiento, pero viaja por los mismos protocolos que una lan
+es un dispositivo que se conecta directamente  a la red y tiene n discos
+esto ademas de tener discos tiene un minisistema operativo que es un filesystem
+
+nas maneja los archivos de manera completa, le digo copia esto dea ca alla y lo maneaj entero, la san la maneja a nivel bloque
+
+nas comprime dos capas la de la administracion y la parte fisica, en una sola sin embargo san depende de sobre que lo estes imlementando
+
+
+si el almacenamiento se necesita para usuarios lo mas conveniente es ir por una nas cuando la accesibilidad rapida no es un must
+sin embargo cuando necesitas almacenamiento en servidor, por ej para base de datos ir por una san es necesrio  para acceder mas rapido
+
+al estar la capa de gestion separada de la fisica en san, es mas escalable que la nas, porue  para escalar con nas tenes que ir agregando cajas, y no actuan como una sola 
+
+disponibilidad de datos
+rendimiento
+		IOPS	es importante en las bases de datos
+		TPS
+		Tiempo de respuesta
+
+resguardo de datos
+	online
+	offline
+
+	la mayor diferencia esta en el tiempo que tengo para recuperar los datos, y en el costo, si tengo  plata ni me preocupo.
+	no hay que perder de vista que offline es una opcion simple y segura.
+	lo que hay que evaluar es en cuanto tiempo puedo llegar a necesitar esas copias.
+
+
+
+cual es el mejor raid?
+bueno depende  de  costo performance y confiabilidad que necesite
+
+
+plan de contingencia y recuperacion ante desastres
+desastres naturales
+perdida del suministro electrico
+fallas de hardware/software
+errores humanos
+
+el plan de contingencia es de toda la organizacion, tengo que preveer como voy a seguir dando servicio 
+hay que tener previsto como operar en contingencia
+se prende fuego el edificio, al dia siguiente hacen todos home, tienen que tener vpn, etc.
+
+RTO 
+El tiempo que  pasara una infraestructura antes de estar disponible
+
+para reducirlo cercano a cero deberias tener contingencia a nivel dataecenter, osea podes tener un datacenter virtualizado en dos locaciones del mundo distinto y un load balancer tambien con contingencia
+
+RPO
+cuantos datos esta dispuesto a perder la organizacion ante la ocurrencia de un incidente.
+
+si tengo replicacion sincronica de todas las transacciones el rpo es 0
+
+no hay una relacion directa entre el rpo y el rto, son independientes
+tener medidas de prevencion deteccion y correccion
