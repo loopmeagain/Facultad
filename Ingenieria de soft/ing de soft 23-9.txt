@@ -1,0 +1,84 @@
+Definicion de definition of done
+
+Estimacion de software
+
+proyecto doodle
+tres ofertas 
+1) 7/8  meses 500k uss
+2) 770k uss 12 meses
+3)  menos de 3 semanas 6 k uss
+
+mirar la brecha de tiempo, si es muy grande, es probable que algo este mal definido, o  se haya malinterpretado el proyecto
+ni el tiempo ni el costo son pivots absolutos
+
+
+si compruebo en la realidad, no estoy estimando, estoy agarrando un dato lo mido y listo.
+
+
+yo puedo estimar, pero si le pifio no puedo estimar cuanto es el impacto
+
+estimar en soft es el proceso a traves del que vamos a estimar cuanto esfuerzo nos va a llevar realizar algo
+
+el primer elemento es  el tamaño representa en alguna unidad, que tan grande es lo que tenemos que construir
+se puede medir en modulos, en caso de volumen, 100 mb de entrada y 200 mb de salida
+
+el segundo elemento es el esfuerzo y lo definimos como la cantidad de  horas humanas requeridas  para completar 
+una tarea suponiendolas ininterrumpidas y que la persona que las ejecuta sabe hacer la tarea
+se mide en horas
+
+el esfuerzo se deriva en la duracion, esla transformacion de las horas hombre en el calendario  de acuerdo a las
+restricciones que se aplican (seniority,vacaciones,horario laboral,cantidad de personas) (12 meses, 4 personas, 8 horas por dia)
+
+Costo $
+
+por que hacemos tantas preguntas sobre tecnologia al cliente? 
+porque tratamos de relevar todas las cuestiones de calidad implicitas, iso25000
+
+a veces cuando estimamos el colchon es correcto, esta bien que exista, eso determina cuanto creemos en lo que afirmamos
+si el colchon es de 100 % es que tu credibilidad es nula
+esta mal ponerle el colchon a la duracion final, porque del lado del cliente le queda como una marca grabada a fuego, si es esa fecha, espera que para esa fecha este el producto terminado.
+entonces  siempre que estimemos tenemos que hablar de un rango
+
+objetivo de negocio
+es lo que el negocio quiere hacer
+compromiso
+lo que nosotros nos comprometemos a alcanzar
+
+estimar != negociar
+
+estimamos solo el desarrollo web
+uno estima 4hs
+otro 8 
+otro 12
+entonces puedo decir que dura 8 horas con un rango de +-50%
+una vez que uno estima, hay que hacer seguimiento de estimaciones, para mejorar la estimaciones
+
+para estimar existen tecnicas
+
+tecnicas rudimentarias: su objetivo es estimar esfuerzo siempre debe darme horas, despues hay que estimar la duracion, con el seniority, el calendario y la cantiad de horas que trabaja la gente por dia
+FOF (five oscilating fingers) 
+ Ventajas: sale rapida, es simple, compromiso  personal
+ desventajas: no se puede justificar,  es subjetivo
+
+Metodo de Clark: si el equipo esta conformado por muchas personas, busca la media
+
+Planning poker
+
+Wideband delphi
+
+T-shirt estimation
+
+en estas ultimas se busca que en un equipo que tiene una tarea para estimar, y hace que el equipo entero defina la estimacion, esto sirve
+solo para temas simples y controlados, pueden traer acarreados buen grado de error.
+
+teniendo un problema muy grande, lo que hacemos es dividir en modulos mas pequeños para poder estimar mas precisamente con las tecnicas rudimentarias
+la idea de partir es para que en una cantidad acotada de situaciones
+
+pero para medir el  tamaño es distinto, hay otras formas
+
+Function points
+use case points
+objetct points
+
+del tamaño que esta en function points para pasar a  esfuerzo que estan en horas hombre, lo que usamos son tablas para
+saber su equivalencia
