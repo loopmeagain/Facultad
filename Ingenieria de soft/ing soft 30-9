@@ -1,0 +1,112 @@
+ing soft 30-9
+caso navidad:
+objeto de negocio (que no es lo mismo que el objetivo del proyecto de soft)
+	aumentar el 30 % de ventas
+estimacion
+	antes de 2/12 
+	2/12 
+	despues de 2/12
+compromiso
+ establecer tareas que permitan alcanzar el objetivo de negocio
+cuando no se puede dar un rango posible
+cuando hay demasiada incertidumbre los rangos son inmensos 
+cuando tenes  hay un requerimiento ultra especifico no es necesario dar un rango
+
+tips para estimar
+restricciones y condiciones si o si 
+buenas practicas
+estabecer rango posible de fechas
+recopilar historia
+compromiso
+
+ni se te ocurra
+el seniority no influye en la estimacion del esfuerzo, si en la duracion
+descuidar riesgos
+el manager no deberia estimar
+
+las organizaciones tienen que tener
+un plan estrategico a largo plazo (que mira a mas de 5 a;os)
+un plan tactico de mediano plazo (1-3a;os)
+plan operativo corto plazo (1a;o)
+
+entre todas las areas transversalmente puede haber un proyecto de negocio
+y esta separado en n proyectos
+ sistemas tiene su objetivo que es la creacion del software que forma parte del plan global de aumentar el 30%
+si la parte de sistemas falla, tambien puede fallar en cadena el resto. esta situacion se da porque cuando vemos el proyecto generalmente lo vemos sesgado
+
+tama;o de software
+representa una medida independiente de la tecnologia que permite comparar
+
+es la cantidad de funcionalidades que incluye el desarrollo
+
+tecnicas para el tama;o: function points, use case points, object points, lineas de codigo(Kloc)
+saber para que se usan las tecnicas, osea en que se especializan
+
+tecnicas: 
+rudimentarias (las de esfuerzo): juicio de experto, clark o pert(es una medida promedio de juicio de experto), wideband delphi(establece que tiene que haber un proceso de estimacion de cuatro fases)
+parametricas (las de tama;o), cada uno tiene su unidad de medida, para esto se usa increiblemente DFD porque es un modelo que permite relevarme las funciones que cumplia el sistema, estas funciones se mapean con una funcion posta en el software. Todas las tecnicas se basan en contar cosas,  ver cuantas de esas cosas hay y hacer una cuenta final. lo que cambia es lo que contamos y como lo contamos.
+se arma una tabla de complejidad, que es de doble entrada
+
+inputs
+outputs 
+queries
+
+y cuando contas da function points sin ajustar o puros
+se realiza el ajuste, y esos son los function points 
+
+ahora para pasar esto a esfuerzo necesito mapearlos, para esto las tecnicas recopilan historia y arman tablas de conversion.
+esfuerzo es la cantidad de horas humanas requeridas para hacer una tarea  considerando ejecucion ininterrumpida y que se tiene conocimiento para hacer
+
+
+ahora tengo horas hombre y necesito transformar el esfuerzo en un calendario, eso es la duracion. como resultado se obtiene un calendario con un estimado de fecha
+
+estimar cuanto tarda pablo 
+t1 = 20 horas
+se trabaja 6 h por dia  entonces si la persona entiende la tarea deberia llevar 4 dias
+pero pablo es semi jr, entonces la duracion va a ser mas, el esfuerzo es el mismo
+
+una forma es multiplicar el esfuerzo por un coeficiente de seniority para corregir
+si yo tengo  tengo una reunion de avance   de 1 h y tengo cuatro pesronas que tienen que entrar, cuantas h de esfuerzo tienen 4 horas
+los riesgos entran en juego en la etapa de duracion
+
+si llego justo a la fecha 2/12, lo trato como que no llego, y lo que hago es comprometerme a que parte de las funcionaldiades puedo entregar para esaf fecha
+
+planning poker => estima tama;o porque el resultado  no representan horas sino puntos del modelo
+esta basada en fibbonacci
+1,2,3,5,8,13,21
+
+como funciona?
+ no imponemos la estimacion, el equipo se sienta a participar  de la estimacion. para esto hay un moderador, en general es mala practica llevar al moderador, el moderador explica lo que se quiere estimar, y todos  eligen una carta y la muestran al mismo tiempo.
+ todos tenemos que estar seguros cuanto vale 1.
+ el que cuenta la tarea es el po, el que modera el scrum master
+ si no es scrum el que cuenta la tarea suele ser el analista funcional y el que modera tl
+
+
+tshirt comparisson, no tengo detalle tengo un orden de magnitud, se suele usar para estimar proyectos
+en cada organizacion cada remera tiene tama;os distintos
+xs s m l xl xxl
+
+
+reloj (planing poker wannabe)
+hay un tablero donde ya esta dividio en canales los valores de fibbonacci
+1 	3	5	8	etc
+
+el moderador ya definio una lista de tarjetas con las tareas, en esta tecnica todos estan en el mismo lugar y todos estan en el mismo pizarron, todos sabemos de lo que estamos hablando. todos los miembros del equipo pasan a estimar y tienen una accion, o la estiman y la ponen en un canal o modifico la de una tarea ya existente y la cambia de canal. Nadie puede hablar con nadie. el conflicto es cuando hace ping pong la tarea, es trabajo del moderador interferir, y lo que hace es banear la tarea, y  pone los valores minimos y maximos y tienen que seguir con otras tareas. la estimacion termina cuando todas las tareas tienen puntos y ya podemos empezar a trabajar sobre eso porque nadie discutio con nadie.
+
+
+Hacer seguimiento de las estimaciones
+
+Ciclo dorado de estimacion (tema de parcial y final)
+la buena practica es seguirlas
+
+ej a la tarea a le dimos la carta 21, fue la estimacion consensuada.
+recien cuando finalizo la tarea, hay que medir y registrar en algun lado.
+analizar: estimamos 21 y me dio 23, por que?
+comparo para calibrar y volver a estimar
+y esa calibracion la uso de historia
+y con esto aumenta la precision de la estimacion.
+en que se basa la calibracion: lecciones aprendidas, lista de situaciones y  armas un checklist, este checklsit es el de calibracion
+
+mejorar la estimacion es ser mas preciso no mas rapido
+velocidad=/ precision
+estimar/=negociar
