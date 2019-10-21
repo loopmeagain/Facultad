@@ -1,0 +1,127 @@
+ing de soft 20191007
+PRoblemas a la hora de estimar que tuvimos:
+Que tarea hacer? falta especificacion
+como dividir en tareas?
+
+diferencias de nivel en la especificacion
+
+experiencia en tecnologia propuesta -> desconocimiento
+valor de referencia cual es? (como definimos el 1)
+
+transformaciones Tama;o->esfuerzo->duracion
+
+
+observaciones
+Parece mas facil pensar en horas
+
+el colchon es una tentacion ante la incertidumbre
+
+equipos distintos estamiando puede resultar mejor
+
+que hacemos como resolver?
+
+1- Elegir la relacion tama;o esfuerzo, la elegimos utilizando historia. si hay historia calculas los puntos por tarea, registras eel esfuerzo por cada tarea y depuras todo lo que no sucedio, esta tecnica solo registra horas independiendtemente de las personas. 
+ Si no sabemos cual es la relacion que tenemos que usar para lo que tenemos que hacer, la forma de descubrirla mas rapido es 
+ 1)calcular el esfuerzo total 
+ 2) si son 8 personas y asumen que trabajan 6 horas por dia en un periodo de 3 semanas => 720 horas, esta es la capacidad del equipo
+ 3) cuantas tareas se completaron  en ese periodo. Estimar los puntos que representan esas tareas que completamos.
+ 4)Factor de conversion: Cap/ puntos  resueltos=> esto nos dice cuantas horas nos lleva resolver un punto
+
+ esta tecnica asume la falacia de que todo el equipo trabajo todos los dias, es optimista y usa a las personas para calcular las horas.
+
+ para definir un uno hay un ejemplo de coincidir en que tan complejo es tener un campo con un boton de submit, y todo lo que tengamos que hacer para que ese campo se guarde en la base de datos.
+
+ la transformacion no se puede hacer sin historia, sino, el riesgo esta en la conversion, como lo corrijo?
+
+como corrijo desviacion E/D? por diferencia de tama;o
+recien los detecto cuando empiezo a ejecutar el proyecto, entonces lo que hay que hacer es el seguimiento, para esto hay que medir, analizar, calibrar y replanificar
+
+depende de la metologia cuando se hacen los seguimiento
+
+proyecto						scrum					kanban
+hitos							diario 					tarea autogestionada
+reuniones de seguimiento 		sprint review			depende de como se haga el 
+semanales o quince 										control de seg sobre el tablero
+
+
+division de tareas
++abstractos--------- concretos
+
+tengo un abm que tiene 3 puntos
+con la logica de que 1 punto es 5 horas
+ la duracion entonces seria 3 dias si es que son dias de 6 horas, pero esto asume quee s a un recurso
+ las tareas se le puede asignar 3 recursos, por ejemplo en el abm separo a para pepito b para maria y m para jose, teniendo a= 1 pt b= 1 pt y m=1 pt, donde cada uno tiene 5 horas cada uno, y la duracion ya no son 3 dias sino 1.
+ pero las taras pueden no ser lineales, por la interrelacion. ESTO NO ES REGLA DE TRES, porque la interdependencia no es clara, y la discordinacion puede geneerar caos. y la coordinacion tambien insume tiempo. el alta que tiene mas validacion se la das  tal vez al senior, y para eso se aplica la regla de conversion de esfuerzo a duracion, 1 hora de esfuerzo=  a 3 horas de un junior e igual a 1 hora de senior
+
+ EL 15% DEL ESFUERZO ESTIMADO ES  EL TIEMPO QUE TE LLEVA DE COORDINACION
+
+como vamos de esfuerzo a duracion? A traves de reglas
+ejemplo por dia trabajado son 5 horas
+
+Esfuerzo=> cantidad de horas hombre necesarias para llevar a cabo una tarea sin depender del seniority, el que esta ejecutando la tarea sabe lo que esta haciendo.
+El esfuerzo no depende de la persona
+Puede mas de una persona hacer una tarea simultaneamente?
+ la conversion entre tama;o y esfuerzo tiene que se rlineal, la del esfuerzo a duracion si puede ser en rangos
+
+ TESTING
+ Conceptos erroneos
+ 1) generalizacion desde el punto de vista personal
+ 2) es descartable si no lo hago  no pasa nada
+ 3) no agrega valor
+ 4) testing OK => producto perfecto => 0 fallas = sin errores
+ 5) Creer que lo puede  hacer cualquiera
+
+ Que creemos que es ?
+ Garantizar una calidad minima
+ Verificar que el comportamiento del soft cumple con lo especificado
+ Garantizar que no rompo nada
+ Objetividad de lo construido
+ Reducir el riesgo de errores
+ hay dos visiones, las del equipo de desarrollo y la del usuario sobre el soft
+
+Que es realmente?
+Es un proceso con el objetivo de detectar la mayor cantidad de fallas posibles.
+La no prescencia de fallas no asume que el software no los tiene, solo garantiza que lo que yo evalue no tiene comportamiento inesperado
+
+
+fallas: comportamiento distinto a lo esperado, para que ocurra una falla el soft tiene que estar en ejecucion y tuvo un comportamiento distinto a lo esperado.
+
+Har una falla => se realiza un debugging para entendenr que es lo que sucedio. esto ayuda a encontrar el defecto.=>  Equivocacion (error). Este error puede ser involuntario o  por mala especificacion.
+El defecto es la porcion del codigo o artefacto  que genero la falla
+El testing depende del contexto de ejecucion
+pseudo proceso
+espero-> estrategia -> ejecuto -> comparo
+
+diferencia entre QA y QC
+
+si yo empiezo a realizar acciones previas para mejorar el producto que voy a construir evitando errores, estoy haciendo QA, si estoy evaluando la calidad del producto terminado estoy haciendo QC.
+ambos 
+
+Para que haya una falla tiene que haber al menos un defecto. para que haya un defecto puede que no haya una falla aun
+
+todos los procesos que trabajen para disminuir la cantidad de fallas son de aseguramientos de calidad.
+todos los procesos de testing buscan relevar la mayor cantidad de fallas para un tiempo x invertido
+Verificacion VS validacion
+verificacion: queremos ver si estamos construyendo el producto de forma correcta. este garantiza que lo que yo hago, funciona como esperamos que ande
+Validacion: estamos construyendo el producto correcto. el usuario queria un arbol y  le estamos dando un arbol, no un arbusto
+
+Visiones Qa 
+proceso:
+producto:
+usuario: que no haya frustraciones entre lo que estoy presentando y lo que esta haciendo el usuario.
+Conceptos:
+incidente: comportamiento inesperado
+	Puede ser una falla: no proviene del codigo
+	o un falso positivo: el origen =/ defecto
+si detecto muchos falsos positivos hay algo mal armado.
+
+Condicion de prueba: 
+especifica el escenario que quiero probar
+requerimiento a evaluar
+el caso de prueba es el conjunto de valores que utilizo para probar.
+
+que la persona sea > de edad
+ edad =15			resultado esperado false
+ edad 18			resultado esperado true
+prox clase: paper de the bug lifecycle y  testing without a map
+3 ejercicios:  tarifario de una autopista, ticket de jumbo, los vamos a discutir
