@@ -115,6 +115,9 @@ incidente: comportamiento inesperado
 	o un falso positivo: el origen =/ defecto
 si detecto muchos falsos positivos hay algo mal armado.
 
+preparacion de pruebas : 
+
+
 Condicion de prueba: 
 especifica el escenario que quiero probar
 requerimiento a evaluar
@@ -123,5 +126,63 @@ el caso de prueba es el conjunto de valores que utilizo para probar.
 que la persona sea > de edad
  edad =15			resultado esperado false
  edad 18			resultado esperado true
+
+ las pruebas tienen un enfoque
+ enfoque /=tipo
+ como voy a ejecutar la prueba
+
+Caja negra vs caja blanca vs caja gris
+
+caja negra, la prueba se ejecuta con valores de entrada y genera valores de salida, no conozco como esta implementado
+este enfoque es muy similar a lo que el usuario puede percibir.
+usa tecnicas para definir casos de prueba. 
+condicion borde
+clases de equivalencia, 
+clase invalida,
+alteraciones de modelo
+conjetura de errores
+
+
+
+en caja blanca, requieren que la persona que realiza la prueba, pueda ver el codigo y entienda lo que esta pasando.
+hay cuatro situaciones que uno trata de buscar
+garantizar la cobertura de sentencia, que trate de cubrir la mayoria de los casos
+garantizar cobertura de decision (if else) 
+garantizar cobertura de condicion ( mira la condicion del if y no el camino, mira como se llega al camino)
+camino basico, cada codigo puede ser representado por un grafo dirigido, al tener un grafo dirigido, podemos  calcular la cantidadde caminos, esa metrica
+se llama complejidad ciclomatica, y es muy util en mantenimiento. si podes graficar ese codigo, lo que podes hacer es testear la totalidad de los caminos.
+cuando emoezamos a ejecutar pruebas, y hacemos un enfoque de caja blanca, si estas buscando que casos probar, puede que te des cuenta que hay cosas que hay que corregir en la pieza
+estas haciendo qa y qc al mismo tiempo, y pareciera que estoy haciendo lo mismo, aunque estoy haciendo cosas diferentes, y ese es el motivo por el cual la mayoria de la gente confunde qc con qa
+este enfoque es mucho mas costoso cuando cambien las reglas de negocio o se agregue casos
+
+tipos de prueba
+
+por conocimiento del soft
+prueba de caja negra o funcional
+prueba de caja blanca
+por tipo de ejecucion
+manuales
+automatizadas (selenium)
+
+por tipo de requerimiento
+funcionales  buscan garantizar que el sistema hace lo que dice que hace
+	 prueba de sistema (es integral) se ejecuta en un entorno de desarrrollo
+	 ; prueba de aceptacion de usuario se ejecuta  en el entorno de cliente
+	 smoke test  prueba que verifica que las cosas basicas esten andando (se definen los casos de uso core, y se los prueban)
+	prueba alfa y beta
+no funcionales: 
+	prueba de integracion
+	prueba de stress
+	prueba de volumen
+	pruebas de seguridad
+	pruebas de usabilidad
+	pruebas a/b
+
+tips basicos: encontrar fallas y no demostrar que no las tiene, 
+la no existencia de fallas no determina calidad
+no es una tarea trivial
+el programador no prueba => salvo que sean tests unitarios
+tener conocimientos de que espero
+la prueba de performance es la de stress solapada con la de volumen
 prox clase: paper de the bug lifecycle y  testing without a map
 3 ejercicios:  tarifario de una autopista, ticket de jumbo, los vamos a discutir

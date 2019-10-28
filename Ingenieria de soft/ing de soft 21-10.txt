@@ -1,0 +1,54 @@
+ing de soft 21-10
+
+
+
+road map para parcial
+
+conceptos de ingenieria y de software
+que es la ing en sistemas de informacion, que es ing de soft, que es soft
+como nos comparamos con otras ingenierias (duras y blandas)
+classic mistakes (errores de procesos, equipos,etc) (problemas del desarrollo)
+
+una vezque conocemos donde fallamos, empezamos a atacar por distintos frentes
+calidad, gestion de desarrollo, estimacion, testing, gestion de configuracion de software(scm), transformacion digital
+
+en la calidad seteamos las expectativas del software que queremos desarrollar de  las distintas perspectivas
+
+una vez definidas las expectativas vamos a ver como nos organizamos para el proceso de desarrollo 
+kanban, scrum, proyectos
+
+esta gestion de equipos tiene un punto muy fuerte que es la estimacion, para saber como alinear al equipo, el esfuerzo que 
+llevan las distintas partes del proyecto, y poder definir la duracion de un proyecto.
+
+
+testing Qa/=qc
+proceso de desarrollo
+actividad 1 => act2 => contstuccion de sw => QC => SW
+act de testing
+El objectivo del qc, es encontrar la mayor cantidad de fallas.
+generalmente el proceso que tageamos como QC tiene varias estapas
+preparacion de la prueba, ejecucion de la prueba, y el analisis de resultado que puede llevar a la depuracion(debug)
+y el debug puede re incidir en la ejecucion de la prueba dependiendo del ciclo de desarrollo.
+
+la actividad de qc necesita soft en ejecucion para hacerse siempre.
+
+
+Quality management
+un incidente puede ser falla o un falso +
+
+falla                               =>          defecto                     =>  equivocacion
+encontrar un comporamiento                    porcion de codigo                 causa real del defecto
+distinto a lo esperado                          que genera la falla              puede tener origen humano o de proceso
+Por que se produce?                                                                 
+requerimientos mal def
+el req cambia o no esta 
+la tecnologia es compleja
+mala comunicacion
+errores de entorno
+
+qa mira que acciones podria haber tomado en mi proceso para haber evitado  la  introduccion de defectos
+
+
+Transformacion digiral y tecnologias emergentes
+RPA AI IOT etc
+
