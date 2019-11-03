@@ -1,0 +1,126 @@
+11-11 Parcial
+18-11 feriado
+25-11 rec + firma
+2do rec diciembre
+Temario :
+Conceptos de ing + classic mistakes
+Visiones y modelos de calidad
+Estimacion
+Marcos de trabajo
+Testing /QA
+SCM
+
+parcial de 20 preguntas, necesitamos 12 para aprobar, para promocionar 16
+
+Metricas => Medicion que significa algo
+por que es importante? sirven parar comparar cambios en los procesos o en el producto a lo largo del tiempo
+
+
+tarifario
+cuales serian los casos de prueba y con que condiciones probaria
+Evaluacion de motos en promocion:
+    input: Estacion, modo de pago, horario, categoria, sentido
+Evaluacion de motos en valle
+Evaluacion de motos en pico 
+Evaluacion de congestion de moto
+
+es la descripcion de lo que queremos evaluar
+
+me alcanza el tarifario para resolver la problematica?
+
+dos perspectivas, una parado desde el sistema de informacion y otro desde la implementacion
+
+en alnalista funcional de negocio vaa hacer todas las preguntas que dispara este cuadro, como diferencio una moto
+que pasa si viene un auto con tres ejes, etc.
+
+se traduce las necesidades del negocio en una arquitectura de solucion
+
+y una vez armada la arquitectura,  en analista  tiene el rol de entender la necesidad del negocio y como esa 
+necesidad se transforma en un requerimiento de software
+
+Analista funcional de negicio /= analista funcional de software
+
+cuando necesito automatizar tengo dos caminos, automatizar la ejecucion de las pruebas
+o automatizar la generacion de casos
+
+para automatizar la ejecucion de las pruebas se puede usar jmeter + puppet
+
+Gestion de la configuracion de software
+
+hay tres disciplinas que se manejan muy cercanamente  scm qc y QA
+ estos tres elementos en la ing de soft, empiezan a ser temas que estan altamente vinculados
+
+ tag cloud -> versionado  TFS, Git, svn 
+ Containers
+ CI 
+ Continuous deployment
+ Ambientes
+
+ scm es una disciplina con el objetivo es de mantener la evolucion de tres elementos : producto, proceso y entorno alo largo de todo el ciclo de vida del desarrollo
+ va a ser un conjunto de acciones que nosotros vamos a hacer para mantener la integridad del producto de software
+
+ Identificar configuracion
+ Controlar los cambios
+ desplegar en ambiente
+
+ 
+
+cambio -> sw2 ->despliegue  ciclo continuo de vida de softt
+trazabilidad de requerimientos
+
+palabras clave
+
+item de configuracion : es todo artefacto que conforma el software o el producto que estoy construyendo
+configuracion de sw: conjunto de items que componen sw 
+
+empiezo a tener una  configuracion de items de configuracion.
+y a medida que los vas modificando el soft va evolucionando.
+
+estos items de config tienen algo que se conoce como linea base, o baseline
+que refleja una foto del estado  de los items de configuracion en ese momento.
+los items de configuracion a lo largo de su vida cambian, cada foto del estado se llama version
+
+tag es una marca que haces en un momento
+la diferencia entre un tag y una baseline,  es que para mi esa marca significo algo, una base sobre la cual voy a laburar
+
+branching
+integridad = estable
+
+Actividades de la gestion de configuracion
+1) Administrar el proceso de scm
+
+    Definicion del proceso
+        Como y donde vamos a hacer deploy 
+        Cuando hago un branch 
+        Que hago si hay un bug en produccion
+        Desarrollo paralelo entre varios equipos
+        Que herramientas uso para gestionar (codigo,proceso,despliegue)
+    
+    Plan de configuracion
+    se deberia hacer una sola vez en el proyecto y no deberia cambiar, solo puede cambiar en pos de mejoras
+    quien lo hace? el rol configuration manager
+
+2) Identificacion de configuracion de sw 
+    Definir la organizacion  del proyecto, donde metemos los scripts de base de datos por ej.
+    que se intenta gestionar
+3) Control de la configuracion 
+    Lo unico constante es el cambio 
+    autorizar / rechazar cambios a la configuracion (por ej un pr)
+    Proceso de control de cambio
+    yo tengo algo que se llama change requeset, ese change reques puede ser por una especificacion funcional o por un cambio tecnico
+    busca evitar el si facil del lider de proyecto, en scrum generalmente es el scrum master si hace  o no un cambio solitado en un momento determinado
+4) Status and accounting 
+es la caracteristica o la informacion que se genera en el proceso  que pueden responder quien pidio el cambio, cuantos 
+cambios hubo, quien hizo el cambio. 
+para esto se puede usar blame, o github insights
+
+5) Auditoria de configuracion
+    hay tres tipos
+    Proceso : verifica que se haya seguido el proceso definido
+    funcional: verifica que solo se haya incluido la funcionalidad espeicificada
+    Fisica: verifica que los cambios en el codigo o en los items corresponden a lo que se pidio
+    generalmente la termina ejecutando gente de qa
+
+6) Release Managment
+    Garantiza qu eel software se puede trasladar entre Ambientes
+    investigar que significa continuous integration, continuous development y que es un pipeline
