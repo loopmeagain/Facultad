@@ -1,0 +1,27 @@
+adr parcial
+para el gant nombre tarea, recurso, duracion precio hora
+edt hasta tres niveles
+siempre asumir que el objetivo es total y no iterativo
+el enunciado dice implementar pero no desarrollar ni diseñar
+el objetivo  habla sobre solo 3 locales, y no contempla la proyeccion de aca a cuando se incorporen las otras sucursales
+el objetivo no contempla los cursos de capacitaciones
+tener instaladas es una frase poco feliz, instalar y configurar
+ los telefonos son fijos, celulares?
+ no se menciona sobre que  medios de pago vas  a tener que contemplar.
+ no se menciona sobre el tema de redes sociales  puesto en la descripcion del proyecto, si no va a haber un boton para compartir los cursos etc, o si va a ser cada uno a traves de internet, si no tiene relacion con el sistema lo supongo como un rol aislado y sino deberia estar como requerimiento.
+licencias
+ riesgos de proyecto =/ riesgo de operacion
+ riesgo , mitigacion
+ que se te vaya un recurso de la empresa, plan de motivacion o tener a varios recursos capacitar
+ en general que los proveedores no cumplan, tener mas de un proveedor de confianza
+
+ para el slide, tiene que ser corto, concreto, semaforos, indices, sin textos, cosas relevantes que hay que decidir, porcentaje total de completitud, porcentaje de desviacion, si esta en rojo
+
+ politicas por rol, usuarios con contrase;a, protocolos de comunicacion
+ googlear politicas comunes tomadas para seguridad en las organizaciones
+
+ costo de horas hombre de desarrollo
+ traslados de personas para implementar en distintos lugares (biaticos)
+ costos de capacitacion con el cliente
+ certificados y costos de hardware(si los asumo yo y no el cliente)
+ servicios que se contraten (cloud o gestion)

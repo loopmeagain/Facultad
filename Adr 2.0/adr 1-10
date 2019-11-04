@@ -1,0 +1,64 @@
+adr 1-10
+ orientado a la solucion no solo soft o hard
+Escalabilidad:
+es la capacidad de ampliar la solucion tecnologica, es decir poder dar respuesta de calidad antes mayores requerimientos
+
+puede ser vertical o horizontal:
+vertical es aumentar la potencia de un equipo o migrar la solucion a un equipo mas potente, es mas sencilla y mas rapida, porque a la solucion no habria que cambiarla a menos que sea un caso puntual, es costoso y es limitada, llega un momento en que agregar mejor capacidad de computo no es la solucion.
+
+horizontal:  aca entra el concepto de nodo, donde no necesariamente tenes que  agregar todos los componentes del mismo tipo de algunos de los componentes de la solucion: es mas barato, es casi ilimitado.
+el problema de escalar horizontalmente es que no todas las  soluciones no estan preparadas para escalar horizontalmente.
+
+req de solucion
+
+de nacionl a continental en 2 a;os (escalabilidad)
+omnicanalidad (que yo indeendientemente de los canales que ingrese tengo que poder hacer todas las operaciones)
+backoffice seguro
+
+para dise;ar la arquitectura hay dos o 3 opciones 
+la primera es hacer una arq monolitica (no distribuida), un unico ejecutable que hace todo en mi pc.
+
+Cliente-servidor en la interfaz de usuario se cargan los datos y los procesa el servidor, ademas aparece un vinculo de comunicacion, que vamos a tener que tener en cuenta.
+Ventajas y desventajas de ir por cliente servidor: es mas compleja la arquitectura, el desarrollo tambien, comparto la carga de procesamiento, parte la hace el cliente y parte la hace el servidor, y la aplicacion es mas veloz.   no aplica totalmente la solucion porque hay que darle un cliente a cada persona por cada dispositivo(por omnicanalidad),  pero si puedo usarlo para el backoffice. empieza a tener problemas en funcion de la disponibilidad.
+es mas sencillo de implementar que multicapa, y mas sencillo de aplicar politicas de seguridad que serian complejas de implementar en web.
+
+multicapa 
+minimo hay 3 capas: presentacion negocio persistencia
+ventajas: escalabilidad horizontal, mayor adaptabilidad
+multicapa es la que se adapta mejor a los requerimientos
+
+una api es un conjunto d ereglas e interfaces que yo expongo y estoy conformando el motor de una solucion
+
+estas apis brindan servicios
+las formas en las que te comunicas con las apis son importantes
+
+apis rest: no mantienen una sesion iniciada con el servidor. intercambiamos json y se termino el problema
+apis soap: el cliente esta acoplado con el servidor
+
+microservicios hacen actividades atomicas muchas mas chicas que un soap, y permite desarrollar distintos servicios en distintos lenguajes
+
+para infra arrancar desde los datos hasta el front end
+toda la parte del resguardo va en infra
+CONVENCION: podemos hablar de nodo en el dibujito, cada objeto es un nodo, si quiero identificar que es mas de un clust o le pongo cluster o hago n nodos
+si tengo que tener en cuenta la escalabilidad, el motor de base de datos tiene que ser clusterizable, asi que si no se que base de datos usar aclarar que tiene que ser clusterizable
+
+si los servicios no son stateless el balanceador tiene que mantener la sesion y encargarse el balanceador de carga de que siempre le pegues al mismo nodo, si es statless ni me preocupo
+
+para los web servers puedo usar distintos balanceadores o usamos el mismo y se complejiza el administrador del balanceador
+
+tip tener una api mobile, y despues la api general donde la general es privada, y la mobile es publica esto te da mejor control sobre la seguridad
+
+nfs es un protocolo de nas, es un sistema de red de archivos que hace que nuestros servidores lo vean unificado
+
+cuando los datos no son estaticos y hay streaming es preferible san
+
+si el que hace el bacup es externo tiene que hacerlo a traves de la vpn
+
+otra cosa que hay que tener es un server de  monitoreo y otro de logeo
+
+el backup es de la base de datos, de las aplicaciones y del nfs
+
+hay virtualizacion en la nas, porque todos estan guardando en la nas pero no saben en que disco, tambien a nivel server, porque yo cuando me conecto no se  acual le estoy pegando, tambien en la vpn. 
+las redes fisicas tienne que conectar todos los componentes
+dentro de mi ecosistema tengo que tener una vlan
+el administrador de redes no deberia permitir que si tengo permiso para entrar a entornos no productivos, que me deje entrar a entornos productivos

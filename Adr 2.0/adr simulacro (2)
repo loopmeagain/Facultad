@@ -1,0 +1,102 @@
+adr simulacro
+servicios de ventas y mantenimientos de servidores 
+quiere incorporar un call center que estaba tercerizada
+400 llamados diarios de 9 a 18
+llamadas duran entre 3 y 10 min
+10 personas en call center en turnos de 8 horas y guardias pasivas fines de semana
+quiere un nuevo crm que permita grabacion de llamados
+tiene que tener una capa de servicios soap
+sala no tiene cableados, solo electrico
+tiene un datacenter propio a 50 km de la oficina y esta conectada a la misma por una vpn
+en el datacenter tiene capacidad ociosa
+
+alcance:
+infra de it
+desarrollar la app para registro de llamadas recibidas 100% de las comunicaciones y debe estar integrada con el crm
+implementar la app 
+capacitar al personal
+
+supuestos:
+guardias pasivas remotas  a traves de cualquier dispositivo
+la app para el call center no esta desarrollada
+
+no contemplados
+tramites para 0800
+gasto de telefonia
+contratacion del personal
+gestion de compras 
+
+el motor de db que vamos ausar soporta cluster? de que tipo master slave o master master?
+por que habria de usar la base de datos? soporta acid, es gratis, es facil de conseguir recursos?
+
+habria que poner un supuesto que algo me garantiza que el enlace de la vpn es de alta disponibilidad
+cosas que hacen ruido, que usen cualquier dispositivo, se supone que deberian usar cualquier dispositivo que sea compatible
+
+si en el esquema de hard vamos atener todo virtualizado, o dibujamos los virtual en el de arq de soft
+o aclararlo en el de infra cada uno
+
+hay que aclarar que se sugiere virtualizar por lo menos en x cantidad de servidores fisicos porque si virtualizas todo en un solo server, se cae y morimos todos, porque es el unico punto de falla 
+
+investigar si se pueden usar nas en cluster
+tengo que poner un balanceador de carga? puedo clusterizarla? uso un nfs?
+
+en el punto 8
+la nas tiene raid? son discos solidos? no es lo mismo el raid que usaria para los logs, que para la base de datos o para el resguardo
+
+en el de hardware va todo el tema de contingencia electirca y enlaces, si el datacenter me aclara el tier, no tengo que pensar en la contingencia electrica
+
+si tengo enlace de emergencia tengo que aclarar que son dos enlaces de distintas compa;ias de dos ultimas millas diferentes, tengo que tener en cuenta que un elace dedicado de 50 km saldria carisimo.
+
+el monitoreo se supone que va a haber un cluster de monitoreo
+
+para no llenar de lineas, podriamos aclarar, el monitoreo esta hecho sobre tal y tales servers, es seguro que vamos a tener que monitorear todos los elementos de hardware.
+
+los logs los podemos meter en cualquier lado, en la base sql, o en la nas, la sql es la ultima opcion para guardar logs, iria por file system o si tengo una nosql oun servicio de log como elastic 
+
+de la nas puedo hacer resguardo en tape y de la db
+
+frutilla de postre es poner el server de repositorio para versionado
+
+la nas van a ser cajas con discos rigidos, necesitamos 10mb por cada archivo, hacen 400 llamadas, 4 gigas por dia, 120 gb por mes
+
+la base de datos que tipo de raid va a tener? raid 5, 1+0? por que?
+
+resguardo solo tape?
+
+backupear diario completo al cierre de la jornada y hacer un incremental cada 2 3 horas.
+Por mes hacer un resguardo on line, y tener un server de backup en la oficina, y que cuando todos los dias se haga el backup,  lo meta ahi, si explota el datacenter, tengo ese resguardo y a lo sumo pierdo un dia. esto lo puedo hacer porque la oficina esta a 50 km.
+puedo usar la misma nas para hacer los backups
+
+saber si voy a necesitar un tera por dia, mes, o hora, me da una idea de la dimension que tengo que tener para el backup
+
+plan de resguardo y recuperacion ante desastres
+exploto el datacenter
+hay que seguir antendiendo, tengo que poder seguir recibiendo los reclamos, asi que necesitamos un enlace telefonico de emergencia
+para el resguardo  puedo tener que restaurar o hacer una sincronizacion a cada ratito y si pasa algo que apunte a la base de contingencia, de esta forma reducis el rto.
+
+Sla
+
+si ya hiciste una solucionen un datacenter con tier definido, como este ejemplo que es tier tres, puedo garantizar lo que me de el tier tres, no le puedo garantizar los vinculos porque es un tema del que lo usa
+
+si no tengo datacenter, la respuesta es relativa al minimo entre los servicios, apuntando al componente mas debil de toda mi solucion.
+
+que controles referentes a la seguridad de la informacion
+el usuario usa su propio dispositivo y puede dejar la sesion prendida y lo puede usar cualquiera, esta fuera de mi control, si te queres cubrir de esto, como control de seguridad va a entrar a una maquina remota mia que va a estar virtualizada en el datacenter, no va a entrar a operar directamente por la vpn, de esta manera me estoy resguardando un poco mas.
+
+limitar el acceso  al backend por un conjunto de ips y la base de datos.
+
+para hablar con las apis hay que segurizar la comunicacion entre front y back del app server, a traves de tokens  o apis keys, tipo oauth2,
+
+presupuesto total
+conceptos de costos:
+	
+	horas hombre para el desarrollo, capacitacion
+	costos de capacitacion (lugar para capacitar, manuales)
+	licencias
+	hardware(a menos que el supuesto especifique que no)
+	cableado
+	si la contingencia es en cloud, servicio cloud, indicar si es saas o paas o iass
+
+	si los de desarrollo trabajan in situ, tengo que ponerles puestos de trabajo
+
+	todos los posibles costos de un proyecto tendrian que ir aca, por mas que sepamos que el valor sea 0
