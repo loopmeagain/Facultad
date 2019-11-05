@@ -1,6 +1,13 @@
 11-11 Parcial
 18-11 feriado
 25-11 rec + firma
+2-12 2do rec
+final 
+3-12
+9-12
+16-12
+si doy el final en febrero, comunicarme antes de darlo con diego o pablo
+dmansilla@edu.ar
 2do rec diciembre
 Temario :
 Conceptos de ing + classic mistakes
@@ -70,7 +77,7 @@ trazabilidad de requerimientos
 
 palabras clave
 
-item de configuracion : es todo artefacto que conforma el software o el producto que estoy construyendo
+item de configuracion : es todo artefacto que es importante gestionar que conforma el software o el producto que estoy construyendo
 configuracion de sw: conjunto de items que componen sw 
 
 empiezo a tener una  configuracion de items de configuracion.
@@ -80,11 +87,24 @@ estos items de config tienen algo que se conoce como linea base, o baseline
 que refleja una foto del estado  de los items de configuracion en ese momento.
 los items de configuracion a lo largo de su vida cambian, cada foto del estado se llama version
 
+baseline  es la foto de un determinado momento de  de los items de configuracion que conforman el producto y que tiene significado
+
 tag es una marca que haces en un momento
 la diferencia entre un tag y una baseline,  es que para mi esa marca significo algo, una base sobre la cual voy a laburar
 
-branching
+branch
+una linea paralela a la baseline  para el trabajo en proyectos de cambios
+
 integridad = estable
+que rol  que ejecuta esto es el de configuration manager, pero puede derivar en roles como release manager y build manager
+que hace el config manager
+define el proceso de cm
+garantiza la construccion y distribucion de sw
+arma los planes
+analiza mejoras
+se basa en herramientas
+jenkins, azure devops, cruise control  => release
+maven, ant, gradle => build
 
 Actividades de la gestion de configuracion
 1) Administrar el proceso de scm
@@ -98,19 +118,20 @@ Actividades de la gestion de configuracion
     
     Plan de configuracion
     se deberia hacer una sola vez en el proyecto y no deberia cambiar, solo puede cambiar en pos de mejoras
-    quien lo hace? el rol configuration manager
+    
 
 2) Identificacion de configuracion de sw 
-    Definir la organizacion  del proyecto, donde metemos los scripts de base de datos por ej.
+    Definir items de config y la organizacion  del proyecto, donde metemos los scripts de base de datos por ej.
     que se intenta gestionar
 3) Control de la configuracion 
     Lo unico constante es el cambio 
     autorizar / rechazar cambios a la configuracion (por ej un pr)
     Proceso de control de cambio
-    yo tengo algo que se llama change requeset, ese change reques puede ser por una especificacion funcional o por un cambio tecnico
+    yo tengo algo que se llama change request, ese change request puede ser por una especificacion funcional o por un cambio tecnico
     busca evitar el si facil del lider de proyecto, en scrum generalmente es el scrum master si hace  o no un cambio solitado en un momento determinado
 4) Status and accounting 
-es la caracteristica o la informacion que se genera en el proceso  que pueden responder quien pidio el cambio, cuantos 
+generacion de informacion suficiente para saber
+responder quien pidio el cambio, cuantos 
 cambios hubo, quien hizo el cambio. 
 para esto se puede usar blame, o github insights
 
@@ -123,4 +144,7 @@ para esto se puede usar blame, o github insights
 
 6) Release Managment
     Garantiza qu eel software se puede trasladar entre Ambientes
-    investigar que significa continuous integration, continuous development y que es un pipeline
+    investigar que significa continuous integration, continuous development y que es un pipeline, seguimos esta la clase que viene.
+
+si yo tengo un sw, ese se ejecuta en distintos entornos, con distintos documentos y distintas configuraciones, y con todo esto tengo que poder saber que version se esta ejecutando, en que ambientes, y con que cambios y por que tiene esos cambios.
+si yo puedo responder todas esas preguntas significa que la gestion de configuracion esta funcionando correctamente.

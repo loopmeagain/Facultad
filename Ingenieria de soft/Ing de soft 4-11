@@ -1,0 +1,65 @@
+Ing de soft 4-11
+Release management
+Garantiza que el sw se pueda distribuir en distintos entornos al que fue desarrollado.
+
+conceptos asociados a release management
+version (configuracion): instancia de un baselinea que sera distribuido 
+ ejemplo
+proyecto sisop 2019
+
+arrancamos con 4 archivos .c .doc .h makefile
+estos 4 archivos van a ser nuestra baseline
+
+por nuevos requerimientos estos archivos sufren modificaciones 
+
+los archivos avanzan de formas independientes y pueden haber nuevos archivos o eliminarse existentes, y decidimos que x archivos en y version van a ser nuestra version nueva baseline 2
+
+Variante: es una instancia de un software  que son semanticamente similares pero de distintas plataformas o para distintos usos, difieren a niveles no funcionales; por ejemplo whatsapp para android o para ios, estan en la misma version pero la implementacion es distinta para cada variante, la forma de construccion es distinta
+
+Release: accion de distribuir el sw entre ambientes/entornos
+
+entorno: contexto de ejecucion de un software, al que se le agrega un significado de para que se lo usa.
+en general hay 4 entornos generalizados: dev, integracion, pre produccion, produccion. Produccion  es el unico obligatorio, el resto son opcionales;
+
+para el versionado existen naming conventions de la configuracion de la linea base:
+la tradicional es  que lleve 3 numeros
+x.y.z
+windows 10.0.1
+donde x es el concepto mayor, el cambio GROTESCO, puede ser un punto de no retorno, romper la compatibilidad
+donde y es version de cambio menor, ajuste de funcionalidades
+ y z bug fixing, si tenes un producto con x.y.188 es que el producto es de mala calidad porque tuvo millones de bugfixes
+ a veces  puede aparecer un cuarto .w que es el build version
+este nombre esta asociado a un set de items de config 
+parcial : 3 preguntas de release managment ;
+
+dentro de release management una sub tarea es el build management:
+
+para ejecutar el soft tengo que realizar algunas actividades previas
+son todas las acciones que se deben realizar para poder construir el "desplegable" (binario + conf + scripts)
+no es lo mismo construir el ejecutable que distribuirlo
+
+del build management nace un concepto que es la integracion continua
+los equipos de dev tienen varias personas que laburan sobre el codigo, esa persona va trabajando con distintas herramientas sobre distintas partes del codigo, que mientras avanza el tiempo cambian constantemente, si pasa mucho tiempo el proceso de merge escala en complejidad y eso genera retraso porque tiene que haber mejor via de comunicacion
+
+Release
+poner a disposicion el software en el ambiente que se lo vaya  a utilizar 
+depende mucho de la arquitectura y el tipo de software
+
+continuous delivery
+pensar que el proceso de despliegue sea automatico salvo el de produccion.
+siempre te garantizas que lo que esta en master este listo para subir a produccion.
+
+para poder implementar continuous delivery necesitas :
+tests automaticos no solo de funcionalidad sino de producto deployeado (operacion).
+disciplina de commits
+proceso ordenado
+herramienta madura de integracion continua
+herramientas que se acoplan a tu proceso y hace diagnosticos sobre el codigo
+continuous deployment
+si tiene despliegue continuo significa que incluye el deploy a produccion
+
+no todos los soft pueden ser automatizados en el despliegue
+
+tanto como continuous delivery, o deployment laburan sobre versiones
+dev ops 
+
